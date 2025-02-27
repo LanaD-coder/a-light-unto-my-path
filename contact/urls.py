@@ -9,5 +9,5 @@ Defines route patterns using Django's `path` function.
 
 # URLConfigurations
 urlpatterns = [
-    path('chat/', views.contact)
+    path('chat/', views.contact, name='contact'),
 ]

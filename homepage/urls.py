@@ -9,5 +9,5 @@ Defines route patterns using Django's `path` function.
 
 # URLConfigurations
 urlpatterns = [
-    path('home/', views.homepage)
+    path('home/', views.homepage, name='homepage'),
 ]

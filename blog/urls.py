@@ -9,5 +9,5 @@ Defines route patterns using Django's `path` function.
 
 # URLConfigurations
 urlpatterns = [
-    path('my_blog/', views.blog)
+    path('my_blog/', views.blog, name='about'),
 ]
