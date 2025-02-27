@@ -55,7 +55,11 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome to My Custom Admin",
     "copyright": "My Company © 2025",
     "show_ui_builder": True,  # Enables UI customization
+    "theme": "morph", # custom theme
+
 }
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -101,6 +105,11 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://github.com",
+    "https://a-light-unto-my-path.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
