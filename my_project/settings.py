@@ -24,8 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)#o9+y)x'
-'(=5s^=c4loo6c796u0fx#jx-bucs_*#p90&h$8n=v2'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,6 +35,7 @@ ALLOWED_HOSTS = ['alight-untomy-path-5986a905c2de.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +47,15 @@ INSTALLED_APPS = [
     'contact',
     'homepage',
 ]
+
+JAZZMIN_SETTINGS = {
+    "site_title": "My Admin",
+    "site_header": "My Dashboard",
+    "site_brand": "MyApp",
+    "welcome_sign": "Welcome to My Custom Admin",
+    "copyright": "My Company © 2025",
+    "show_ui_builder": True,  # Enables UI customization
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
