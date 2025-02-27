@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-)#o9+y)x'
 '(=5s^=c4loo6c796u0fx#jx-bucs_*#p90&h$8n=v2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['alight-untomy-path-5986a905c2de.herokuapp.com', '127.0.0.1']
 
