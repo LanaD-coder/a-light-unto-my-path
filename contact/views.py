@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def contact(request):
-    return HttpResponse('Let´s connect')
+    return HttpResponse('Let´s chat.')
