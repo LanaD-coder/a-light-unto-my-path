@@ -1,9 +1,11 @@
 from django.shortcuts import render
 # Views for handling blog-related requests.
-from django.http import HttpResponse
+from django.views import generic
+from .models import Post
 
 
 # Create your views here.
-def blog(request):  # Handles requests to the blog page.
-    return HttpResponse('I have something to tell you...')
-    # Returns an HTTP response with a message.
+class PostList(generic.ListView):
+    queryset = Post.objects.all()
+    template_name = "post_list.html"
+
