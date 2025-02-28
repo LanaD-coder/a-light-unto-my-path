@@ -154,15 +154,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Path for additional static files (used during development)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Important for Heroku
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Project-level static files
+    os.path.join(BASE_DIR, 'static'),  # Where your CSS and JS are stored
 ]
-
-# Path where `collectstatic` stores all static files (used in production)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
 # Enable Whitenoise storage for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
