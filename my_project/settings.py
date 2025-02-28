@@ -18,9 +18,8 @@ if os.path.isfile('env.py'):
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
+STATIC_DIR = BASE_DIR / 'static'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -154,10 +153,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Important for Heroku
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Where your CSS and JS are stored
+    STATIC_DIR,  # This is the static folder in your project
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Enable Whitenoise storage for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
