@@ -1,0 +1,49 @@
+/* === Global Styles === */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* === Navbar Styling === */
+.navbar {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    height: 60px; /* Adjust logo size */
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d9534f; /* Change color on hover */
+}
+
+/* === Footer Styling === */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer i {
+    font-size: 20px;
+    color: #d9534f;
+    margin-left: 10px;
+}
+
+.footer i:hover {
+    color: #fff;
+}
