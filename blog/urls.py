@@ -9,5 +9,5 @@ from .views import PostList
 
 # URLConfigurations
 urlpatterns = [
-    path('my_blog/', PostList.as_view(), name='blog'),
+    path('my_blog/', PostList.as_view(), name='home'),
     ]

@@ -1,0 +1,9 @@
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand img {
+    height: 40px; /* Adjust as needed */
+    width: auto;
+}
