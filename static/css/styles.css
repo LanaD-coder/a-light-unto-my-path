@@ -1,0 +1,74 @@
+/* General Page Styles */
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: #f8f9fa;  /* Light Gray */
+    color: #305f6d; /* Dark Teal */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #305f6d;  /* Dark Teal */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Drop Shadow */
+}
+
+.navbar-brand img {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3)); /* Subtle Logo Shadow */
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa !important; /* Light Gray */
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #c1884e !important; /* Warm Gold */
+}
+
+/* Background Colors */
+.main-bg {
+    background-color: #698c8e; /* Muted Teal */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #305f6d; /* Dark Teal */
+    color: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer i {
+    color: #c1884e; /* Warm Gold */
+    font-size: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer i:hover {
+    color: #bf6e15; /* Deep Orange */
+    transform: scale(1.2);
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #bf6e15; /* Deep Orange */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #c1884e; /* Warm Gold */
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        border-color: #f8f9fa;
+    }
+}
