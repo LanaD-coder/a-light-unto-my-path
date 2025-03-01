@@ -28,7 +28,7 @@ STATIC_DIR = BASE_DIR / 'static'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['alight-untomy-path-5986a905c2de.herokuapp.com', '127.0.0.1']
 
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'blog',
     'contact',
     'homepage',
+    'django_extensions',
 ]
 
 JAZZMIN_SETTINGS = {
