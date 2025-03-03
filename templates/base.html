@@ -19,7 +19,10 @@
     />
 
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <!-- Static Root CSS -->
     <link
@@ -27,7 +30,6 @@
       type="text/css"
       href="{% static 'css/style.css' %}"
     />
-    <!-- Global -->
 
     <!-- Bootstrap CSS -->
     <link
@@ -36,6 +38,12 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
 
   <body class="d-flex flex-column h-100 main-bg">
@@ -59,8 +67,9 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <i class="fa-solid fa-bars"></i>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -97,21 +106,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-      <p class="m-0 text-center text-white">Made by Illana De Beer</p>
-      <p class="m-0 text-center text-white">
+    <footer class="footer mt-auto py-3">
+      <p class="m-0 text-center">Made by Illana De Beer</p>
+      <p class="m-0 text-center">
         Follow us:
         <span class="social-icons">
           <a
-            href="https://www.facebook.com/yourpage"
+            href="https://www.facebook.com/"
             target="_blank"
             aria-label="Facebook"
           >
             <i class="fab fa-facebook-square"></i>
           </a>
-          <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
-            <i class="fab fa-x-twitter"></i>
-        </a>
+          <a href="https://x.com/" target="_blank" aria-label="X">
+            <i class="fa-brands fa-square-x-twitter"></i>
+          </a>
           <a
             href="https://www.instagram.com/"
             target="_blank"

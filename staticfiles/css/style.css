@@ -1,18 +1,18 @@
 /* General Styles */
 body {
-    color: slategrey;
+    color: black;
     font-family: 'Lexend Deca', sans-serif;
-    background-color: #f8f9fa; /* Light background for readability */
+    background-color: #FBF7F4; /* Isabelline */
 }
 
 /* Navbar Styles */
 .navbar {
-    background-color: #698c8e; /* Muted Teal */
+    background-color: #EED2CC; /* Pale Dogwood */
 }
 
 .navbar .nav-link,
 .navbar .navbar-text {
-    color: white;
+    color: #296b77; /* Teal Blue */
 }
 
 .navbar .nav-link.active {
@@ -20,18 +20,15 @@ body {
     text-decoration: underline;
 }
 
-.navbar-toggler {
-    border-color: white;
-}
-
-.navbar-toggler-icon {
-    filter: invert(1);
+.navbar-toggler i {
+    font-size: 1.5rem;
+    color:  #296b77; /* Teal Blue */
 }
 
 /* Footer Styles */
 .footer {
-    background-color: #698c8e; /* Muted Teal */
-    color: white;
+    background-color: #EED2CC; /* Pale Dogwood */
+    color: #296b77;  /* Teal Blue */
     text-align: center;
     padding: 1rem 0;
     display: flex;
@@ -51,11 +48,19 @@ body {
 }
 
 .footer i {
-    color: #c1884e; /* Warm Gold */
+    color:  #296b77; /* Teal Blue */
     font-size: 1.5rem;
 }
 
+/*  Blog Css */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures uniform size */
+}
+
+
 /* Additional Utility Classes */
 .main-bg {
-    background-color: #f8f9fa;
+    background-color: #FBF7F4; /* Isabelline */
 }
