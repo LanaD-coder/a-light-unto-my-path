@@ -1,29 +1,31 @@
-/* General Styles */
+
+/* Base Page Styles */
+
 body {
     color: black;
     font-family: 'Lexend Deca', sans-serif;
     background-color: #FBF7F4; /* Isabelline */
 }
 
-/* Rolling Banner Styles */
+/* Rolling Banner */
 .rolling-banner {
-    background-color: #6C9A8B;  /* Cambridge Blue */
-    color: #FBF7F4; /* Isabelline */
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 10px 0;
-    width: 100%;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Optional: Adds slight shadow below */
+    width: 100%;
+    background: #6C9A8B;  /* Cambridge Blue */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    z-index: 1010;
     overflow: hidden;
 }
 
-/* Ensure Banner Text is Properly Centered */
+/* Scrolling Text */
 .banner-text {
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left 20s linear infinite;
-    padding-left: 100%; /* Starts off-screen */
+    animation: scroll-left 25s linear infinite;
+    padding-left: 100%;
 }
 
 /* Keyframes for Scrolling Text */
@@ -36,75 +38,33 @@ body {
     }
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .rolling-banner {
-        font-size: 1rem; /* Reduce font size on smaller screens */
-        padding: 8px 0;  /* Reduce padding */
-    }
-
-    .banner-text {
-        font-size: 1rem; /* Adjust banner text size */
-    }
-}
-
 /* Navbar Styles */
 .base-navbar {
     background-color: #EED2CC; /* Pale Dogwood */
-    position: -webkit-sticky;  /* For Safari */
     position: sticky;
-    top: 0;  /* Ensures that the navbar sticks to the top */
+    top: 0;
     z-index: 1020;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    width: 100%;  /* Ensure the navbar spans the full width */
-    margin-top: 0; /* Ensure no space before navbar */
+    width: 100%;
 }
 
+/* Navbar Container */
 .container-fluid {
     display: flex;
-    justify-content: space-between; /* Ensure logo and items are spaced apart */
-    align-items: center; /* Vertically center content */
-    width: 100%; /* Set the container to take up the full width of the screen */
-    margin: 0; /* Remove any default margin */
+    justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
 }
 
 /* Navbar item alignment */
 .base-navbar .navbar-nav {
     display: flex;
-    justify-content: flex-end; /* Aligns the navbar items to the right */
-    gap: 20px; /* Adds space between each navbar item */
-}
-
-/* For smaller screen sizes, adjust navbar items */
-@media (max-width: 768px) {
-    .base-navbar .navbar-nav {
-        flex-direction: column; /* Stack navbar items vertically */
-        gap: 10px; /* Reduce space between items */
-    }
-
-    .base-navbar .navbar-brand {
-        margin-left: 0; /* Ensure no extra left margin */
-    }
-
-    .navbar-toggler {
-        display: block;
-    }
-
-    .navbar-toggler i {
-        color: #296b77; /* Teal Blue */
-        font-size: 1.5rem;
-    }
-}
-.collapse {
     justify-content: flex-end;
+    gap: 20px;
 }
 
-/* Test for a parent container that might be causing issues */
-.container {
-    position: relative;
-    z-index: 0;
-    overflow: visible;
+.nav-link {
+    color: #296b77; /* Teal Blue */
 }
 
 /* Footer Styles */
@@ -112,38 +72,69 @@ body {
     background-color: #EED2CC; /* Pale Dogwood */
     color: #296b77; /* Teal Blue */
     text-align: center;
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
 }
 
-/* For smaller screens, adjust social icons */
-@media (max-width: 768px) {
-    .footer .social-icons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .footer i {
-        font-size: 1.2rem; /* Adjust icon size */
-    }
+.footer p {
+    margin: 0;
+    padding: 0 20px;
 }
 
-/* Blog */
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+}
+
+.social-icons a {
+    color: #296b77;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icons i:hover {
+    color: #A1683A;
+}
+
+
+/* Blog & Card Adjustments */
+
+.card {
+    width: 100%;
+    max-width: 300px;
+}
+
 .card-body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Image is Full Width */
 .card-img-top {
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Ensures uniform size */
+    height: 200px;
+    object-fit: cover;
 }
 
-/* Homepage */
+/* Blog Card Container */
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 
 /* Hero Section */
+
 .hero {
     position: relative;
     width: 100%;
@@ -157,7 +148,7 @@ body {
 
 .hero-overlay {
     text-align: center;
-    color: #FBF7F4; /* Isabelline */
+    color: #FBF7F4;
     background: rgba(232, 153, 141, 0.6);
     padding: 40px;
     border-radius: 10px;
@@ -180,7 +171,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #6C9A8B;  /* Cambridge Blue */
+    background-color: #6C9A8B;
     color: white;
     font-size: 1.2rem;
     text-decoration: none;
@@ -192,15 +183,14 @@ body {
     background-color: #A1683A;
 }
 
-/* ========================= */
-/* Contact Page Styles (Scoped) */
-/* ========================= */
+/* ======================= */
+/* Contact Page Styles */
+/* ======================= */
 .contact-page {
     background-color: #FBF7F4;
     padding: 50px 0;
 }
 
-/* Contact Form Container */
 .contact-container {
     max-width: 800px;
     background: white;
@@ -210,40 +200,35 @@ body {
     margin: 40px auto;
 }
 
-/* Contact Form Heading */
 .contact-title {
     text-align: center;
-    color: #296b77; /* Teal Blue */
+    color: #296b77;
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-/* Form Labels */
 .contact-form .form-label {
     font-family: 'Lexend Deca', sans-serif;
     font-weight: bold;
-    color: #296b77; /* Teal Blue */
+    color: #296b77;
 }
 
-/* Form Fields */
 .contact-form .form-control {
     border-radius: 5px;
-    border: 1px solid #EED2CC;  /* Soft Pale Dogwood */
+    border: 1px solid #EED2CC;
     padding: 12px;
     font-size: 1rem;
-    background-color: #FBF7F4; /* Isabelline */
+    background-color: #FBF7F4;
 }
 
-/* Form Fields - Focus Effect */
 .contact-form .form-control:focus {
-    border-color: #6C9A8B; /* Cambridge Blue */
+    border-color: #6C9A8B;
     box-shadow: 0 0 5px rgba(108, 154, 139, 0.5);
 }
 
-/* Submit Button */
 .contact-form .contact-btn {
-    background-color: #E8998D; /* Coral Pink */
+    background-color: #E8998D;
     border: none;
     padding: 12px;
     font-size: 1.2rem;
@@ -256,47 +241,68 @@ body {
 }
 
 .contact-form .contact-btn:hover {
-    background-color: #A1683A; /* Raw Amber */
+    background-color: #A1683A;
 }
 
-/* Message Alert */
-.contact-alert {
-    background: rgba(232, 153, 141, 0.2);
-    color: #A1683A; /* Raw Amber */
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-}
+/* Ensure Cards are Centered on Mobile */
+@media (max-width: 992px) {
+    .row {
+        justify-content: center;
+        gap: 20px;
+    }
 
-/* Additional Utility Classes */
-.main-bg {
-    background-color: #FBF7F4; /* Isabelline */
-}
+    .col-md-4,
+    .col-sm-6 {
+        display: flex;
+        justify-content: center;
+    }
 
-/* For smaller screens */
-@media (max-width: 768px) {
-    .rolling-banner {
-        margin-top: 300px; /* Adjust for smaller screens */
+    .footer .social-icons {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
     }
 }
 
-/* Hero Section Responsiveness for Mobile Devices */
+/* Media Query for screens up to 768px */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3.5rem; /* Adjust font size for small screens */
+        font-size: 3.5rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem; /* Reduce subtitle size */
+        font-size: 1.2rem;
     }
 
     .hero-btn {
-        font-size: 1rem; /* Make button text smaller */
-        padding: 8px 16px; /* Adjust button padding */
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 
     .hero-overlay {
-        padding: 20px; /* Reduce padding on smaller screens */
+        padding: 20px;
+    }
+
+    .rolling-banner {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .banner-text {
+        animation: scroll-left 35s linear infinite;
+    }
+
+    .base-navbar .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-toggler i {
+        color: #296b77;
+        font-size: 1.5rem;
     }
 }

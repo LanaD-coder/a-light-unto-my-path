@@ -1,63 +1,63 @@
 {% extends "base.html" %}
-{% block content %}
 {% load static %}
 
+{% block content %}
 <!-- index.html content starts here -->
 <div class="container-fluid">
-  <div class="row">
-    <!-- Blog Entries Column -->
-    <div class="col-12 mt-3 left">
-      <div class="row">
-        {% for post in post_list %}
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <!-- Add Image Here -->
-            {% if post.image %}
-            <img src="{{ post.image.url }}"
-              class="card-img-top img-fluid"
-              alt="{{ post.title }}"
-            />
-            {% else %}
-            <img
-              src="{% static 'images/default.jpg' %}"
-              class="card-img-top img-fluid"
-              alt="Default Image"
-            />
-            {% endif %}
+  <div class="row d-flex justify-content-center">
+    {% for post in post_list %}
+      <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
+        <div class="card mb-4">
+          {% if post.image %}
+            <img src="{{ post.image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}" />
+          {% else %}
+            <img src="{% static 'images/default.jpg' %}" class="card-img-top img-fluid" alt="Default Image" />
+          {% endif %}
 
-            <div class="card-body">
-              <div class="image-container">
-                <div class="image-flash">
-                  <p class="author">Author: {{ post.author }}</p>
-                </div>
+          <div class="card-body">
+            <div class="image-container">
+              <div class="image-flash">
+                <p class="author">Author: {{ post.author }}</p>
               </div>
-              <a href="#" class="post-link">
-                <h2 class="card-title">{{ post.title }}</h2>
-              </a>
-              <hr />
-              <p class="card-text text-muted h6">{{ post.created_on }}</p>
             </div>
+            <a href="{{ post.get_absolute_url }}" class="post-link">
+              <h2 class="card-title">{{ post.title }}</h2>
+            </a>
+            <hr />
+            <p class="card-text text-muted h6">{{ post.created_on }}</p>
           </div>
         </div>
-        {% if forloop.counter|divisibleby:3 %}
       </div>
-      <div class="row">{% endif %} {% endfor %}</div>
-    </div>
+    {% empty %}
+      <p class="text-center">No posts available.</p>
+    {% endfor %}
   </div>
-  {% if is_paginated %}
+</div>
+
+<!-- Pagination -->
+{% if is_paginated %}
   <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+        </li>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if num >= page_obj.number|add:-2 and num <= page_obj.number|add:2 %}
+          <li class="page-item {% if num == page_obj.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
       {% if page_obj.has_next %}
-      <li>
-        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-          NEXT &raquo;</a
-        >
-      </li>
+        <li class="page-item">
+          <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+        </li>
       {% endif %}
     </ul>
   </nav>
-  {% endif %}
-</div>
-
-<!-- index.html content ends here -->
+{% endif %}
 {% endblock %}
