@@ -61,11 +61,18 @@ body {
     margin-left: auto;
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap:15px;
+    flex-wrap: wrap;
 }
 
 .nav-link {
     color: #296b77; /* Teal Blue */
+    padding: 8px 12px;
+    font-size: 0.95rem;
+}
+
+.navbar-nav {
+    flex-wrap: wrap;
 }
 
 /* Footer Styles */
@@ -95,14 +102,14 @@ body {
 }
 
 .social-icons a {
-    color: #296b77;
+    color: #296b77;  /* Teal Blue */
     font-size: 24px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 
 .social-icons i:hover {
-    color: #A1683A;
+    color: #A1683A;  /* Raw Umber */
 }
 
 
@@ -149,7 +156,7 @@ body {
 
 .hero-overlay {
     text-align: center;
-    color: #FBF7F4;
+    color: #FBF7F4;  /* Isabelline */
     background: rgba(232, 153, 141, 0.6);
     padding: 40px;
     border-radius: 10px;
@@ -172,8 +179,8 @@ body {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #6C9A8B;
-    color: white;
+    background-color: #6C9A8B;  /* Cambridge Blue */
+    color: #FBF7F4;  /* Isabelline */
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
@@ -181,20 +188,20 @@ body {
 }
 
 .hero-btn:hover {
-    background-color: #A1683A;
+    background-color: #A1683A;  /* Raw Umber */
 }
 
 /* ======================= */
 /* Contact Page Styles */
 /* ======================= */
 .contact-page {
-    background-color: #FBF7F4;
+    background-color: #FBF7F4;  /* Isabelline */
     padding: 50px 0;
 }
 
 .contact-container {
     max-width: 800px;
-    background: white;
+    background: #FBF7F4;   /* Isabelline */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -203,7 +210,7 @@ body {
 
 .contact-title {
     text-align: center;
-    color: #296b77;
+    color: #296b77;  /* Teal Blue */
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: bold;
@@ -212,37 +219,88 @@ body {
 .contact-form .form-label {
     font-family: 'Lexend Deca', sans-serif;
     font-weight: bold;
-    color: #296b77;
+    color: #296b77;  /* Teal Blue */
 }
 
 .contact-form .form-control {
     border-radius: 5px;
-    border: 1px solid #EED2CC;
+    border: 1px solid #EED2CC;  /* Pale Dogwood */
     padding: 12px;
     font-size: 1rem;
-    background-color: #FBF7F4;
+    background-color: #FBF7F4;  /* Isabelline */
 }
 
 .contact-form .form-control:focus {
-    border-color: #6C9A8B;
+    border-color: #6C9A8B;  /* Cambridge Blue */
     box-shadow: 0 0 5px rgba(108, 154, 139, 0.5);
 }
 
 .contact-form .contact-btn {
-    background-color: #E8998D;
+    background-color: #E8998D;  /* Coral Pink */
     border: none;
     padding: 12px;
     font-size: 1.2rem;
     border-radius: 5px;
     transition: 0.3s;
     width: 100%;
-    color: white;
+    color: #FBF7F4;  /* Isabelline */
     font-weight: bold;
     cursor: pointer;
 }
 
 .contact-form .contact-btn:hover {
-    background-color: #A1683A;
+    background-color: #A1683A;  /* Raw Umber */
+}
+
+/* ======================= */
+/* Login/Register Page Styles */
+/* ======================= */
+
+/* Center the form on the page */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FBF7F4;   /* Isabelline */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style form fields */
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #EED2CC;
+    border-radius: 5px;
+}
+
+/* Style buttons */
+.primaryAction {
+    width: 100%;
+    padding: 10px;
+    background-color: #E8998D;  /* Coral Pink */
+    color: #FBF7F4;  /* Isabelline */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primaryAction:hover {
+    background-color: #A1683A;  /* Raw Umber */
+}
+
+/* Style the "Forgot Password?" link */
+.secondaryAction {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #6C9A8B;  /* Cambridge Blue */
+    text-decoration: none;
+}
+
+.secondaryAction:hover {
+    text-decoration: underline;
 }
 
 /* Ensure Cards are Centered on Mobile */
@@ -263,7 +321,13 @@ body {
         text-align: center;
         padding: 1.5rem;
     }
+
+    .base-navbar .navbar-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
+
 
 /* Media Query for screens up to 768px */
 @media (max-width: 768px) {
@@ -295,6 +359,7 @@ body {
 
     .base-navbar .navbar-nav {
         flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
 
