@@ -1,4 +1,5 @@
-{% url 'home' as home_url %} {% load static %}
+{% url 'home' as home_url %}
+{% load static %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -6,7 +7,7 @@
     <title>A light unto my path</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Google Fonts CSS -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,25 +19,19 @@
       rel="stylesheet"
     />
 
-    <!-- Font Awesome CSS -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
     <!-- Static Root CSS -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/style.css' %}"
-    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
     <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
     />
 
     <!-- Favicons -->
@@ -62,7 +57,7 @@
 
   <body class="d-flex flex-column h-100 main-bg">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="base-navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'homepage' %}">
           <img
@@ -84,38 +79,53 @@
           <i class="fa-solid fa-bars"></i>
         </button>
 
+        <!-- Collapsing part inside the container-fluid -->
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'homepage' %}">Home</a>
+              <a
+                class="nav-link {% if request.path == '/' %}active{% endif %}"
+                href="{% url 'homepage' %}"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a
-                class="nav-link {% if request.path == '/contact/chat/' %}active{% endif %}"
+                class="nav-link {% if '/contact' in request.path %}active{% endif %}"
                 href="{% url 'contact' %}"
                 >Contact</a
               >
-              <!-- ✅ Fix -->
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link {% if request.path == '/about/me/' %}active{% endif %}"
+                class="nav-link {% if '/blog' in request.path %}active{% endif %}"
+                href="{% url 'blog_home' %}"
+                >Blog</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {% if '/about' in request.path %}active{% endif %}"
                 href="{% url 'about' %}"
                 >About</a
               >
-              <!-- ✅ Fix -->
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
+    <!-- Rolling Banner -->
+    <div class="rolling-banner">
+      <p class="banner-text">
+        Welcome to our website! Check out our latest blog posts and news
+        updates. Stay tuned for more!
+      </p>
+    </div>
+
     <main class="flex-shrink-0 main-bg">
       {% block content %}
-      <!-- Content Goes here -->
+      <!-- Content Goes Here -->
       {% endblock content %}
     </main>
 
@@ -153,10 +163,6 @@
       </p>
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
