@@ -28,7 +28,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls'), name='homepage'),
-    path('site/<int:id>/', views.flatpage_by_id, name='flatpage_by_id'),
     path('summernote/', include('django_summernote.urls')),
 
 ]

@@ -9,5 +9,5 @@ from . import views  # Import views
 
 # URLConfigurations
 urlpatterns = [
-    path('me/', views.about_me, name='about'),
+    path('', views.about_me, name='about'),
 ]

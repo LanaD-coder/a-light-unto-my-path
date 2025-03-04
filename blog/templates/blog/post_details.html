@@ -1,0 +1,31 @@
+<!-- templates/blog/post_detail.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <h1>{{ post.title }}</h1>
+    <p><strong>Author:</strong> {{ post.author.username }} | <strong>Published on:</strong> {{ post.created_on }}</p>
+    <p>{{ post.content }}</p>
+
+    <h3>Comments</h3>
+
+    {% if user.is_authenticated %}
+      <form method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+      </form>
+    {% else %}
+      <p>You must be logged in to leave a comment.</p>
+    {% endif %}
+
+    <ul>
+      {% for comment in comments %}
+        <li><strong>{{ comment.author.username }}</strong>: {{ comment.body }}</li>
+      {% endfor %}
+    </ul>
+
+    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Back to Blog</a>
+  </div>
+{% endblock %}
