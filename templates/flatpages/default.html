@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="flatpage-container">
+    <h1>{{ flatpage.title }}</h1>
+    <div class="flatpage-content">
+        {{ flatpage.content|safe }}
+    </div>
+</div>
+{% endblock %}

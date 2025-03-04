@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from about import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls'), name='homepage'),
+    path('site/<int:id>/', views.flatpage_by_id, name='flatpage_by_id'),
     path('summernote/', include('django_summernote.urls')),
 
 ]

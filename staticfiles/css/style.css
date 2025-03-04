@@ -303,6 +303,87 @@ body {
     text-decoration: underline;
 }
 
+/* Centering the signup form */
+.signup {
+    max-width: 400px;
+    margin: 50px auto; /* Centers horizontally */
+    padding: 25px;
+    background: #FBF7F4; /* Isabelline */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Center the "Sign Up" heading */
+.signup h1 {
+    text-align: center;
+    color: #6C9A8B; /* Cambridge Blue */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Center the paragraph text */
+.signup p {
+    text-align: center;
+    color: #A1683A; /* Raw Umber */
+    margin-bottom: 20px;
+}
+
+/* Styling the form inputs */
+.signup label {
+    font-size: 14px;
+    color: #A1683A; /* Raw Umber */
+    font-weight: bold;
+}
+
+.signup input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #6C9A8B; /* Cambridge Blue */
+    border-radius: 5px;
+    background: #ffffff;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Improve focus effect for inputs */
+.signup input:focus {
+    outline: none;
+    border-color: #A1683A; /* Raw Umber */
+    box-shadow: 0 0 5px rgba(161, 104, 58, 0.5);
+}
+
+/* Styling the button */
+.signup button {
+    background-color: #6C9A8B; /* Cambridge Blue */
+    color: #FBF7F4; /* Isabelline */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+.signup button:hover {
+    background-color: #A1683A; /* Raw Umber */
+    transform: scale(1.05);
+}
+
+/* Style the list items */
+.signup li {
+    color: #A1683A; /* Raw Umber */
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
 /* Ensure Cards are Centered on Mobile */
 @media (max-width: 992px) {
     .row {
@@ -370,5 +451,12 @@ body {
     .navbar-toggler i {
         color: #296b77;
         font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup {
+        width: 90%;
+        padding: 20px;
     }
 }
