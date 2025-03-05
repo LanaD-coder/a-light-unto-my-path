@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -18,6 +19,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
+    scheduled_publish_date = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -26,7 +28,12 @@ class Post(models.Model):
         return f"{self.title} | written by {self.author}"
 
     def get_absolte_url(self):
-        return reverse('blog:post:detail', kwargs={'slug':self.slug})  #SEO friendly urls
+        return reverse('blog:post:detail', kwargs={'slug':self.slug})
+
+    def is_scheduled_to_publish(self):
+        if self.scheduled_publish_date:
+            return self.scheduled_publish_date <= timezone.now() and self.status == 0
+        return False
 
 
 class Comment(models.Model):
