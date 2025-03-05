@@ -26,7 +26,7 @@ class PostDetailView(DetailView):
         post = context['post']
 
         # Add approved comments
-        context['comment'] = post.comment.filter(approved=True)
+        context['comment'] = post.comments.filter(approved=True)
 
         # Add context for the comment form if user is logged in
         if self.request.user.is_authenticated:

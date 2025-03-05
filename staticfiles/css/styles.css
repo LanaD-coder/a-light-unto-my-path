@@ -117,8 +117,103 @@ body {
     color: #A1683A;  /* Raw Umber */
 }
 
+/* ============== */
+/* Blog Styles */
+/* ============= */
+.post-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FBF7F4;  /* Isabelline */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
 
-/* Blog & Card Adjustments */
+/* Post Title */
+.post-detail-title {
+    font-size: 2.5rem; /* Large title */
+    text-align: center; /* Center the title */
+    color: #296b77; /* Teal Blue */
+    margin-bottom: 20px;
+}
+
+/* Heading and Subheading */
+.post-detail-heading {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    color: #296b77; /* Teal Blue */
+}
+
+/* Post meta (author and date) */
+.post-detail-meta {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    color: #296b77; /* Teal Blue */
+    margin-bottom: 20px;
+}
+
+/* Post Content */
+.post-detail-body {
+    line-height: 1.6;
+    color: #296b77; /* Teal Blue */
+}
+
+/* Comment Section */
+.post-detail-comments ul {
+    padding-left: 0;
+}
+
+.post-detail-comments li {
+    list-style-type: none;
+    border-bottom: 1px solid #E8998D;  /* Coral Pink*/
+    padding: 10px 0;
+}
+
+.post-detail-comments li:last-child {
+    border-bottom: none;
+}
+
+.post-detail-comment-author {
+    font-weight: bold;
+    color: #296b77; /* Teal Blue */
+}
+
+.post-detail-comment-text {
+    margin: 5px 0;
+    color: #296b77; /* Teal Blue */
+}
+
+/* Comment Form */
+.post-detail-comment-form {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #FBF7F4;  /* Isabelline */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-detail-comment-form textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #E8998D;  /* Coral Pink*/
+    border-radius: 4px;
+}
+
+.post-detail-comment-form button {
+    background-color: #6C9A8B;  /* Cambridge Blue*/
+    color:  #296b77; /* Teal Blue */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.post-detail-comment-form button:hover {
+    background-color:  #6C9A8B;  /* Cambridge Blue*/
+}
 
 .card {
     width: 100%;
@@ -509,6 +604,26 @@ body {
     .about-page-section {
         padding: 20px;
     }
+
+    .post-detail-container {
+        padding: 15px;
+    }
+
+    .post-detail-title {
+        font-size: 2rem;
+    }
+
+    .post-detail-heading {
+        font-size: 1.5rem;
+    }
+
+    .post-detail-body {
+        font-size: 1rem;
+    }
+
+    .post-detail-comment-form textarea {
+        height: 80px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -527,5 +642,25 @@ body {
 
     .about-page-section {
         padding: 15px;
+    }
+
+    .post-detail-container {
+        padding: 10px;
+    }
+
+    .post-detail-title {
+        font-size: 1.8rem;
+    }
+
+    .post-detail-heading {
+        font-size: 1.3rem;
+    }
+
+    .post-detail-body {
+        font-size: 0.95rem;
+    }
+
+    .post-detail-comment-form textarea {
+        height: 60px;
     }
 }

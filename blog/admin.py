@@ -7,11 +7,12 @@ from django.utils import timezone
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'author', 'status', 'created_on', 'image')
+    list_display = ('title', 'author', 'status', 'image')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
+    readonly_fields = ('created_on', 'updated_on')
 
     # Add scheduled_published_date field
     fieldsets = (
@@ -19,8 +20,9 @@ class PostAdmin(SummernoteModelAdmin):
             'fields': (
                 'title', 'slug', 'content', 'excerpt', 'status', 'image', 'author', 'scheduled_publish_date')
         }),
+
         ('Date Information', {
-            'fields': ('created_on', 'updated_on')
+            'fields': ('updated_on', 'created_on'),
         }),
  )
 

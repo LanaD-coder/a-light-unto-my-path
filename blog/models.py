@@ -27,8 +27,8 @@ class Post(models.Model):
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
-    def get_absolte_url(self):
-        return reverse('blog:post:detail', kwargs={'slug':self.slug})
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'slug':self.slug})
 
     def is_scheduled_to_publish(self):
         if self.scheduled_publish_date:

@@ -12,9 +12,9 @@
         </div>
 
         <h3>Comments</h3>
-        {% if post.comment.count > 0 %}
+        {% if post.comments.count > 0 %}
             <ul>
-                {% for comment in post.comment.filter(approved=True) %}
+                {% for comment in post.comments %}
                     <li>
                         <strong>{{ comment.author.username }}:</strong>
                         <p>{{ comment.body }}</p>
