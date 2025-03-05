@@ -1,6 +1,8 @@
 from django.shortcuts import render
-
+from django.urls import reverse
 
 # Create your views here.
+from django.urls import reverse
+
 def homepage(request):
-    return render(request, 'homepage.html')  # Renders the homepage template
+    return render(request, 'homepage/homepage.html/')

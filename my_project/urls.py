@@ -19,7 +19,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from about import views
+from blog import views as blog_views
+from accounts.views import signup
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,11 +28,14 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
-    path('homepage/', include('homepage.urls'), name='homepage'),
+    path('homepage/', include('homepage.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('accounts/signup/', signup, name='signup'),
+    path('comments/', blog_views.comment_view, name='comment_view'),
 
 ]
 
-# Serve files ind development
+# Serve files in development
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

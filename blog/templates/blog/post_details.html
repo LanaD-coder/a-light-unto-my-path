@@ -1,31 +1,37 @@
-<!-- templates/blog/post_detail.html -->
+<!-- blog/templates/blog/post_detail.html -->
 {% extends 'base.html' %}
-{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>{{ post.title }}</h1>
-    <p><strong>Author:</strong> {{ post.author.username }} | <strong>Published on:</strong> {{ post.created_on }}</p>
-    <p>{{ post.content }}</p>
+    <div class="post-detail">
+        <h1>{{ post.title }}</h1>
+        <p><small>Posted on {{ post.created_on }} by {{ post.author }}</small></p>
+        <div class="post-body">
+            <p>{{ post.body }}</p>
+        </div>
 
-    <h3>Comments</h3>
+        <h3>Comments</h3>
+        {% if post.comment.count > 0 %}
+            <ul>
+                {% for comment in post.comment.filter(approved=True) %}
+                    <li>
+                        <strong>{{ comment.author.username }}:</strong>
+                        <p>{{ comment.body }}</p>
+                    </li>
+                {% empty %}
+                    <li>No comments yet. Be the first to comment!</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No comments yet. Be the first to comment!</p>
+        {% endif %}
 
-    {% if user.is_authenticated %}
-      <form method="POST">
-        {% csrf_token %}
-        {{ comment_form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit Comment</button>
-      </form>
-    {% else %}
-      <p>You must be logged in to leave a comment.</p>
-    {% endif %}
-
-    <ul>
-      {% for comment in comments %}
-        <li><strong>{{ comment.author.username }}</strong>: {{ comment.body }}</li>
-      {% endfor %}
-    </ul>
-
-    <a href="{% url 'blog:post_list' %}" class="btn btn-secondary">Back to Blog</a>
-  </div>
+        {% if user.is_authenticated %}
+            <h3>Leave a Comment</h3>
+            {% include 'blog/comment_form.html' %}
+        {% else %}
+            <p>You must be logged in to comment.</p>
+        {% endif %}
+    </div>
 {% endblock %}

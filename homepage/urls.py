@@ -4,8 +4,8 @@ URL configuration for the Django app.
 Defines route patterns using Django's `path` function.
 """
 from django.urls import path
-from .views import homepage
+from . import views
 
 urlpatterns = [
-    path("", homepage, name="homepage"),
+    path("", views.homepage, name="homepage"),
 ]
