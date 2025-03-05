@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.views.generic import DetailView
-from .models import Post, Comment
+from .models import Post
 from .forms import CommentForm
 from django.http import HttpResponseForbidden
 from django.contrib.auth.forms import UserCreationForm
