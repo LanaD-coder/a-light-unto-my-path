@@ -1,4 +1,9 @@
-
+/* General reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* Base Page Styles */
 
 body {
@@ -384,6 +389,42 @@ body {
     margin-bottom: 5px;
 }
 
+/* ======================= */
+/* About Page Styles */
+/* ======================= */
+
+.about-page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Centering content */
+.about-page h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-page p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Styling for about page section */
+.about-page-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 /* Ensure Cards are Centered on Mobile */
 @media (max-width: 992px) {
     .row {
@@ -452,11 +493,39 @@ body {
         color: #296b77;
         font-size: 1.5rem;
     }
+
+    .about-page-container {
+        padding: 10px;
+    }
+
+    .about-page h1 {
+        font-size: 2rem;
+    }
+
+    .about-page p {
+        font-size: 1rem;
+    }
+
+    .about-page-section {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
     .signup {
         width: 90%;
         padding: 20px;
+    }
+
+    .about-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-page p {
+        font-size: 0.9rem;
+    }
+
+    .about-page-section {
+        padding: 15px;
     }
 }
