@@ -3,11 +3,14 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
   <head>
-    <title>A light unto my path</title>
+    <title>A Light Unto My Path</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Define urls -->
+    <!-- Define URLs -->
     {% url 'home' as home_url %}
+    {% url 'contact' as contact_url %}
+    {% url 'about' as about_url %}
+    {% url 'blog:post_list' as blog_url %}
     {% url 'account_login' as login_url %}
     {% url 'account_logout' as logout_url %}
     {% url 'account_signup' as signup_url %}
@@ -60,9 +63,9 @@
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
   </head>
 
-  <body class="d-flex flex-column h-100 main-bg">
+  <body class="main-bg">
     <!-- Navigation -->
-    <nav class="base-navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg base-navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'homepage' %}">
           <img
@@ -80,72 +83,69 @@
           aria-controls="navbarText"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          id="navbar-toggler"
         >
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars" id="nav-icon"></i>
         </button>
 
         <!-- Collapsing part inside the container-fluid -->
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto d-flex justify-content-end">
             <li class="nav-item">
-                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
+              <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+              <a class="nav-link {% if request.path == about_me_url %}active{% endif %}" href="{% url 'about_me' %}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if '/blog' in request.path %}active{% endif %}" href="{% url 'blog:post_list' %}">Blog</a>
+              <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{% url 'blog:post_list' %}">Blog</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% if '/about' in request.path %}active{% endif %}" href="{% url 'about' %}">About</a>
+              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
             </li>
+
+
 
             <!-- Authentication Links -->
             {% if user.is_authenticated %}
-            {% if not user.is_staff %}  {# Only show logout if NOT admin #}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-            </li>
-        {% endif %}
-    {% else %}
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-        </li>
-    {% endif %}
-        </ul>
+              {% if not user.is_staff %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ logout_url }}">Logout</a>
+                </li>
+              {% endif %}
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ login_url }}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ signup_url }}">Register</a>
+              </li>
+            {% endif %}
+          </ul>
         </div>
       </div>
     </nav>
 
+  <div class="d-flex flex-column h-100">
     <main class="flex-shrink-0 main-bg">
       {% block content %}
       <!-- Content Goes Here -->
-      {% endblock content %}
+      {% endblock %}
     </main>
+  </div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
       <p>&copy; 2025 A Light Unto My Path</p>
       <p>Made by Illana De Beer</p>
       <div class="social-icons">
-        <a
-          href="https://www.facebook.com/"
-          target="_blank"
-          aria-label="Facebook"
-        >
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook-square"></i>
         </a>
         <a href="https://x.com/" target="_blank" aria-label="X">
           <i class="fa-brands fa-square-x-twitter"></i>
         </a>
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          aria-label="Instagram"
-        >
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram-square"></i>
         </a>
         <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
@@ -154,6 +154,7 @@
       </div>
     </footer>
 
+    <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

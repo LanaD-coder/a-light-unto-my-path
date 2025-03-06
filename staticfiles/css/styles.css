@@ -1,355 +1,449 @@
 /* General reset*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 /* Base Page Styles */
+em {
+  font-family: 'Imperial Script';
+}
+
+.welcome-verse {
+  text-align: center;
+  background-color: #296b77;  /* Teal Blue*/
+  color: #fbf7f4; /* Isabelline */
+}
 
 body {
-    color: black;
-    font-family: 'Lexend Deca', sans-serif;
-    background-color: #FBF7F4; /* Isabelline */
+  font-family: "Lexend Deca", sans-serif;
+  background-color: #fbf7f4; /* Isabelline */
+  padding-top: 2px;
+  margin: 0;
+  overflow: auto;
+
 }
 
 /* Rolling Banner */
 .rolling-banner {
-    position: relative;
-    width: 100%;
-    background: #6C9A8B;  /* Cambridge Blue */
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 18px;
-    z-index: 1010;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #6c9a8b; /* Cambridge Blue */
+  color: #fbf7f4; /* Isabelline */
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+
 }
 
 /* Scrolling Text */
 .banner-text {
-    display: inline-block;
-    white-space: nowrap;
-    animation: scroll-left 15s linear infinite;
-    padding-left: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 15s linear infinite;
+  padding-left: 100%;
 }
 
 /* Keyframes for Scrolling Text */
 @keyframes scroll-left {
-    from {
-        transform: translateX(50%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 /* Navbar Styles */
 .base-navbar {
-    background-color: #EED2CC; /* Pale Dogwood */
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    width: 100%;
-}
+  position: sticky;
+  top: 0;
+  z-index: 1050; /* Ensure no other element causes errors*/
+  width: 100%;
+  background-color: #EED2CC; /* Pale Dogwood */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 
-/* Navbar Container */
-.container-fluid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
 }
 
 /* Navbar item alignment */
 .base-navbar .navbar-nav {
-    margin-left: auto;
-    display: flex;
-    justify-content: flex-end;
-    gap:15px;
-    flex-wrap: wrap;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.nav-link {
-    color: #296b77; /* Teal Blue */
-    padding: 8px 12px;
-    font-size: 0.95rem;
+/* Navbar brand/logo styling */
+.base-navbar .navbar-brand img {
+  max-height: 75px;
 }
 
-.navbar-nav {
-    flex-wrap: wrap;
+/* Navbar links */
+.base-navbar .navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #296b77; /* Teal Blue */
+  padding: 10px 15px;
+  transition: color 0.3s ease-in-out;
 }
+
+.base-navbar .navbar-nav .nav-link:hover,
+.base-navbar .navbar-nav .nav-link.active {
+  color: #a1683a; /* Raw Umber */
+}
+
 
 /* Footer Styles */
 .footer {
-    background-color: #EED2CC; /* Pale Dogwood */
-    color: #296b77; /* Teal Blue */
-    text-align: center;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
+  background-color: #eed2cc; /* Pale Dogwood */
+  color: #296b77; /* Teal Blue */
+  text-align: center;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .footer p {
-    margin: 0;
-    padding: 0 20px;
+  margin: 0;
+  padding: 0 20px;
 }
 
 /* Social Icons */
 .social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
 }
 
 .social-icons a {
-    color: #296b77;  /* Teal Blue */
-    font-size: 24px;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+  color: #296b77; /* Teal Blue */
+  font-size: 24px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
 .social-icons i:hover {
-    color: #A1683A;  /* Raw Umber */
+  color: #a1683a; /* Raw Umber */
 }
 
 /* ============== */
 /* Blog Styles */
 /* ============= */
 .post-detail-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #FBF7F4;  /* Isabelline */
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fbf7f4; /* Isabelline */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 }
 
 /* Post Title */
 .post-detail-title {
-    font-size: 2.5rem; /* Large title */
-    text-align: center; /* Center the title */
-    color: #296b77; /* Teal Blue */
-    margin-bottom: 20px;
+  font-size: 2.5rem; /* Large title */
+  text-align: center; /* Center the title */
+  color: #296b77; /* Teal Blue */
+  margin-bottom: 20px;
 }
 
 /* Heading and Subheading */
 .post-detail-heading {
-    font-size: 1.8rem;
-    margin-top: 40px;
-    color: #296b77; /* Teal Blue */
+  font-size: 1.8rem;
+  margin-top: 40px;
+  color: #296b77; /* Teal Blue */
 }
 
 /* Post meta (author and date) */
 .post-detail-meta {
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-    color: #296b77; /* Teal Blue */
-    margin-bottom: 20px;
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  color: #296b77; /* Teal Blue */
+  margin-bottom: 20px;
 }
 
 /* Post Content */
 .post-detail-body {
-    line-height: 1.6;
-    color: #296b77; /* Teal Blue */
+  line-height: 1.6;
+  color: #296b77; /* Teal Blue */
 }
 
 /* Comment Section */
 .post-detail-comments ul {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .post-detail-comments li {
-    list-style-type: none;
-    border-bottom: 1px solid #E8998D;  /* Coral Pink*/
-    padding: 10px 0;
+  list-style-type: none;
+  border-bottom: 1px solid #e8998d; /* Coral Pink*/
+  padding: 10px 0;
 }
 
 .post-detail-comments li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .post-detail-comment-author {
-    font-weight: bold;
-    color: #296b77; /* Teal Blue */
+  font-weight: bold;
+  color: #296b77; /* Teal Blue */
 }
 
 .post-detail-comment-text {
-    margin: 5px 0;
-    color: #296b77; /* Teal Blue */
+  margin: 5px 0;
+  color: #296b77; /* Teal Blue */
 }
 
 /* Comment Form */
 .post-detail-comment-form {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #FBF7F4;  /* Isabelline */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fbf7f4; /* Isabelline */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .post-detail-comment-form textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #E8998D;  /* Coral Pink*/
-    border-radius: 4px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e8998d; /* Coral Pink*/
+  border-radius: 4px;
 }
 
 .post-detail-comment-form button {
-    background-color: #6C9A8B;  /* Cambridge Blue*/
-    color:  #296b77; /* Teal Blue */
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #6c9a8b; /* Cambridge Blue*/
+  color: #296b77; /* Teal Blue */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .post-detail-comment-form button:hover {
-    background-color:  #6C9A8B;  /* Cambridge Blue*/
+  background-color: #6c9a8b; /* Cambridge Blue*/
 }
 
 .card {
-    width: 100%;
-    max-width: 300px;
+  width: 100%;
+  max-width: 300px;
 }
 
 .card-body {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Image is Full Width */
 .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* Blog Card Container */
 .blog-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
-
 
 /* Hero Section */
 
 .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+  text-align: center;
 }
 
 .hero-overlay {
-    text-align: center;
-    color: #FBF7F4;  /* Isabelline */
-    background: rgba(232, 153, 141, 0.6);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fbf7f4; /* Isabelline */
+  background: rgba(232, 153, 141, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
-    font-family: 'Imperial Script', sans-serif;
-    font-size: 5rem;
+  font-family: "Imperial Script", sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 .hero-subtitle {
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 1.5rem;
-    margin-top: 10px;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 10px;
 }
 
 .hero-btn {
-    font-family: 'Lexend Deca', sans-serif;
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #6C9A8B;  /* Cambridge Blue */
-    color: #FBF7F4;  /* Isabelline */
-    font-size: 1.2rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+  font-family: "Lexend Deca", sans-serif;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6C9A8B; /* Cambridge Blue */
+  color: #fbf7f4; /* Isabelline */
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .hero-btn:hover {
-    background-color: #A1683A;  /* Raw Umber */
+  background-color: #a1683a; /* Raw Umber */
+}
+
+/* ======================= */
+/* About Page Styles */
+/* ======================= */
+
+/* Hero Section for About Page */
+.hero-about {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-about-overlay {
+  text-align: center;
+  color: #fbf7f4; /* Isabelline */
+  background: rgba(232, 153, 141, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.hero-about-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-about-subtitle {
+  font-size: 1.5rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* About Page Container */
+.about-page-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 20;
+  background-color: #6C9A8B; /* Cambridge Blue */
+  padding-top: 20px; /* To prevent content from sticking under the sticky navbar */
+}
+
+/* About Page Section */
+.about-page-about-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 20; /* Ensure it's above the hero-about overlay */
+  text-align: left;
+  color: #6C9A8B; /* Cambridge Blue */
+  margin: 10px auto; /* Center the content */
+  box-sizing: border-box;
+  margin-top: -20px; /* Give space between hero and the content section */
+}
+
+/* Heading Styles for About Section */
+.about-page-about-section h1 {
+  font-size: 2.5rem;
+  color: #6C9A8B; /* Cambridge Blue */
+  margin-bottom: 20px;
+}
+
+/* Paragraph Styling for About Section */
+.about-page-about-section p {
+  font-size: 1.2rem;
+  color: #6C9A8B; /* Cambridge Blue */
+  line-height: 1.8;
+  margin-bottom: 20px;
 }
 
 /* ======================= */
 /* Contact Page Styles */
 /* ======================= */
+
 .contact-page {
-    background-color: #FBF7F4;  /* Isabelline */
-    padding: 50px 0;
+  background-color: #fbf7f4; /* Isabelline */
+  padding: 50px 0;
 }
 
 .contact-container {
-    max-width: 800px;
-    background: #FBF7F4;   /* Isabelline */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin: 40px auto;
+  max-width: 800px;
+  background: #fbf7f4; /* Isabelline */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  margin: 40px auto;
 }
 
 .contact-title {
-    text-align: center;
-    color: #296b77;  /* Teal Blue */
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-weight: bold;
+  text-align: center;
+  color: #296b77; /* Teal Blue */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .contact-form .form-label {
-    font-family: 'Lexend Deca', sans-serif;
-    font-weight: bold;
-    color: #296b77;  /* Teal Blue */
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: bold;
+  color: #296b77; /* Teal Blue */
 }
 
 .contact-form .form-control {
-    border-radius: 5px;
-    border: 1px solid #EED2CC;  /* Pale Dogwood */
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #FBF7F4;  /* Isabelline */
+  border-radius: 5px;
+  border: 1px solid #EED2CC; /* Pale Dogwood */
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #FBF7F4; /* Isabelline */
 }
 
 .contact-form .form-control:focus {
-    border-color: #6C9A8B;  /* Cambridge Blue */
-    box-shadow: 0 0 5px rgba(108, 154, 139, 0.5);
+  border-color: #6C9A8B; /* Cambridge Blue */
+  box-shadow: 0 0 5px rgba(108, 154, 139, 0.5);
 }
 
 .contact-form .contact-btn {
-    background-color: #E8998D;  /* Coral Pink */
-    border: none;
-    padding: 12px;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: 0.3s;
-    width: 100%;
-    color: #FBF7F4;  /* Isabelline */
-    font-weight: bold;
-    cursor: pointer;
+  background-color: #E8998D; /* Coral Pink */
+  border: none;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: 0.3s;
+  width: 100%;
+  color: #fbf7f4; /* Isabelline */
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .contact-form .contact-btn:hover {
-    background-color: #A1683A;  /* Raw Umber */
+  background-color: #a1683a; /* Raw Umber */
 }
 
 /* ======================= */
@@ -358,309 +452,296 @@ body {
 
 /* Center the form on the page */
 .login-form {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #FBF7F4;   /* Isabelline */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fbf7f4; /* Isabelline */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Style form fields */
 .login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #EED2CC;
-    border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #EED2CC;  /* Pale Dogwood*/
+  border-radius: 5px;
 }
 
 /* Style buttons */
 .primaryAction {
-    width: 100%;
-    padding: 10px;
-    background-color: #E8998D;  /* Coral Pink */
-    color: #FBF7F4;  /* Isabelline */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  background-color: #E8998D; /* Coral Pink */
+  color: #FBF7F4; /* Isabelline */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .primaryAction:hover {
-    background-color: #A1683A;  /* Raw Umber */
+  background-color: #a1683a; /* Raw Umber */
 }
 
 /* Style the "Forgot Password?" link */
 .secondaryAction {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #6C9A8B;  /* Cambridge Blue */
-    text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  color: #6c9a8b; /* Cambridge Blue */
+  text-decoration: none;
 }
 
 .secondaryAction:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Centering the signup form */
 .signup {
-    max-width: 400px;
-    margin: 50px auto; /* Centers horizontally */
-    padding: 25px;
-    background: #FBF7F4; /* Isabelline */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  max-width: 400px;
+  margin: 50px auto; /* Centers horizontally */
+  padding: 25px;
+  background: #fbf7f4; /* Isabelline */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* Center the "Sign Up" heading */
 .signup h1 {
-    text-align: center;
-    color: #6C9A8B; /* Cambridge Blue */
-    font-weight: bold;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #6c9a8b; /* Cambridge Blue */
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /* Center the paragraph text */
 .signup p {
-    text-align: center;
-    color: #A1683A; /* Raw Umber */
-    margin-bottom: 20px;
+  text-align: center;
+  color: #a1683a; /* Raw Umber */
+  margin-bottom: 20px;
 }
 
 /* Styling the form inputs */
 .signup label {
-    font-size: 14px;
-    color: #A1683A; /* Raw Umber */
-    font-weight: bold;
+  font-size: 14px;
+  color: #a1683a; /* Raw Umber */
+  font-weight: bold;
 }
 
 .signup input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #6C9A8B; /* Cambridge Blue */
-    border-radius: 5px;
-    background: #ffffff;
-    margin-bottom: 15px;
-    font-size: 14px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #6C9A8B; /* Cambridge Blue */
+  border-radius: 5px;
+  background: #FBF7F4; /* Isabelline */
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
 /* Improve focus effect for inputs */
 .signup input:focus {
-    outline: none;
-    border-color: #A1683A; /* Raw Umber */
-    box-shadow: 0 0 5px rgba(161, 104, 58, 0.5);
+  outline: none;
+  border-color: #A1683A; /* Raw Umber */
+  box-shadow: 0 0 5px rgba(161, 104, 58, 0.5);
 }
 
 /* Styling the button */
 .signup button {
-    background-color: #6C9A8B; /* Cambridge Blue */
-    color: #FBF7F4; /* Isabelline */
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
+  background-color: #6C9A8B; /* Cambridge Blue */
+  color: #FBF7F4; /* Isabelline */
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Button hover effect */
 .signup button:hover {
-    background-color: #A1683A; /* Raw Umber */
-    transform: scale(1.05);
+  background-color: #A1683A; /* Raw Umber */
+  transform: scale(1.05);
 }
 
 /* Style the list items */
 .signup li {
-    color: #A1683A; /* Raw Umber */
-    font-size: 14px;
-    margin-bottom: 5px;
+  color: #A1683A; /* Raw Umber */
+  font-size: 14px;
+  margin-bottom: 5px;
 }
-
-/* ======================= */
-/* About Page Styles */
-/* ======================= */
-
-.about-page-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Centering content */
-.about-page h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.about-page p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-/* Styling for about page section */
-.about-page-section {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 
 /* Ensure Cards are Centered on Mobile */
 @media (max-width: 992px) {
-    .row {
-        justify-content: center;
-        gap: 20px;
-    }
+  .row {
+    justify-content: center;
+    gap: 20px;
+  }
 
-    .col-md-4,
-    .col-sm-6 {
-        display: flex;
-        justify-content: center;
-    }
+  .col-md-4,
+  .col-sm-6 {
+    display: flex;
+    justify-content: center;
+  }
 
-    .footer .social-icons {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
-    }
+  .footer .social-icons {
+    display: flex;
+    text-align: center;
+    padding: 1.5rem;
+  }
 
-    .base-navbar .navbar-nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .base-navbar .navbar-nav {
+    align-items: center; /* Center links in mobile view */
+  }
+
+  .base-navbar .navbar-collapse {
+    background-color: #EED2CC;  /* Pale Dogwood*/
+    padding: 10px;
+  }
+
+  .base-navbar .nav-link {
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+/* Navbar toggle button */
+.base-navbar .navbar-toggler {
+  border: none;
 }
 
+.base-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.base-navbar #nav-icon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+.base-navbar .navbar-toggler:hover #nav-icon {
+  color: #007bff;
+}
+
+}
 
 /* Media Query for screens up to 768px */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
+  .hero-title {
+    font-size: 3.5rem;
+  }
 
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
 
-    .hero-btn {
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
+  .hero-btn {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
 
-    .hero-overlay {
-        padding: 20px;
-    }
+  .hero-overlay {
+    padding: 20px;
+  }
 
-    .rolling-banner {
-        font-size: 14px;
-        padding: 8px 0;
-    }
+  .rolling-banner {
+    font-size: 14px;
+    padding: 8px 0;
+  }
 
-    .banner-text {
-        animation: scroll-left 35s linear infinite;
-    }
+  .banner-text {
+    animation: scroll-left 35s linear infinite;
+  }
 
-    .base-navbar .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+  .base-navbar .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    .navbar-toggler {
-        display: block;
-    }
+  .navbar-toggler {
+    display: block;
+  }
 
-    .navbar-toggler i {
-        color: #296b77;
-        font-size: 1.5rem;
-    }
+  .navbar-toggler i {
+    color: #296D77;  /* Teal Blue*/
+    font-size: 1.5rem;
+  }
 
-    .about-page-container {
-        padding: 10px;
-    }
+  .hero-about-title {
+    font-size: 2rem;
+  }
 
-    .about-page h1 {
-        font-size: 2rem;
-    }
+  .hero-about-subtitle {
+    font-size: 1.2rem;
+  }
 
-    .about-page p {
-        font-size: 1rem;
-    }
+  .about-page-about-section {
+    padding: 20px;
+    width: 100%;
+  }
 
-    .about-page-section {
-        padding: 20px;
-    }
+  .about-page-about-section h1 {
+    font-size: 2rem;
+  }
 
-    .post-detail-container {
-        padding: 15px;
-    }
+  .about-page-about-section p {
+    font-size: 1rem;
+  }
 
-    .post-detail-title {
-        font-size: 2rem;
-    }
+  .post-detail-container {
+    padding: 15px;
+  }
 
-    .post-detail-heading {
-        font-size: 1.5rem;
-    }
+  .post-detail-title {
+    font-size: 2rem;
+  }
 
-    .post-detail-body {
-        font-size: 1rem;
-    }
+  .post-detail-heading {
+    font-size: 1.5rem;
+  }
 
-    .post-detail-comment-form textarea {
-        height: 80px;
-    }
+  .post-detail-body {
+    font-size: 1rem;
+  }
+
+  .post-detail-comment-form textarea {
+    height: 80px;
+  }
 }
 
 @media (max-width: 480px) {
-    .signup {
-        width: 90%;
-        padding: 20px;
-    }
+  .signup {
+    width: 90%;
+    padding: 20px;
+  }
 
-    .about-page h1 {
-        font-size: 1.8rem;
-    }
+  .post-detail-container {
+    padding: 10px;
+  }
 
-    .about-page p {
-        font-size: 0.9rem;
-    }
+  .post-detail-title {
+    font-size: 1.8rem;
+  }
 
-    .about-page-section {
-        padding: 15px;
-    }
+  .post-detail-heading {
+    font-size: 1.3rem;
+  }
 
-    .post-detail-container {
-        padding: 10px;
-    }
+  .post-detail-body {
+    font-size: 0.95rem;
+  }
 
-    .post-detail-title {
-        font-size: 1.8rem;
-    }
-
-    .post-detail-heading {
-        font-size: 1.3rem;
-    }
-
-    .post-detail-body {
-        font-size: 0.95rem;
-    }
-
-    .post-detail-comment-form textarea {
-        height: 60px;
-    }
+  .post-detail-comment-form textarea {
+    height: 60px;
+  }
 }

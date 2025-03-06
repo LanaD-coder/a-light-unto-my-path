@@ -2,11 +2,12 @@ from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
 from django.utils import timezone
+from .forms import PostForm
 
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-
+    form = PostForm
     list_display = ('title', 'author', 'status', 'image')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on',)

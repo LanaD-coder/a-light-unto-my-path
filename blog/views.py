@@ -48,7 +48,7 @@ class PostDetailView(DetailView):
                 comment.save()
 
                 # Redirect to the same page after saving the comment
-                return self.get(request, *args, **kwargs)
+                return self.redirect('blog:post_detail', slug=post.slug)
 
         else:
             return HttpResponseForbidden("You need to be logged in to comment.")
