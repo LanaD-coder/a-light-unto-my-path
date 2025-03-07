@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Define URLs -->
-    {% url 'home' as home_url %}
+    {% url 'homepage' as homepage_url %}
     {% url 'contact' as contact_url %}
     {% url 'about' as about_url %}
     {% url 'blog:post_list' as blog_url %}
@@ -92,10 +92,10 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto d-flex justify-content-end">
             <li class="nav-item">
-              <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
+              <a class="nav-link {% if request.path == 'homepage_url' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == about_me_url %}active{% endif %}" href="{% url 'about_me' %}">About</a>
+              <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{% url 'blog:post_list' %}">Blog</a>

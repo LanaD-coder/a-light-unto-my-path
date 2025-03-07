@@ -9,7 +9,7 @@ from . import views
 
 # URLConfigurations
 urlpatterns = [
-    path('', views.about_me, name='about_me'),
+    path('', views.about_me, name='about'),
 ]
 
 
