@@ -20,7 +20,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from blog import views as blog_views
-from accounts.views import signup
+from accounts.views import login_signup_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +30,7 @@ urlpatterns = [
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('accounts/signup/', signup, name='signup'),
+    path('accounts/', login_signup_view, name='login_signup'),
     path('comments/', blog_views.comment_view, name='comment_view'),
 
 ]

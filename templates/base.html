@@ -13,7 +13,7 @@
     {% url 'blog:post_list' as blog_url %}
     {% url 'account_login' as login_url %}
     {% url 'account_logout' as logout_url %}
-    {% url 'account_signup' as signup_url %}
+    {% url 'login_signup' as login_signup_url %}
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -104,8 +104,6 @@
               <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
             </li>
 
-
-
             <!-- Authentication Links -->
             {% if user.is_authenticated %}
               {% if not user.is_staff %}
@@ -115,10 +113,7 @@
               {% endif %}
             {% else %}
               <li class="nav-item">
-                <a class="nav-link" href="{{ login_url }}">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ signup_url }}">Register</a>
+                <a class="nav-link" href="{{ login_signup_url }}">Login / Sign Up</a>
               </li>
             {% endif %}
           </ul>

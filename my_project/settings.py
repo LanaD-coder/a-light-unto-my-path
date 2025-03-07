@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'django.contrib.flatpages',
     'about',
+    'accounts',
     'blog',
     'contact',
     'homepage',

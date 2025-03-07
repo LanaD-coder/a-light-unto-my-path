@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title%}
+   {% trans "Sign In / Sign Up" %}
+{% endblock head_title %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero" style="background-image: url('{% static 'images/login_signup-hero.png' %}')">
+  <div class="hero-overlay-lsu">
+    <h2 class="hero-title-lsu">We would love to hear from you.</h2>
+    <p class="hero-subtitle-lsu">
+      If you are part of our community and this blog stirs something in your
+      spirit—whether it brings feelings of anger, sadness, confusion, or
+      hope—please don’t hesitate to reach out. With the Lord’s guidance, I will
+      do my best to support and walk alongside you.
+    </p>
+  </div>
+</div>
+
+<h1 class="centered-heading">{% trans "Sign In / Sign Up" %}</h1>
+
+<div class="forms-container">
+  <div class="form-container">
+    <!-- Login Form -->
+    <div
+      class="login-form"
+      style="display: {% if login_form %}block{% else %}none{% endif %};"
+    >
+      <h2>{% trans "Sign In" %}</h2>
+      <form method="post">
+        {% csrf_token %} {{ login_form.as_p }}
+        <button type="submit" name="login" class="primaryAction">
+          {% trans "Sign In" %}
+        </button>
+      </form>
+      <p>
+        {% trans "Don't have an account?" %}
+        <a href="#signup-form" onclick="toggleForms('signup')">{% trans "Sign up" %}</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <!-- Sign Up Form -->
+    <div
+      class="signup-form"
+      style="display: {% if signup_form %}block{% else %}none{% endif %};"
+    >
+      <h2>{% trans "Sign Up" %}</h2>
+      <form method="post">
+        {% csrf_token %} {{ signup_form.as_p }}
+        <button type="submit" name="signup" class="primaryAction">
+          {% trans "Sign Up" %}
+        </button>
+      </form>
+      <p>
+        {% trans "Already have an account?" %}
+        <a href="#login-form" onclick="toggleForms('login')">{% trans "Sign in" %}</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Toggle between login and signup forms
+  function toggleForms(formType) {
+    if (formType === "signup") {
+      document.querySelector(".login-form").style.display = "none";
+      document.querySelector(".signup-form").style.display = "block";
+    } else if (formType === "login") {
+      document.querySelector(".signup-form").style.display = "none";
+      document.querySelector(".login-form").style.display = "block";
+    }
+  }
+</script>
+
+{% endblock %}
