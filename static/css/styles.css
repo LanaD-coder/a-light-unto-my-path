@@ -31,13 +31,15 @@ main {
 .welcome-verse {
   text-align: center;
   background-color: #296b77;  /* Teal Blue*/
+  border-top-right-radius: 15px;
   color: #fbf7f4; /* Isabelline */
+  max-width: 100%;
 }
 
 /* Rolling Banner */
 .rolling-banner {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   background: #6c9a8b; /* Cambridge Blue */
   color: #fbf7f4; /* Isabelline */
   padding: 10px 0;
@@ -69,7 +71,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 1050; /* Ensure no other element causes errors*/
-  width: 100%;
+  max-width: 100%;
   background-color: #EED2CC; /* Pale Dogwood */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 
@@ -115,6 +117,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
 }
 
 .footer p {
@@ -146,6 +149,7 @@ main {
 /* Blog Styles */
 /* ============= */
 .post-detail-container {
+  color: #296b77 !important;  /* Teal Blue */
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -158,7 +162,6 @@ main {
 .post-detail-title {
   font-size: 2.5rem; /* Large title */
   text-align: center; /* Center the title */
-  color: #296b77; /* Teal Blue */
   margin-bottom: 20px;
 }
 
@@ -176,12 +179,6 @@ main {
   font-size: 1rem;
   color: #296b77; /* Teal Blue */
   margin-bottom: 20px;
-}
-
-/* Post Content */
-.post-detail-body {
-  line-height: 1.6;
-  color: #296b77; /* Teal Blue */
 }
 
 /* Comment Section */
@@ -210,7 +207,7 @@ main {
 }
 
 /* Comment Form */
-.post-detail-comment-form {
+.comment-form-container {
   margin-top: 30px;
   padding: 20px;
   background-color: #fbf7f4; /* Isabelline */
@@ -218,7 +215,7 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.post-detail-comment-form textarea {
+.comment-form-container textarea {
   width: 100%;
   height: 100px;
   padding: 10px;
@@ -227,37 +224,29 @@ main {
   border-radius: 4px;
 }
 
-.post-detail-comment-form button {
+.comment-form-container button {
   background-color: #6c9a8b; /* Cambridge Blue*/
-  color: #296b77; /* Teal Blue */
+  color: #fbf7f4; /* Isabelline */
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.post-detail-comment-form button:hover {
+.comment-form-container button:hover {
   background-color: #6c9a8b; /* Cambridge Blue*/
 }
 
 .card {
-  width: 100%;
-  max-width: 300px;
+  max-width: 100%;
 }
 
 .card-body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Image is Full Width */
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
 /* Blog Card Container */
-.blog-card img {
+.image-container {
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -266,11 +255,10 @@ main {
 }
 
 /* Hero Section */
-
 .hero {
   position: relative;
-  width: 100%;
   height: 100vh;
+  max-width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -284,6 +272,7 @@ main {
   text-align: center;
   color: #fbf7f4; /* Isabelline */
   background: rgba(232, 153, 141, 0.8);
+  border-top-right-radius: 15px;
   padding: 60px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
@@ -324,6 +313,29 @@ main {
   background-color: #a1683a; /* Raw Umber */
 }
 
+/* Style for the navigation arrows */
+.navigation-arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.arrow-left, .arrow-right {
+  font-size: 1.5rem;
+  color: #296b77; /* Teal Blue */
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fbf7f4;
+  border-radius: 4px;
+  border: 1px solid #e8998d; /* Coral Pink */
+  transition: background-color 0.3s ease;
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  background-color: #e8998d; /* Coral Pink */
+  color: white;
+
+}
 /* ======================= */
 /* About Page Styles */
 /* ======================= */
@@ -336,17 +348,6 @@ main {
   background-size: cover;
   background-position: center;
   z-index: 1;
-}
-
-.hero-overlay-about {
-  text-align: center;
-  color: #fbf7f4; /* Isabelline */
-  background: rgba(232, 153, 141, 0.6);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  position: relative;
-  top: 20px;
 }
 
 /* About Page Container */
@@ -397,6 +398,38 @@ main {
 .contact-page {
   background-color: #fbf7f4; /* Isabelline */
   padding: 50px 0;
+}
+
+.hero-overlay-contact,
+.hero-overlay-about,
+.hero-overlay-lsu {
+  text-align: center;
+  background: rgba(232, 153, 141, 0.6);
+  border-top-right-radius: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 20px;
+}
+
+.hero-title-contact,
+.hero-title-about,
+.hero-title-lsu {
+  color: #fbf7f4; /* Isabelline */
+  font-family: "Imperial Script", sans-serif;
+  font-size: clamp(1.5rem, 5vw, 3rem); /* Adjust to stay responsive */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle-contact,
+.hero-subtitle-about,
+.hero-subtitle-lsu {
+  font-family: "Lexend Deca", sans-serif;
+  color: #fbf7f4; /* Isabelline */
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .contact-container {
@@ -457,33 +490,6 @@ main {
 /* Login/Signup Page Styles */
 /* ======================= */
 
-.hero-overlay-lsu {
-  text-align: center;
-  color: #fbf7f4; /* Isabelline */
-  background: rgba(108, 154, 139, 0.6);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  position: relative;
-  top: 20px;
-}
-
-.hero-title-lsu {
-  color: #fbf7f4; /* Isabelline */
-  font-family: "Imperial Script", sans-serif;
-  font-size: 5rem;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Increase readability */
-}
-
-.hero-subtitle-lsu {
-  font-family: "Lexend Deca", sans-serif;
-  color: #fbf7f4; /* Isabelline */
-  font-size: 1.5rem;
-  margin-top: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-
 /* Center the form on the page */
 .centered-heading {
   text-align: center;
@@ -495,20 +501,48 @@ main {
 
 .forms-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 20px;
-  max-width: 90%;
-  margin: 50px auto;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  max-width: 100%;
+
 }
 
 /* Common styling for the form containers (login/signup) */
-.form-container {
-  max-width: 400px;
-  flex: 1;
-  padding: 20px;
+.form-container, .lsu-card {
+  flex: 1 1 calc(33.333% - 20px);  /* Ensures card and forms are the same size*/
+  box-sizing: border-box;
   background-color: #fbf7f4; /* Isabelline */
-  border-radius: 8px;
+  border-color: #E8998D; /* Coral Pink */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.lsu-card {
+  background-color:  #fbf7f4; /* Isabelline */
+  border-color: #E8998D; /* Coral Pink */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.lsu-card-body {
+  background-color: #fbf7f4; /* Isabelline */;
+  padding: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+
+}
+
+.separator-text {
+  color: #296b77;  /* Teal Blue */
+}
+
+.separator-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
 }
 
 /* Ensure both forms have equal width */
@@ -527,7 +561,7 @@ main {
   border-radius: 5px;
 }
 
-/* Form buttons */
+/* Form button */
 .form-container button {
   background-color: #E8998D; /* Coral Pink */
   color: #FBF7F4; /* Isabelline */
@@ -540,6 +574,8 @@ main {
   background-color: #A1683A; /* Raw Umber */
   transform: scale(1.05);
 }
+
+
 
 /* Styling for the secondary action links */
 .secondaryAction {
@@ -690,6 +726,16 @@ main {
     padding: 10px;
   }
 
+  .hero-title-contact {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-subtitle-contact {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
   .footer {
     flex-direction: column;
     align-items: center;
@@ -789,6 +835,11 @@ main {
       max-width: 100%;
       margin-bottom: 20px;
   }
+
+  .form-container, .slu-card {
+    flex: 1 1 100%;
+  }
+
 }
 
 /* Media Query for screens up to 320px */
@@ -861,4 +912,27 @@ main {
   .contact-title {
     font-size: 1.4rem; /* Smaller contact title */
   }
+
+  .hero-title-contact,
+  .hero-title-about,
+  .hero-title-lsu {
+    font-size: 2rem;
+    line-height: 1.2;  /* Avoid overlap */
+  }
+
+  .hero-subtitle-contact,
+  .hero-subtitle-about,
+  .hero-subtitle-lsu {
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  .form-container input,
+  .form-container button {
+    padding: 8px;
+  }
+  .lsu-card-body {
+    padding: 15px;
+  }
+
 }

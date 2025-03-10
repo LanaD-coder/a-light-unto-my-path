@@ -2,13 +2,14 @@
 {% load static %}
 {% load i18n %}
 
-{% block head_title%}
-   {% trans "Sign In / Sign Up" %}
-{% endblock head_title %}
+{% block head_title%}"Sign In / Sign Up"{% endblock head_title %}
 
 {% block content %}
 <!-- Hero Section -->
-<div class="hero" style="background-image: url('{% static 'images/login_signup-hero.png' %}')">
+<div
+  class="hero"
+  style="background-image: url('{% static 'images/login_signup-hero.png' %}')"
+>
   <div class="hero-overlay-lsu">
     <h2 class="hero-title-lsu">We would love to hear from you.</h2>
     <p class="hero-subtitle-lsu">
@@ -38,10 +39,31 @@
       </form>
       <p>
         {% trans "Don't have an account?" %}
-        <a href="#signup-form" onclick="toggleForms('signup')">{% trans "Sign up" %}</a>
+        <a href="#signup-form" onclick="toggleForms('signup')"
+          >{% trans "Sign up" %}</a
+        >
       </p>
     </div>
   </div>
+
+<!-- Separator Card -->
+<div class="lsu-card">
+  <div class="card-image">
+    <img src="{% static 'images/door-lsu.jpg' %}" alt="Divider Image" class="separator-image" />
+  </div>
+  <div class="slu-card-body">
+    <p class="separator-text">
+      To ensure a safe and respectful environment for all our readers,
+      signing up is required to participate in commenting on posts. We believe
+      that meaningful conversations should be rooted in kindness and
+      understanding, especially in a space dedicated to God and Christian
+      beliefs. By requiring users to sign up, we can maintain a community that
+      values thoughtful discussion and prevents harmful or inappropriate
+      comments. This measure is in place to protect the integrity of our space
+      and to create a positive, supportive place for everyone.
+    </p>
+  </div>
+</div>
 
   <div class="form-container">
     <!-- Sign Up Form -->
@@ -58,7 +80,9 @@
       </form>
       <p>
         {% trans "Already have an account?" %}
-        <a href="#login-form" onclick="toggleForms('login')">{% trans "Sign in" %}</a>
+        <a href="#login-form" onclick="toggleForms('login')"
+          >{% trans "Sign in" %}</a
+        >
       </p>
     </div>
   </div>

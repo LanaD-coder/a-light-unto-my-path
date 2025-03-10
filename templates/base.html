@@ -92,7 +92,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto d-flex justify-content-end">
             <li class="nav-item">
-              <a class="nav-link {% if request.path == 'homepage_url' %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
+              <a class="nav-link {% if request.path == homepage_url %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
@@ -123,9 +123,11 @@
 
   <div class="d-flex flex-column h-100">
     <main class="flex-shrink-0 main-bg">
+      <div class="container-fluid py-4">
       {% block content %}
       <!-- Content Goes Here -->
       {% endblock %}
+      </div>
     </main>
   </div>
 

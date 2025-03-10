@@ -1,38 +1,53 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <div class="post-detail-container">
-        <h1>{{ post.title }}</h1>
-        <p><small>Posted on {{ post.created_on }} by {{ post.author }}</small></p>
-        <div class="post-detail-body">
-            <p>{{ post.content }}</p>
-        </div>
+<div class="post-detail-container">
+  <h1>{{ post.title }}</h1>
+  <p><small>Posted on {{ post.created_on }} by {{ post.author }}</small></p>
+  <div class="post-detail-body">
+    <p>{{ post.content|safe }}</p>
+  </div>
 
-        <h3>Comments</h3>
-        {% if post.comments.count > 0 %}
-            <ul>
-                {% for comment in post.comments %}
-                    <li>
-                        <strong>{{ comment.author.username }}:</strong>
-                        <p>{{ comment.body }}</p>
-                    </li>
-                {% empty %}
-                    <li>No comments yet. Be the first to comment!</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No comments yet. Be the first to comment!</p>
-        {% endif %}
+  <!-- Navigation Arrows -->
+  <div class="navigation-arrows">
+    {% if previous_post %}
+    <a
+      href="{% url 'blog:post_detail' slug=previous_post.slug %}"
+      class="arrow-left"
+      >← Previous</a
+    >
+    {% endif %} {% if next_post %}
+    <a
+      href="{% url 'blog:post_detail' slug=next_post.slug %}"
+      class="arrow-right"
+      >Next →</a
+    >
+    {% endif %}
+  </div>
 
-        {% if user.is_authenticated %}
-            <h3>Leave a Comment</h3>
-            {% include 'blog/comment_form.html' %}
-        {% else %}
-            <p>You must be logged in to comment.</p>
-        {% endif %}
-    </div>
+  <div class="comment-form-container">
+    <h3>Comments</h3>
+    {% if post.comments.all.count > 0 %}
+    <ul>
+      {% for comment in post.comments.all %}
+      <li>
+        <strong>{{ comment.author.username }}:</strong>
+        <p>{{ comment.body }}</p>
+      </li>
+      {% empty %}
+      <li>No comments yet. Be the first to comment!</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No comments yet. Be the first to comment!</p>
+    {% endif %} {% if user.is_authenticated %}
+    <h3>Leave a Comment</h3>
+    {% include 'blog/comment_form.html' %} {% else %}
+    <p>You must be logged in to comment.</p>
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

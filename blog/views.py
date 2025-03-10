@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
+from django.core.paginator import Paginator
 from django.views.generic import DetailView
 from .models import Post
 from .forms import CommentForm
@@ -12,7 +13,7 @@ from django.contrib import messages
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/blog.html"
-    paginate_by = 6
+    paginate_by = 8
 
 
 # View for a single post with comments
@@ -24,6 +25,24 @@ class PostDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = context['post']
+
+        # Add navigation arrows for post navigation
+        previous_post = Post.objects.filter(created_on__lt=post.created_on).order_by('-created_on').first()
+        next_post = Post.objects.filter(created_on__gt=post.created_on).order_by('created_on').first()
+
+        context['previous_post'] = previous_post
+        context['next_post'] = next_post
+
+        # Prefetch comments to improve functionality
+        post = Post.objects.prefetch_related('comments').get(id=post.id)
+
+        #Paginate comments to reduce number of comments displayed.
+        comments = post.comments.filter(approved=True)
+        paginator = Paginator(comments, 5)  # 5 comments per page
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context['comments'] = page_obj
 
         # Add approved comments
         context['comment'] = post.comments.filter(approved=True)
