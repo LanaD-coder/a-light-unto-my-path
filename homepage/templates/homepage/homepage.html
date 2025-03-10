@@ -26,5 +26,16 @@
     </div>
 </div>
 
+<h1>External API Data</h1>
+
+{% if api_data.error %}
+    <p style="color: red;">Error: {{ api_data.error }}</p>
+{% else %}
+    <ul>
+        {% for item in api_data %}
+            <li>{{ item.name }} - {{ item.value }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 
 {% endblock %}

@@ -215,6 +215,13 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+.comment-form-container li p {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  word-wrap: break-word;
+}
+
 .comment-form-container textarea {
   width: 100%;
   height: 100px;
@@ -840,6 +847,13 @@ main {
     flex: 1 1 100%;
   }
 
+  .comment-form-container li p {
+    width: 100% !important;
+    padding: 15px;
+    word-wrap: break-word !important;
+  }
+
+
 }
 
 /* Media Query for screens up to 320px */
@@ -933,6 +947,13 @@ main {
   }
   .lsu-card-body {
     padding: 15px;
+  }
+
+  .comment-form-container li p {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px;
+    word-wrap: break-word !important;
   }
 
 }
