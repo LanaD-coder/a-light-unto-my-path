@@ -29,8 +29,12 @@ class PostDetailView(DetailView):
         post = self.object  # The current post instance
 
         # Fetch previous and next posts based on created date
-        context['previous_post'] = Post.objects.filter(created_on__lt=post.created_on).order_by('-created_on').first()
-        context['next_post'] = Post.objects.filter(created_on__gt=post.created_on).order_by('created_on').first()
+        context['previous_post'] = Post.objects.filter(
+            created_on__lt=post.created_on
+            ).order_by('-created_on').first()
+        context['next_post'] = Post.objects.filter(
+            created_on__gt=post.created_on
+            ).order_by('created_on').first()
 
         # Fetch comments and paginate them
         comments = post.comments.filter(approved=True).order_by('-created_on')
@@ -61,7 +65,8 @@ class PostDetailView(DetailView):
                 return redirect('blog:post_detail', slug=post.slug)
 
         return HttpResponseForbidden \
-                ("You need to be logged in to comment.")
+            ("You need to be logged in to comment.")
+
 
 @login_required
 def comment_view(request, slug):
@@ -80,7 +85,9 @@ def comment_view(request, slug):
     else:
         form = CommentForm()
 
-    return render(request, 'blog/comment_form.html', {'form': form, 'post': post})
+    return render(request, 'blog/comment_form.html',
+                  {'form': form, 'post': post})
+
 
 # Update existing Comment
 class CommentUpdateView(UpdateView):
@@ -89,12 +96,14 @@ class CommentUpdateView(UpdateView):
     template_name = 'blog/edit_comment.html'
 
     def get_success_url(self):
-        return reverse_lazy('blog:post_detail', kwargs={'slug': self.object.post.slug})
+        return reverse_lazy('blog:post_detail',
+                            kwargs={'slug': self.object.post.slug})
 
     def get_queryset(self):
         # Ensure users can only edit their own comments
         queryset = super().get_queryset()
         return queryset.filter(author=self.request.user)
+
 
 # Delete a comment
 class CommentDeleteView(DeleteView):
@@ -102,12 +111,14 @@ class CommentDeleteView(DeleteView):
     template_name = 'blog/confirm_delete.html'
 
     def get_success_url(self):
-        return reverse_lazy('blog:post_detail', kwargs={'slug': self.object.post.slug})
+        return reverse_lazy('blog:post_detail',
+                            kwargs={'slug': self.object.post.slug})
 
     def get_queryset(self):
         # Ensure users can only delete their own comments
         queryset = super().get_queryset()
         return queryset.filter(author=self.request.user)
+
 
 # Handle user sign-up
 def register(request):

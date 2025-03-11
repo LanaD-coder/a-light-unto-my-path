@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 from django.utils import timezone
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -8,7 +9,8 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 class Post(models.Model):
-    image = models.ImageField(upload_to='blog_images/', default='default.jpg')
+    # image = models.ImageField(upload_to='blog_images/', default='default.jpg')
+    image = CloudinaryField('image', blank=True, null=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
@@ -31,9 +33,11 @@ class Post(models.Model):
         return reverse('blog:post_detail', kwargs={'slug':self.slug})
 
     def is_scheduled_to_publish(self):
-        if self.scheduled_publish_date:
-            return self.scheduled_publish_date <= timezone.now() and self.status == 0
-        return False
+        return (
+            self.scheduled_publish_date
+            and self.status == 0
+            and self.scheduled_publish_date <= timezone.now()
+    )
 
 
 class Comment(models.Model):

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+<div class="logout-container">
+    <h2>You have been logged out.</h2>
+    <p>Redirecting to homepage...</p>
+    <a href="{% url 'homepage' %}">Click here if you are not redirected.</a>
+</div>
+
+<script>
+    // Redirect to homepage after 3 seconds
+    setTimeout(function() {
+        window.location.href = "{% url 'homepage' %}";
+    }, 3000);
+</script>
+{% endblock %}

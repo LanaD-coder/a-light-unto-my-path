@@ -387,26 +387,10 @@ main {
 .about-page-container {
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
   position: relative;
   z-index: 20;
   background-color: #6C9A8B; /* Cambridge Blue */
   padding-top: 20px; /* To prevent content from sticking under the sticky navbar */
-}
-
-/* About Page Section */
-.about-page-about-section {
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  width: 100%;
-  z-index: 20;
-  text-align: left;
-  color: #6C9A8B; /* Cambridge Blue */
-  margin: 10px auto; /* Center the content */
-  box-sizing: border-box;
-  margin-top: -20px;
 }
 
 /* Heading Styles for About Section */
@@ -423,6 +407,16 @@ main {
   line-height: 1.8;
   margin-bottom: 20px;
 }
+.hero-overlay-about {
+  text-align: center;
+  background: rgba(232, 153, 141, 1.5);
+  border-top-right-radius: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: 20px;
+}
 
 /* ======================= */
 /* Contact Page Styles */
@@ -434,7 +428,6 @@ main {
 }
 
 .hero-overlay-contact,
-.hero-overlay-about,
 .hero-overlay-lsu {
   text-align: center;
   background: rgba(232, 153, 141, 0.6);

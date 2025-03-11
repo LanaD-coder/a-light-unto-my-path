@@ -13,8 +13,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-if os.path.isfile('env.py'):
-    import env
+if os.path.isfile('env.py'): import env
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -52,9 +55,11 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'about',
     'accounts',
+    'cloudinary',
     'blog',
     'contact',
     'homepage',
+
     'django_extensions',
 ]
 
@@ -103,17 +108,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-# DATABASES = {
-# 'default': {
-# 'ENGINE': 'django.db.backends.sqlite3',
-# 'NAME': BASE_DIR / 'db.sqlite3',
-# }
-# }
-
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -158,8 +152,8 @@ ACCOUNT_USERNAME_REQUIRED = True
 
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/accounts/login/' # Redirect user after login/logout
+LOGOUT_REDIRECT_URL = 'accounts/logout.html'
+LOGIN_URL = '/accounts/login/'  # Redirect user after login/logout
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
@@ -196,3 +190,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'your-cloud-name',
+    'API_KEY': 'your-api-key',
+    'API_SECRET': 'your-api-secret',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

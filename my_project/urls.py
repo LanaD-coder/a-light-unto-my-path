@@ -26,11 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),
     path('accounts/', include('allauth.urls')),
+    path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls')),
     path('summernote/', include('django_summernote.urls')),
-    path('accounts/', login_signup_view, name='login_signup'),
     path('comments/', blog_views.comment_view, name='comment_view'),
 
 ]
