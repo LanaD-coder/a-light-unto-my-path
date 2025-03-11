@@ -105,6 +105,32 @@ main {
   color: #a1683a; /* Raw Umber */
 }
 
+.random-verse-container {
+  margin: 10px 0;
+  padding: 15px;
+  background-color: #6c9a8b; /* Cambridge Blue*/
+  border-color:  #296b77; /* Teal Blue */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.random-verse-title {
+  font-size: 1.5rem;
+  color: #fbf7f4; /* Isabelline */
+  margin-bottom: 10px;
+}
+
+.random-verse-text {
+  font-size: 1.2rem;
+  color: #fbf7f4; /* Isabelline */
+  margin-bottom: 10px;
+}
+
+.random-verse-reference {
+  font-size: 1.1rem;
+  color: #fbf7f4; /* Isabelline */
+  font-weight: bold;
+}
 
 /* Footer Styles */
 .footer {

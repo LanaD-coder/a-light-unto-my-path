@@ -1,7 +1,8 @@
 # accounts/urls.py
 from django.urls import path
-from . import views
+from .views import login_signup_view
 
 urlpatterns = [
-    path('login-signup/', views.login_signup_view, name='login_signup'),  # Registration page
+    path('accounts/', login_signup_view, name='login_signup'),  # Registration page
+    path('accounts/login/', login_signup_view, name='login')
 ]
