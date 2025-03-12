@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+main {
+  width: 100%;
+  max-width: 100%;
+}
+
 body {
   font-family: "Lexend Deca", sans-serif;
   background-color: #fbf7f4; /* Isabelline */
@@ -12,7 +17,7 @@ body {
   margin: 0;
   overflow: auto;
   overflow-x: hidden;
-
+  max-width: 100%;
 }
 
 h1 {
@@ -20,6 +25,9 @@ h1 {
   text-align: center;
 }
 
+img {
+  max-width: 100%;
+}
 em {
   font-family: 'Imperial Script';
 }
@@ -242,14 +250,14 @@ main {
 }
 
 .comment-form-container li p {
-  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
   margin: 0;
   word-wrap: break-word;
 }
 
 .comment-form-container textarea {
-  width: 100%;
+  max-width: 100%;
   height: 100px;
   padding: 10px;
   margin-bottom: 10px;
@@ -280,7 +288,7 @@ main {
 
 /* Blog Card Container */
 .image-container {
-  width: 100%;
+  max-width: 100%;
   height: 200px;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -290,7 +298,8 @@ main {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
+  height: auto;
+  min-height: 100%;
   max-width: 100%;
   background-size: cover;
   background-position: center;
@@ -309,14 +318,13 @@ main {
   padding: 60px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  position: relative;
   top: -120px;
 }
 
 .hero-title {
   color: #296b77; /* Teal Blue */
   font-family: "Imperial Script", sans-serif;
-  font-size: 5rem;
+  font-size: clamp(2rem, 5vw, 5rem);
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);  /* Increase readability */
 }
@@ -358,7 +366,7 @@ main {
   color: #296b77; /* Teal Blue */
   text-decoration: none;
   padding: 10px;
-  background-color: #fbf7f4;
+  background-color: #fbf7f4;  /* Isabelline */
   border-radius: 4px;
   border: 1px solid #e8998d; /* Coral Pink */
   transition: background-color 0.3s ease;
@@ -376,7 +384,7 @@ main {
 /* Hero Section for About Page */
 .hero-about {
   position: relative;
-  width: 100%;
+  max-width: 100%;
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -385,7 +393,7 @@ main {
 
 /* About Page Container */
 .about-page-container {
-  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 20;
@@ -393,15 +401,20 @@ main {
   padding-top: 20px; /* To prevent content from sticking under the sticky navbar */
 }
 
+.about-page-about {
+  color:  #6C9A8B; /* Cambridge Blue */
+  background-color: #fbf7f4;  /* Isabelline */
+  padding: 10px;
+}
 /* Heading Styles for About Section */
-.about-page-about-section h1 {
+.about-page-about h1 {
   font-size: 2.5rem;
   color: #6C9A8B; /* Cambridge Blue */
   margin-bottom: 20px;
 }
 
 /* Paragraph Styling for About Section */
-.about-page-about-section p {
+.about-page-about p {
   font-size: 1.2rem;
   color: #6C9A8B; /* Cambridge Blue */
   line-height: 1.8;
@@ -502,7 +515,7 @@ main {
   font-size: 1.2rem;
   border-radius: 5px;
   transition: 0.3s;
-  width: 100%;
+  max-width: 100%;
   color: #fbf7f4; /* Isabelline */
   font-weight: bold;
   cursor: pointer;
@@ -581,7 +594,7 @@ main {
 
 /* Make input fields and buttons look similar */
 .form-container input, .form-container button {
-  width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -704,19 +717,35 @@ main {
 
 /* Media Query for screens up to 768px */
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
 
   .hero-btn {
     font-size: 1rem;
-    padding: 8px 16px;
+    padding: 10px 18px;
   }
 
   .base-navbar .navbar-nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+  }
+
+  .base-navbar .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px 15px;
   }
 
   .about-page-about-section h1 {
@@ -733,19 +762,19 @@ main {
 
   .post-detail-title {
     font-size: 1.8rem;
+    text-align: center;
   }
 
   .post-detail-body {
     font-size: 1rem;
   }
 
-  .contact-page {
-    padding: 40px 0;
+  .post-detail-comments li p {
+    word-wrap: break-word !important;
   }
 
-  .hero {
-    height: 80vh;
-    padding-top: 60px;
+  .contact-page {
+    padding: 40px 10px;
   }
 
   .contact-form .form-control {
@@ -765,6 +794,8 @@ main {
   .footer {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 15px 10px;
   }
 
   .footer p {
@@ -773,13 +804,45 @@ main {
 
   .social-icons {
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+  }
+
+  .signup {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .forms-container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .form-container, .slu-card {
+    flex: 1 1 100%;
   }
 }
+
 /* Media Query for screens up to 576px */
 @media (max-width: 576px) {
+  .hero {
+    padding: 50px 15px;
+  }
+
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .hero-btn {
@@ -793,19 +856,11 @@ main {
 
   .post-detail-title {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   .post-detail-body {
     font-size: 0.9rem;
-  }
-
-  .signup {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .contact-form .form-control {
-    padding: 8px;
   }
 
   .base-navbar .navbar-nav .nav-link {
@@ -825,15 +880,7 @@ main {
   }
 
   .footer .social-icons {
-    gap: 8px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .post-detail-container {
-    padding: 10px;
+    gap: 10px;
   }
 
   .card-img-top {
@@ -853,26 +900,23 @@ main {
     padding: 30px 0;
   }
 
-  .forms-container {
-      flex-direction: column;
-  }
-
-  .form-container {
-      max-width: 100%;
-      margin-bottom: 20px;
-  }
-
-  .form-container, .slu-card {
-    flex: 1 1 100%;
+  .contact-form .form-control {
+    padding: 8px;
   }
 
   .comment-form-container li p {
-    width: 100% !important;
-    padding: 15px;
-    word-wrap: break-word !important;
+    max-width: 100% !important;
+    padding: 10px;
   }
 
+  .rolling-banner {
+    font-size: 14px;
+    padding: 6px 0;
+  }
 
+  .banner-text {
+    animation-duration: 10s;
+  }
 }
 
 /* Media Query for screens up to 320px */
@@ -969,7 +1013,7 @@ main {
   }
 
   .comment-form-container li p {
-    width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     padding: 10px;
     word-wrap: break-word !important;

@@ -195,6 +195,9 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+BIBLE_API_KEY = 'b3094e0c60a213765a11153a7c25b0c6'
+BIBLE_ID = "de4e12af7f28f599-02"
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'your-cloud-name',
     'API_KEY': 'your-api-key',

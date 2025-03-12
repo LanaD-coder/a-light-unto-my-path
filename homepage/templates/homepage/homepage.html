@@ -5,46 +5,43 @@
 
 <!-- Welcome verse -->
 <div class="welcome-verse">
-  <h1>
-    <em
-      >John 8:12 <br />
+    <h1><em>
+      John 8:12 <br />
       Then Jesus spoke to them again, saying, “I am the light of the world. He
-      who follows Me shall not walk in darkness, but have the light of
-      life.”</em
-    >
-  </h1>
+      who follows Me shall not walk in darkness, but have the light of life.”
+    </em></h1>
 </div>
 
 <!-- Rolling Banner -->
 <div class="rolling-banner">
   <h2 class="banner-text">
     God loves you, as you are. Right at this moment, with all your failings and
-    faults! He loves you inspite of them.
+    faults! He loves you in spite of them.
   </h2>
 </div>
 
 <!-- Hero Section -->
-<div class="hero"
-    style="background-image: url('{% static 'images/hero.jpg' %}')">
-    <div class="hero-overlay">
-      <h2 class="hero-title">Welcome to</h2>
-      <h3 class="hero-title">A light unto my path</h3>
+<div class="hero" style="background-image: url('{% static 'images/hero.jpg' %}')">
+  <div class="hero-overlay">
+    <h2 class="hero-title">Welcome to</h2>
+    <h3 class="hero-title">A Light Unto My Path</h3>
 
-      <!-- Daily Verse Placement -->
-    <div class="random-verse-container">
+    <div class="daily-verse">
+      <h2>Verse of the Day</h2>
       {% if daily_verse %}
-      <h3 class="random-verse-title">Verse of the Day:</h3>
-      <p class="random-verse-text"><em>"{{ daily_verse.verse_text|safe }}"</em></p>
-      <p class="random-verse-reference">
-        <strong>{{ daily_verse.reference }}</strong>
-      </p>
-    {% else %}
-    <p>No verse available at the moment.</p>
-    {% endif %}
-  </div>
-
-  <a href="/blog/" class="hero-btn">Enter the Blog</a>
+        <h3>{{ daily_verse.reference }}</h3>
+        <p>{{ daily_verse.verse_text|safe }}</p>
+      {% else %}
+        <p>No verse available. Please try again later.</p>
+      {% endif %}
     </div>
-  </div>
 
-    {% endblock %}
+    <a href="/blog/" class="hero-btn">Enter the Blog</a>
+  </div>
+</div>
+
+<!-- Bible API JavaScript -->
+<script src="http://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+
+
+{% endblock %}
