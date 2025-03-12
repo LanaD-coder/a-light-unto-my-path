@@ -30,7 +30,7 @@
       <h2>Verse of the Day</h2>
       {% if daily_verse %}
         <h3>{{ daily_verse.reference }}</h3>
-        <p>{{ daily_verse.verse_text|safe }}</p>
+        {{ daily_verse.verse_text|safe }}
       {% else %}
         <p>No verse available. Please try again later.</p>
       {% endif %}
