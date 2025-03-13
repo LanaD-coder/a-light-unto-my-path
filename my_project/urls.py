@@ -20,16 +20,17 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from blog import views as blog_views
-from accounts.views import login_signup_view
+from accounts.views import custom_logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', include('about.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls')),
+     path('logout/', custom_logout_view, name='logout_page'),
     path('summernote/', include('django_summernote.urls')),
     path('comments/', blog_views.comment_view, name='comment_view'),
 

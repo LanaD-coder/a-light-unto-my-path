@@ -3,7 +3,7 @@
   <head>
     <title>A Light Unto My Path</title>
     {% load static %}
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Define URLs -->
     {% url 'homepage' as homepage_url %}
@@ -12,11 +12,11 @@
     {% url 'blog:post_list' as blog_url %}
     {% url 'account_login' as login_url %}
     {% url 'account_logout' as logout_url %}
-    {% url 'login_signup' as login_signup_url %}
+    {% url 'account_signup' as login_signup_url %}
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
       rel="stylesheet"
@@ -33,7 +33,7 @@
     />
 
     <!-- Static Root CSS -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -59,7 +59,7 @@
       sizes="16x16"
       href="{% static 'favicon/favicon-16x16.png' %}"
     />
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}"/>
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
   </head>
 
   <body>
@@ -69,7 +69,10 @@
         <a class="navbar-brand" href="{% url 'homepage' %}">
           <img
             src="{% static 'images/logo-png.png' %}"
-            alt="Logo" width="75" height="75"/>
+            alt="Logo"
+            width="75"
+            height="75"
+          />
         </a>
         <button
           class="navbar-toggler"
@@ -79,7 +82,8 @@
           aria-controls="navbarText"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          id="navbar-toggler">
+          id="navbar-toggler"
+        >
           <i class="fa-solid fa-bars" id="nav-icon"></i>
         </button>
 
@@ -87,57 +91,96 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto d-flex justify-content-end">
             <li class="nav-item">
-              <a class="nav-link {% if request.path == homepage_url %}active{% endif %}" href="{% url 'homepage' %}">Home</a>
+              <a
+                class="nav-link {% if request.path == homepage_url %}active{% endif %}"
+                href="{% url 'homepage' %}"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
+              <a
+                class="nav-link {% if request.path == about_url %}active{% endif %}"
+                href="{% url 'about' %}"
+                >About</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{% url 'blog:post_list' %}">Blog</a>
+              <a
+                class="nav-link {% if request.path == blog_url %}active{% endif %}"
+                href="{% url 'blog:post_list' %}"
+                >Blog</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+              <a
+                class="nav-link {% if request.path == contact_url %}active{% endif %}"
+                href="{% url 'contact' %}"
+                >Contact</a
+              >
             </li>
 
             <!-- Authentication Links -->
             {% if user.is_authenticated %}
-              {% if not user.is_staff %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ logout_url }}">Logout</a>
-                </li>
-              {% endif %}
+            <!-- I want to redirect to the logout page after clicking-->
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                onclick="document.getElementById('logout-form').submit(); return false;"
+              >
+                Logout
+              </a>
+              <form
+                id="logout-form"
+                method="post"
+                action="{% url 'logout' %}"
+                style="display: none"
+              >
+                {% csrf_token %}
+              </form>
+            </li>
             {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{{ login_signup_url }}">Login / Sign Up</a>
-              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login_signup' %}"
+                >Login / Sign Up</a
+              >
+            </li>
             {% endif %}
           </ul>
         </div>
       </div>
     </nav>
 
-  <div class="d-flex flex-column h-100">
-    <main class="flex-shrink-0 main-bg">
-      <div class="container-fluid py-4">
-      {% block content %}
-      <!-- Content Goes Here -->
-      {% endblock %}
-      </div>
-    </main>
-  </div>
+    <div class="d-flex flex-column h-100">
+      <main class="flex-shrink-0 main-bg">
+        <div class="container-fluid py-4">
+          {% block content %}
+          <!-- Content Goes Here -->
+          {% endblock %}
+        </div>
+      </main>
+    </div>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
       <p>&copy; 2025 A Light Unto My Path</p>
       <p>Made by Illana De Beer</p>
       <div class="social-icons">
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          aria-label="Facebook"
+        >
           <span class="fab fa-facebook-square"></span>
         </a>
         <a href="https://x.com/" target="_blank" aria-label="X">
           <span class="fa-brands fa-square-x-twitter"></span>
         </a>
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          aria-label="Instagram"
+        >
           <span class="fab fa-instagram-square"></span>
         </a>
         <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">

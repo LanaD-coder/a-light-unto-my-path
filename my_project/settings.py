@@ -156,8 +156,8 @@ ACCOUNT_USERNAME_REQUIRED = True
 
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'accounts/logout.html'
-LOGIN_URL = '/accounts/login/'  # Redirect user after login/logout
+LOGOUT_REDIRECT_URL = 'logout_page'
+LOGIN_URL = '/'  # Redirect user after login/logout
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 

@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block title %}Logout{% endblock %}
+{% load i18n %}
 
 {% block content %}
-<div class="logout-container">
-    <h2>You have been logged out.</h2>
-    <p>Redirecting to homepage...</p>
-    <a href="{% url 'homepage' %}">Click here if you are not redirected.</a>
-</div>
+  <!-- Background Video -->
+  <div class="video-background">
+    <video autoplay muted loop id="background-video">
+      <source src="{% static 'videos/logout-vid.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-<script>
-    // Redirect to homepage after 3 seconds
-    setTimeout(function() {
-        window.location.href = "{% url 'homepage' %}";
-    }, 3000);
-</script>
+    <!-- Logout Container -->
+    <div class="logout-container">
+      <h2>{% trans "You have successfully signed out." %}</h2>
+      <p>{% trans "Thank you for visiting. We hope to see you again soon!" %}</p>
+
+      <!-- Return to Homepage Button -->
+      <a href="{% url 'homepage' %}" class="primaryAction">{% trans "Return to Homepage" %}</a>
+    </div>
+  </div>
 {% endblock %}
