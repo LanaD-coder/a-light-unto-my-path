@@ -18,6 +18,7 @@ html, body {
   overflow: auto;
   max-width: 100%;
   min-width: 320px;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -662,49 +663,43 @@ main {
 /* logout Page Styles */
 /* ======================= */
 
-/* Style for the video background */
-.video-background {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#background-video {
-  position: absolute;
+.logout-page-wrapper {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  position: fixed;
   top: 0;
   left: 0;
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  background: rgba(0, 0, 0, 0.3); /* Optional dark overlay */
+  z-index: 999; /* Ensures it's above base.html */
 }
 
-/* Style for the logout container */
+/* Logout box styles */
 .logout-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  background: #fbf7f4; /* Isabelline */
+  color: #296b77;  /* Teal Blue */
   padding: 30px;
-  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  z-index: 1;
+  text-align: center;
+  max-width: 500px;
+  width: 80%;
+  z-index: 10;
 }
 
-/* Style for the return button */
+/* Return button styling */
 .primaryAction {
-  background-color: #e8998d; /* Coral Pink */
+  display: inline-block;
+  margin-top: 15px;
   padding: 10px 20px;
-  border-radius: 5px;
+  background: #E8998D; /* Coral Pink */
+  color: #fbf7f4; /* Isabelline */
   text-decoration: none;
-  color: #FBF7F4;  /* Isabelline */
+  border-radius: 5px;
   font-weight: bold;
 }
 
-.primaryAction:hover {
-  background-color: #a1683a; /* Raw Umber */
-}
 
 /* =============  */
 /* Media Queries */
@@ -734,11 +729,6 @@ main {
 
   .hero-overlay {
     padding: 40px;
-  }
-
-  .logout-container {
-    max-width: 60%;
-    padding: 1.8rem;
   }
 
 }
@@ -799,16 +789,6 @@ main {
   .base-navbar .navbar-nav .nav-link {
     padding: 12px 15px;
     text-align: center;
-  }
-
-  .logout-container {
-    max-width: 70%;
-    padding: 1.5rem;
-  }
-
-  .primaryAction, .secondaryAction {
-    font-size: 0.9rem;
-    padding: 10px 20px;
   }
 
 }
@@ -939,12 +919,12 @@ main {
   }
 
   .logout-container {
-    max-width: 80%;
-    padding: 1.2rem;
+    width: 85%;
+    padding: 25px;
   }
 
-.primaryAction, .secondaryAction {
-    font-size: 0.85rem;
+  .primaryAction {
+    font-size: 16px;
     padding: 10px 18px;
   }
 
@@ -1047,14 +1027,22 @@ main {
   }
 
   .logout-container {
-    max-width: 90%;
-    padding: 1rem;
-  }
+    width: 95%;
+    padding: 20px;
+}
 
-.primaryAction, .secondaryAction {
-    font-size: 0.8rem;
+.logout-container h2 {
+    font-size: 1.2rem;
+}
+
+.logout-container p {
+    font-size: 0.9rem;
+}
+
+.primaryAction {
+    font-size: 0.9rem;
     padding: 8px 16px;
-  }
+}
 
 }
 
@@ -1154,14 +1142,4 @@ main {
     padding: 12px;
   }
 
-  .logout-container {
-    max-width: 95%;
-    padding: 0.8rem;
-  }
-
-.primaryAction, .secondaryAction {
-    font-size: 0.75rem;
-    padding: 8px 14px;
-    width: 100%;
-  }
 }

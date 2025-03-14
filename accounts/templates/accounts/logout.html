@@ -3,20 +3,11 @@
 {% load i18n %}
 
 {% block content %}
-  <!-- Background Video -->
-  <div class="video-background">
-    <video autoplay muted loop id="background-video">
-      <source src="{% static 'videos/logout-vid.mp4' %}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <!-- Logout Container -->
+<div class="logout-page-wrapper">  <!-- Added wrapper here -->
     <div class="logout-container">
-      <h2>{% trans "You have successfully signed out." %}</h2>
-      <p>{% trans "Thank you for visiting. We hope to see you again soon!" %}</p>
-
-      <!-- Return to Homepage Button -->
-      <a href="{% url 'homepage' %}" class="primaryAction">{% trans "Return to Homepage" %}</a>
+        <h2>{% trans "You have successfully signed out." %}</h2>
+        <p>{% trans "Thank you for visiting. We hope to see you again soon!" %}</p>
+        <a href="{% url 'homepage' %}" class="primaryAction">{% trans "Return to Homepage" %}</a>
     </div>
-  </div>
+</div>
 {% endblock %}
