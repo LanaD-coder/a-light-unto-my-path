@@ -205,6 +205,10 @@
           document.getElementById("logout-form").submit();
       });
     </script>
+    {% block scripts %}
+    <script src="{% static 'quizes/main.js' %}" defer></script>
+    {% endblock scripts %}
+
 
   </body>
 </html>

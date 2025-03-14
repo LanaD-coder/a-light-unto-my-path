@@ -60,8 +60,10 @@ INSTALLED_APPS = [
     'blog',
     'contact',
     'homepage',
-
     'django_extensions',
+    'quiz',
+    'question',
+    'result',
 ]
 
 
@@ -179,7 +181,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'quiz/static',
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'

@@ -700,6 +700,13 @@ main {
   font-weight: bold;
 }
 
+/* =============  */
+/* Quiz Styling */
+/* ============== */
+
+.not-visible {
+  display: none;
+}
 
 /* =============  */
 /* Media Queries */

@@ -30,9 +30,10 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('homepage/', include('homepage.urls')),
-     path('logout/', custom_logout_view, name='logout_page'),
+    path('logout/', custom_logout_view, name='logout_page'),
     path('summernote/', include('django_summernote.urls')),
     path('comments/', blog_views.comment_view, name='comment_view'),
+    path('', include('quiz.urls', namespace='quiz')),
 
 ]
 
