@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'quizes/main.js' %}"></script>
+{% endblock scripts %}
+
 {% block title %}
 home
 {% endblock title %}
@@ -14,11 +19,10 @@ home
           <h5 class="modal-title" id="exampleModalLabel">Start?</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="modal-body-confirm">
-        </div>
+        <div class="modal-body" id="modal-body-confirm"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+          <button type="button" id="start-button" class="btn btn-success">Yes, let's go!</button>
         </div>
       </div>
     </div>
@@ -39,7 +43,7 @@ home
         data-bs-toggle="modal"
         data-bs-target="#quizStartModal"
     >{{obj.name}}
-    </button>
+    </button> <br>
 
 {% endfor %}
 {% endblock content%}
