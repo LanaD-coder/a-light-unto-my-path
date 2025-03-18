@@ -1,3 +1,4 @@
+# urls.py
 from django.urls import path
 from .views import (
     QuizListView,
@@ -8,7 +9,7 @@ from .views import (
 app_name = 'quiz'
 
 urlpatterns = [
-    path('', QuizListView.as_view(), name='main-view'),
+    path('', QuizListView.as_view(), name='quiz_main'),
     path('<pk>/', quiz_view, name='quiz-view'),
-    path('<pk>/data/', quiz_data_view, name='quiz-data_view'),
+    path('<pk>/data/', quiz_data_view, name='quiz-data-view'),
 ]

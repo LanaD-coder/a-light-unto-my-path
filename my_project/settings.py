@@ -73,8 +73,8 @@ JAZZMIN_SETTINGS = {
     "site_brand": "MyApp",
     "welcome_sign": "Welcome to My Custom Admin",
     "copyright": "My Company © 2025",
-    "show_ui_builder": True,  # Enables UI customization
-    "theme": "morph",  # custom theme
+    "show_ui_builder": True,
+    "theme": "morph",
 
 }
 
@@ -181,7 +181,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'quiz/static',
+    BASE_DIR / 'static',
+    BASE_DIR / 'quiz'/ 'static',
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'

@@ -21,7 +21,7 @@
 </div>
 
 <!-- Hero Section -->
-<div class="hero" style="background-image: url('{% static 'images/hero.jpg' %}')">
+<div class="hero" style="background-image: url('{% static 'images/hero-image.jpg' %}')">
   <div class="hero-overlay">
     <h2 class="hero-title">Welcome to</h2>
     <h3 class="hero-title">A Light Unto My Path</h3>
@@ -36,7 +36,7 @@
       {% endif %}
     </div>
 
-    <a href="/quiz/" class="hero-btn">Let' play some games!</a>
+    <a href="{% url 'quiz:quiz_main' %}" class="hero-btn">Let' play some games!</a>
   </div>
 </div>
 

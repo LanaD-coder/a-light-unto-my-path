@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block scripts %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'quizes/main.js' %}"></script>
-{% endblock scripts %}
-
 {% block title %}
 home
 {% endblock title %}
 
 {% block content %}
 <!-- Modal -->
-<div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,28 +17,33 @@ home
         <div class="modal-body" id="modal-body-confirm"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-          <button type="button" id="start-button" class="btn btn-success">Yes, let's go!</button>
+          <button type="button" id="start-button" class="btn btn-success">Let's go</button>
         </div>
       </div>
     </div>
 </div>
 
 <div class="h1-quiz">
-    Quiz List
+    Enjoy our quizes!
 </div>
 <hr>
     {% for obj in object_list %}
     <button
         class="btn btn-link modal-button"
+        style="color: #fbf7f4; font-weight: bold; text-decoration: none;"
         data-pk="{{obj.pk}}"
         data-quiz="{{obj.name}}"
         data-questions="{{obj.number_of_questions}}"
         data-difficulty="{{obj.difficulty}}"
-        data-pass="{{obj.score_to_pass}}"
+        data-pass="{{obj.required_score_to_pass}}"
         data-bs-toggle="modal"
-        data-bs-target="#quizStartModal"
-    >{{obj.name}}
-    </button> <br>
+        data-bs-target="#quizStartModal">
+        {{obj.name}}
+    </button><br>
 
 {% endfor %}
 {% endblock content%}
+
+{% block scripts %}
+<script src="{% static 'quizes/quiz-main.js' %}" defer></script>
+{% endblock scripts %}

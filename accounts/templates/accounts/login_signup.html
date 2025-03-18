@@ -28,7 +28,7 @@
     <!-- Login Form -->
     <div class="login-form"
       style="display: {% if login_form %}block{% else %}none{% endif %};">
-      <h2>{% trans "Sign In" %}</h2>
+      <h2 style="color: #e8998d">{% trans "Sign In" %}</h2>
       <form method="post">
         {% csrf_token %}
 
@@ -82,7 +82,7 @@
     <!-- Sign Up Form -->
     <div class="signup-form"
       style="display: {% if signup_form %}block{% else %}none{% endif %};">
-      <h2>{% trans "Sign Up" %}</h2>
+      <h2 style="color: #e8998d">{% trans "Sign Up" %}</h2>
       <form method="post">
         {% csrf_token %}
 

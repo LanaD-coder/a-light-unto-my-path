@@ -18,12 +18,13 @@
   </div>
 </div>
 
-<div class="contact-container mt-5">
-  <h2 class="text-center mb-4">Contact Me</h2>
+<div class="container mt-5">
+  <h2 class="text-center mb-4" style="color: #fbf7f4;">Contact Me</h2>
 
   <div class="row justify-content-center">
+    <!-- Contact Form -->
     <div class="col-md-6">
-      <form method="POST" class="contact-form">
+      <form method="POST" class="contact-form p-4 border rounded shadow-sm">
         {% csrf_token %}
 
         <div class="mb-3">
@@ -70,8 +71,28 @@
           ></textarea>
         </div>
 
-        <button type="submit" class="contact-btn">Send Message</button>
+        <button type="submit" class="btn btn-primary w-100">Send Message</button>
       </form>
+    </div>
+
+    <!-- Helpline Section -->
+    <div class="col-md-4 d-flex flex-column justify-content-center">
+      <div class="p-4 border rounded shadow-sm bg-light">
+        <h5 class="text-center">Do you need to speak to someone?</h5>
+        <p class="text-muted text-center">
+          If you need urgent support or guidance, as a member of the LGBTA++
+          community or a parent, please reach out. We are here to help.
+
+        </p>
+        <button
+          type="button"
+          class="btn btn-primary w-100"
+          data-bs-toggle="modal"
+          data-bs-target="#helplineModal"
+        >
+          Contact Helpline
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -105,6 +126,43 @@
       <div class="modal-body">
         Your message has been sent successfully. We will get back to you soon!
         God bless!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Modal for Helpline Information -->
+<div
+  class="modal fade"
+  id="helplineModal"
+  tabindex="-1"
+  aria-labelledby="helplineModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helplineModalLabel">Helpline Information</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>If you need immediate assistance, please reach out:</p>
+        <ul>
+          <li><strong>Phone:</strong> +1 (800) 123-4567</li>
+          <li><strong>Email:</strong> support@example.com</li>
+          <li><strong>Live Chat:</strong> Available 24/7 on our website</li>
+        </ul>
+        <p>We are here to help and guide you with the Lord’s wisdom. You are not alone!</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

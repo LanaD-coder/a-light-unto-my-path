@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block scripts %}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'quizes/quiz.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{% static 'quizes/quiz.js' %}" defer></script>
 {% endblock scripts %}
 
 {% block title %}
@@ -15,6 +15,13 @@
 <form id="quiz-form" class="mt-3 mb-3">
     {% csrf_token %}
     <div id="quiz-box"></div>
-    <button type="submit" class="btn btn-primary mt-3">save</button>
+    <button type="submit" class="btn btn-primary mt-3">Submit Quiz</button>
 </form>
+
+<div id="results-box"></div>
+
+<div class="text-center mt-4">
+    <a href="{% url 'quiz:quiz_main' %}" class="btn btn-secondary">Back to All Quizzes</a>
+</div>
+
 {% endblock content %}

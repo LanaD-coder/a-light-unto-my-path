@@ -13,12 +13,12 @@ main {
 html, body {
   font-family: "Lexend Deca", sans-serif;
   background-color: #fbf7f4; /* Isabelline */
-  padding-top: 2px;
   margin: 0;
   overflow: auto;
   max-width: 100%;
   min-width: 320px;
   overflow-x: hidden;
+  padding-top: 45px;
 }
 
 h1 {
@@ -40,6 +40,14 @@ main {
 /* ============== */
 /* Homepage Styles */
 /* ============= */
+
+header.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
 
 .welcome-verse {
   text-align: center;
@@ -663,19 +671,32 @@ main {
 /* logout Page Styles */
 /* ======================= */
 
-/* Logout container styles */
+.logout-page-wrapper {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3); /* Optional dark overlay */
+  z-index: 999; /* Ensures it's above base.html */
+}
+
+/* Logout box styles */
 .logout-container {
-  background: rgba(106, 156, 140, 0.6);
-  color: white;
+  background: #fbf7f4; /* Isabelline */
+  color: #296b77;  /* Teal Blue */
   padding: 30px;
   border-radius: 10px;
   text-align: center;
   max-width: 500px;
   width: 80%;
-  z-index: 10; /* Ensures it stays on top */
+  z-index: 10;
 }
 
-/* Style the return button */
+/* Return button styling */
 .primaryAction {
   display: inline-block;
   margin-top: 15px;
@@ -685,6 +706,14 @@ main {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+}
+
+/* =============  */
+/* Quiz Styling */
+/* ============== */
+
+.not-visible {
+  display: none;
 }
 
 /* =============  */
