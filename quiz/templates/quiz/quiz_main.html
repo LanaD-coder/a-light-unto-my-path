@@ -6,6 +6,17 @@ home
 {% endblock title %}
 
 {% block content %}
+<!-- Hero Section -->
+<div class="hero-quiz">
+  <div class="container text-center">
+      <p class="hero-quiz-text">
+          Are you ready to test your Bible knowledge in a fun and engaging way? Dive into our exciting quizzes and challenge yourself with three thought-provoking topics:
+          <strong>"What am I?"</strong>, <strong>"Where am I?"</strong>, and <strong>"Who am I?"</strong>. Each topic offers three levels—<strong>Easy, Medium, and Hard</strong>—so whether you're just starting or you're a seasoned Bible scholar, there's a quiz for you!
+          Explore the scriptures, learn new insights, and see how well you really know the Bible. Take a quiz today and put your knowledge to the test!
+      </p>
+  </div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
@@ -23,26 +34,38 @@ home
     </div>
 </div>
 
-<div class="h1-quiz">
-    Enjoy our quizes!
+<div class="h1-quiz text-center" style="color: #fbf7f4; font-family: 'Imperial Script'; font-size: 2.5rem;">
+   <b>Enjoy our quizzes!</b>
 </div>
 <hr>
-    {% for obj in object_list %}
-    <button
-        class="btn btn-link modal-button"
-        style="color: #fbf7f4; font-weight: bold; text-decoration: none;"
-        data-pk="{{obj.pk}}"
-        data-quiz="{{obj.name}}"
-        data-questions="{{obj.number_of_questions}}"
-        data-difficulty="{{obj.difficulty}}"
-        data-pass="{{obj.required_score_to_pass}}"
-        data-bs-toggle="modal"
-        data-bs-target="#quizStartModal">
-        {{obj.name}}
-    </button><br>
 
+{% for obj in object_list %}
+<button
+    class="btn btn-link modal-button d-block mx-auto text-center"
+    style="
+      background-color: #e8998d;
+      color: #fbf7f4;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      border: none;
+      display: block;
+      width: 200px;
+      transition: background-color 0.3s ease, transform 0.2s ease;""
+    data-pk="{{ obj.pk }}"
+    data-quiz="{{ obj.name }}"
+    data-questions="{{ obj.number_of_questions }}"
+    data-difficulty="{{ obj.difficulty }}"
+    data-pass="{{ obj.required_score_to_pass }}"
+    data-bs-toggle="modal"
+    data-bs-target="#quizStartModal">
+    {{ obj.name }}
+</button><br>
 {% endfor %}
-{% endblock content%}
+
+{% endblock content %}
 
 {% block scripts %}
 <script src="{% static 'quizes/quiz-main.js' %}" defer></script>
