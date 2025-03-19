@@ -202,9 +202,9 @@ BIBLE_API_KEY = 'b3094e0c60a213765a11153a7c25b0c6'
 BIBLE_ID = "de4e12af7f28f599-02"
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'your-cloud-name',
-    'API_KEY': 'your-api-key',
-    'API_SECRET': 'your-api-secret',
+    'CLOUD_NAME': ' dvs5uituk',
+    'API_KEY': '922535369712853',
+    'API_SECRET': 'M7aRepNHwXJez8Zn5ibwfZ109Ek',
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
