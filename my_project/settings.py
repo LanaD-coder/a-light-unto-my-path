@@ -198,6 +198,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 # Enable Whitenoise storage for production
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+WHITENOISE_IMMUTABLE_FILE_TEST = lambda path, url: True
+WHITENOISE_USE_FINDERS = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
