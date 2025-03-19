@@ -98,9 +98,8 @@ header.fixed-top {
 }
 .hero {
     position: relative;
-    height: auto;
-    min-height: 100%;
-    max-width: 100%;
+    width: 100%;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -108,6 +107,14 @@ header.fixed-top {
     justify-content: center;
     padding-top: 80px;
     text-align: center;
+    background-color: #f4f4f4;
+}
+.hero.lazyload {
+    background-image: none;
+}
+.hero.loaded {
+    background-image: inherit;
+    transition: background-image 0.5s ease-in-out;
 }
 .hero-overlay {
     text-align: center;
