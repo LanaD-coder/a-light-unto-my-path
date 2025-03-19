@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.http import JsonResponse
 from question.models import Question, Answer
 from result.models import Result
+from django.contrib.auth.models import AnonymousUser
 
 class QuizListView(ListView):
     model = Quiz
@@ -52,7 +53,9 @@ def save_quiz_view(request, pk):
 
         print(f'Final Question List: {questions}')
 
-        user = request.user if request.user.is_authenticated else None
+        user = request.user
+        if isinstance(user, AnonymousUser) or not user.is_authenticated:
+            user = None
         quiz = Quiz.objects.get(pk=pk)
 
         score = 0
