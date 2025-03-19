@@ -19,6 +19,12 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+cloudinary.config(
+    cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME', 'dvs5uituk'),
+    api_key = os.getenv('CLOUDINARY_API_KEY', '922535369712853'),
+    api_secret = os.getenv('CLOUDINARY_API_SECRET', 'M7aRepNHwXJez8Zn5ibwfZ109Ek')
+)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -202,7 +208,7 @@ BIBLE_API_KEY = 'b3094e0c60a213765a11153a7c25b0c6'
 BIBLE_ID = "de4e12af7f28f599-02"
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': ' dvs5uituk',
+    'CLOUD_NAME': 'dvs5uituk',
     'API_KEY': '922535369712853',
     'API_SECRET': 'M7aRepNHwXJez8Zn5ibwfZ109Ek',
 }
