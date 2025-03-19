@@ -4,9 +4,38 @@
 {% block title %}Page Not Found{% endblock %}
 
 {% block content %}
-<div style="text-align: center; padding: 50px;">
-    <h1>404 - Page Not Found</h1>
-    <p>Sorry, we couldn't find the page you're looking for.</p>
-    <p><a href="{% url 'homepage' %}">Return to Home Page</a></p>
+<style>
+    .hero {
+        background: url("{% static 'images/404.jpg' %}") no-repeat center center;
+        background-size: cover;
+        height: 100vh; /* Full screen height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #fbf7f4;
+        font-family: 'Lexend Deca', sans-serif;
+    }
+    .hero-content {
+        background: rgba(108, 154, 139, 0.6);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    a {
+        color: #fbf7f4;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, we couldn't find the page you're looking for.</p>
+        <p><a href="{% url 'homepage' %}">Return to Home Page</a></p>
+    </div>
 </div>
 {% endblock %}

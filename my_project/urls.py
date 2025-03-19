@@ -17,11 +17,19 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import redirect
 from django.conf import settings
 from django.conf.urls.static import static
 from blog import views as blog_views
 from accounts.views import custom_logout_view
 from django.views.generic import RedirectView
+from django.conf.urls import handler404
+from accounts.views import custom_404_view
+
+handler404 = custom_404_view
+
+def redirect_to_homepage(request):
+    return redirect('homepage')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,7 +42,9 @@ urlpatterns = [
     path('logout/', custom_logout_view, name='logout_page'),
     path('summernote/', include('django_summernote.urls')),
     path('comments/', blog_views.comment_view, name='comment_view'),
-    path('', include('quiz.urls', namespace='quiz')),
+
+    path('', redirect_to_homepage, name='root_redirect'),
+    path('quiz/', include('quiz.urls', namespace='quiz')),
 
 ]
 

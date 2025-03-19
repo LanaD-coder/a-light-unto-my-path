@@ -4,6 +4,9 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomLoginForm
 
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
+
 def login_signup_view(request):
     """
     Handles both login and signup.
