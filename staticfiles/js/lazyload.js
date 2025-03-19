@@ -6,17 +6,24 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    console.log("Hero section found:", hero);
-    console.log("Data-bg attribute:", hero.getAttribute("data-bg"));
+    let imgUrl = hero.getAttribute("data-bg");
+
+    if (!imgUrl) {
+        console.error("No data-bg attribute found!");
+        return;
+    }
+
+    const loadImage = () => {
+        console.log("Loading background image:", imgUrl);
+        hero.style.backgroundImage = `url('${imgUrl}')`;
+        hero.classList.add("loaded");
+    };
 
     if ("IntersectionObserver" in window) {
         let observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    let imgUrl = hero.getAttribute("data-bg");
-                    console.log("Loading background image:", imgUrl);
-                    hero.style.backgroundImage = `url('${imgUrl}')`;
-                    hero.classList.add("loaded");
+                    loadImage();
                     observer.unobserve(hero);
                 }
             });
@@ -25,8 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(hero);
     } else {
         console.warn("IntersectionObserver not supported, loading image immediately.");
-        let imgUrl = hero.getAttribute("data-bg");
-        hero.style.backgroundImage = `url('${imgUrl}')`;
-        hero.classList.add("loaded");
+        loadImage();
     }
 });

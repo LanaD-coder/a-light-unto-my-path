@@ -110,11 +110,11 @@ header.fixed-top {
     background-color: #f4f4f4;
 }
 .hero.lazyload {
-    background-image: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 .hero.loaded {
-    background-image: inherit;
-    transition: background-image 0.5s ease-in-out;
+    opacity: 1;
 }
 .hero-overlay {
     text-align: center;
