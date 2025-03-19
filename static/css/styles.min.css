@@ -362,7 +362,6 @@ header.fixed-top {
 .contact-hero {
     position: relative;
     height: auto;
-    min-height: 100%;
     max-width: 100%;
     background-size: cover;
     background-position: center;
@@ -371,6 +370,8 @@ header.fixed-top {
     justify-content: center;
     padding-top: 80px;
     text-align: center;
+    background-color: #f8f9fa;
+    min-height: 400px;
 }
 .contact-page {
     background-color: #fbf7f4;

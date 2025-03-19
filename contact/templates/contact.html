@@ -5,8 +5,7 @@
 
 <!-- Hero Section -->
 <div
-  class="contact-hero"
-  style="background-image: url('{% static 'images/hero-contact.png' %}')">
+  class="contact-hero lazyload" data-bg="https://res.cloudinary.com/dvs5uituk/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/freepik__many-white-doves-flying-with-little-postal-package__76480_1_q98v3e.webp">
   <div class="hero-overlay-contact">
     <h2 class="hero-title-contact">We would love to hear from you.</h2>
     <p class="hero-subtitle-contact">
@@ -185,4 +184,8 @@
   });
 </script>
 
+{% endblock %}
+
+{% block extra_js %}
+<script defer src="{% static 'js/lazyload.js' %}"></script>
 {% endblock %}

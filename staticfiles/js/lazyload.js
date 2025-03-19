@@ -1,37 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const hero = document.querySelector(".hero");
+    const heroes = document.querySelectorAll("[data-bg]");  // Select all elements with a data-bg attribute
 
-    if (!hero) {
-        console.error("Hero section not found!");
+    if (heroes.length === 0) {
+        console.error("No hero sections found!");
         return;
     }
 
-    let imgUrl = hero.getAttribute("data-bg");
+    heroes.forEach(hero => {
+        let imgUrl = hero.getAttribute("data-bg");
 
-    if (!imgUrl) {
-        console.error("No data-bg attribute found!");
-        return;
-    }
+        if (!imgUrl) {
+            console.error("No data-bg attribute found for hero section!");
+            return;
+        }
 
-    const loadImage = () => {
-        console.log("Loading background image:", imgUrl);
-        hero.style.backgroundImage = `url('${imgUrl}')`;
-        hero.classList.add("loaded");
-    };
+        const loadImage = () => {
+            console.log("Loading background image:", imgUrl);
+            hero.style.backgroundImage = `url('${imgUrl}')`;
+            hero.classList.add("loaded");
+        };
 
-    if ("IntersectionObserver" in window) {
-        let observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    loadImage();
-                    observer.unobserve(hero);
-                }
+        if ("IntersectionObserver" in window) {
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadImage();
+                        observer.unobserve(hero);
+                    }
+                });
             });
-        });
 
-        observer.observe(hero);
-    } else {
-        console.warn("IntersectionObserver not supported, loading image immediately.");
-        loadImage();
-    }
+            observer.observe(hero);
+        } else {
+            console.warn("IntersectionObserver not supported, loading image immediately.");
+            loadImage();
+        }
+    });
 });
