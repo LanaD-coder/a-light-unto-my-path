@@ -52,7 +52,7 @@ def save_quiz_view(request, pk):
 
         print(f'Final Question List: {questions}')
 
-        user = request.user
+        user = request.user if request.user.is_authenticated else None
         quiz = Quiz.objects.get(pk=pk)
 
         score = 0
@@ -79,6 +79,7 @@ def save_quiz_view(request, pk):
                 results.append({str(q): 'not answered'})
 
         score_ = score * multiplier
+
         Result.objects.create(quiz=quiz, user=user, score=score_)
 
         if score_ >= quiz.required_score_to_pass:
