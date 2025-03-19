@@ -135,6 +135,49 @@
       document.querySelector(".login-form").style.display = "block";
     }
   }
+
+  // Show success modal when login is successful
+  document.addEventListener("DOMContentLoaded", function () {
+    {% if messages %}
+      {% for message in messages %}
+        {% if message.tags == "success" %}
+          var modal = document.getElementById("loginSuccessModal");
+          var closeBtn = document.querySelector(".close");
+
+          modal.style.display = "block";
+
+          // Close modal on button click
+          closeBtn.onclick = function () {
+            modal.style.display = "none";
+            window.location.href = "/"; // Redirect to homepage
+          };
+
+          // Close modal when clicking outside
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+              window.location.href = "/"; // Redirect to homepage
+            }
+          };
+
+          // Auto-close modal after 3 seconds and redirect
+          setTimeout(function () {
+            modal.style.display = "none";
+            window.location.href = "/"; // Redirect after timeout
+          }, 3000);
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  });
 </script>
+
+<!-- Success Modal -->
+<div id="loginSuccessModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Success!</h2>
+    <p>You have successfully signed in.</p>
+  </div>
+</div>
 
 {% endblock %}

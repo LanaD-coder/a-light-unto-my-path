@@ -25,7 +25,8 @@ def login_signup_view(request):
                 user = authenticate(request, username=username, password=password)
                 if user is not None:
                     login(request, user)
-                    return redirect('homepage')
+                    messages.success(request, "You have successfully signed in!")
+                    return redirect('login_signup')
                 else:
                     messages.error(request, "Invalid username or password.")
 
