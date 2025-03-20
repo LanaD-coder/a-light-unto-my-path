@@ -2,16 +2,13 @@
 {% load static %}
 {% load i18n %}
 
-{% block head_title%}"Sign In / Sign Up"{% endblock head_title %}
+{% block head_title %}"Sign In / Sign Up"{% endblock head_title %}
 
 {% block content %}
 <!-- Hero Section -->
-<div
-  class="hero"
-  style="background-image: url('{% static 'images/login_signup-hero.png' %}')"
->
+<div class="hero" data-bg="https://res.cloudinary.com/dvs5uituk/image/upload/f_auto,q_auto/freepik__the-style-is-candid-image-photography-with-natural__81585_1_ykuweh.png">
   <div class="hero-overlay-lsu">
-    <h2 class="hero-title-lsu">We would love to hear from you.</h2>
+    <h1 class="hero-title-lsu">We would love to hear from you.</h1>
     <p class="hero-subtitle-lsu">
       If you are part of our community and this blog stirs something in your
       spirit—whether it brings feelings of anger, sadness, confusion, or
@@ -21,51 +18,11 @@
   </div>
 </div>
 
-<h1 class="centered-heading">{% trans "Sign In / Sign Up" %}</h1>
-
-<div class="forms-container">
-  <div class="form-container">
-    <!-- Login Form -->
-    <div class="login-form"
-      style="display: {% if login_form %}block{% else %}none{% endif %};">
-      <h2 style="color: #e8998d">{% trans "Sign In" %}</h2>
-      <form method="post">
-        {% csrf_token %}
-
-        <label for="{{ login_form.username.id_for_label }}">{% trans "Username" %}</label>
-        {{ login_form.username }}
-        {% if login_form.username.errors %}
-          <small class="error-message">{{ login_form.username.errors.0 }}</small>
-        {% endif %}
-
-        <label for="{{ login_form.password.id_for_label }}">{% trans "Password" %}</label>
-        {{ login_form.password }}
-        {% if login_form.password.errors %}
-          <small class="error-message">{{ login_form.password.errors.0 }}</small>
-        {% endif %}
-
-        <button type="submit" name="login" class="primaryAction">
-          {% trans "Sign In" %}
-        </button>
-      </form>
-    </div>
-  </div>
-
-{% if messages %}
-  <ul class="messages">
-      {% for message in messages %}
-          <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
-      {% endfor %}
-  </ul>
-{% endif %}
-
 <!-- Separator Card -->
-<div class="lsu-card">
-  <div class="card-image">
-    <img src="{% static 'images/door-lsu.jpg' %}" alt="Divider Image" class="separator-image" />
-  </div>
-  <div class="slu-card-body">
-    <p class="separator-text">
+<div class="separator-card">
+  <div class="separator-body">
+    <h2><em>Why is login/signup required?</em></h2>
+    <p>
       To ensure a safe and respectful environment for all our readers,
       signing up is required to participate in commenting on posts. We believe
       that meaningful conversations should be rooted in kindness and
@@ -78,37 +35,30 @@
   </div>
 </div>
 
-  <div class="form-container">
+<!-- Forms Card (Both Login and Signup in the Same Card) -->
+<div class="form-card-lsu">
+  <h1 class="centered-heading">{% trans "Sign In / Sign Up" %}</h1>
+
+  <div class="form-container-lsu">
+    <!-- Login Form -->
+    <div class="form-box login-form" style="display: {% if login_form %}block{% else %}none{% endif %};">
+      <h2 style="color: #e8998d">{% trans "Sign In" %}</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ login_form.as_p }}  <!-- This ensures form rendering without duplicate IDs -->
+
+        <button type="submit" name="login" class="primaryAction">
+          {% trans "Sign In" %}
+        </button>
+      </form>
+    </div>
+
     <!-- Sign Up Form -->
-    <div class="signup-form"
-      style="display: {% if signup_form %}block{% else %}none{% endif %};">
+    <div class="form-box signup-form" style="display: {% if signup_form %}block{% else %}none{% endif %};">
       <h2 style="color: #e8998d">{% trans "Sign Up" %}</h2>
       <form method="post">
         {% csrf_token %}
-
-        <label for="{{ signup_form.username.id_for_label }}">{% trans "Username" %}</label>
-        {{ signup_form.username }}
-        {% if signup_form.username.errors %}
-          <small class="error-message">{{ signup_form.username.errors.0 }}</small>
-        {% endif %}
-
-        <label for="{{ signup_form.email.id_for_label }}">{% trans "Email" %}</label>
-        {{ signup_form.email }}
-        {% if signup_form.email.errors %}
-          <small class="error-message">{{ signup_form.email.errors.0 }}</small>
-        {% endif %}
-
-        <label for="{{ signup_form.password1.id_for_label }}">{% trans "Password" %}</label>
-        {{ signup_form.password1 }}
-        {% if signup_form.password1.errors %}
-          <small class="error-message">{{ signup_form.password1.errors.0 }}</small>
-        {% endif %}
-
-        <label for="{{ signup_form.password2.id_for_label }}">{% trans "Confirm Password" %}</label>
-        {{ signup_form.password2 }}
-        {% if signup_form.password2.errors %}
-          <small class="error-message">{{ signup_form.password2.errors.0 }}</small>
-        {% endif %}
+        {{ signup_form.as_p }}  <!-- Prevents duplicate IDs and ensures form integrity -->
 
         <button type="submit" name="signup" class="primaryAction">
           {% trans "Sign Up" %}
@@ -116,15 +66,21 @@
       </form>
       <p>
         {% trans "Already have an account?" %}
-        <a href="#login-form" onclick="toggleForms('login')"
-          >{% trans "Sign in" %}</a
-        >
+        <a href="#" onclick="toggleForms('login'); return false">{% trans "Sign in" %}</a>
       </p>
     </div>
   </div>
 </div>
 
-<script>
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+
+<script defer>
   // Toggle between login and signup forms
   function toggleForms(formType) {
     if (formType === "signup") {
@@ -138,6 +94,8 @@
 
   // Show success modal when login is successful
   document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo(0,0);
+
     {% if messages %}
       {% for message in messages %}
         {% if message.tags == "success" %}
@@ -163,7 +121,7 @@
           // Auto-close modal after 3 seconds and redirect
           setTimeout(function () {
             modal.style.display = "none";
-            window.location.href = "/"; // Redirect after timeout
+            window.location.href = "/";
           }, 3000);
         {% endif %}
       {% endfor %}

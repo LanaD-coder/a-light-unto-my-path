@@ -25,11 +25,13 @@ img {
     max-width: 100%;
 }
 em {
-    font-family: 'Imperial Script';
+    font-family: 'Birthstone', sans-serif;
 }
 main {
     background-color: #6C9A8B;
 }
+
+/* Homepage */
 header.fixed-top {
     position: fixed !important;
     top: 0;
@@ -43,6 +45,7 @@ header.fixed-top {
     border-top-right-radius: 15px;
     color: #fbf7f4;
     max-width: 100%;
+    padding: 10px;
 }
 .rolling-banner {
     position: relative;
@@ -107,7 +110,7 @@ header.fixed-top {
     justify-content: center;
     padding-top: 80px;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: #fbf7f4;
 }
 .hero.lazyload {
     opacity: 0;
@@ -118,7 +121,7 @@ header.fixed-top {
 }
 .hero-overlay {
     text-align: center;
-    color: #fbf7f4;
+    color: #fbf7f4;;
     background: rgba(232, 153, 141, 0.8);
     padding: 60px 30px;
     border-radius: 10px;
@@ -126,7 +129,7 @@ header.fixed-top {
 }
 .hero-title {
     color: #296b77;
-    font-family: "Imperial Script", sans-serif;
+    font-family: "Birthstone", sans-serif;
     font-size: clamp(2rem, 5vw, 5rem);
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -187,6 +190,9 @@ header.fixed-top {
     align-items: center;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5);
     max-width: 100%;
+    min-height: 60px;
+    position: relative;
+    width: 100%;
 }
 .footer p {
     margin: 0;
@@ -199,15 +205,19 @@ header.fixed-top {
     gap: 10px;
     padding: 10px 20px;
 }
+
 .social-icons a {
     color: #296b77;
     font-size: 24px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
-.social-icons i:hover {
+
+.social-icons a:hover {
     color: #a1683a;
 }
+
+/* Blog */
 .post-detail-container {
     color: #296b77 !important;
     max-width: 800px;
@@ -255,7 +265,7 @@ header.fixed-top {
 }
 .comment-form-container {
     margin-top: 30px;
-    padding: 20px;
+    padding: 10px;
     background-color: #fbf7f4;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -265,14 +275,18 @@ header.fixed-top {
     box-sizing: border-box;
     margin: 0;
     word-wrap: break-word;
+    white-space: normal;
 }
-.comment-form-container textarea {
-    max-width: 100%;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #e8998d;
-    border-radius: 4px;
+.comment-form-container textarea,
+textarea#id_body.comment-textarea {
+    width: 100% !important;
+    min-height: 70px !important;
+    font-size: 0.9rem !important;
+    padding: 6px !important;
+    border: 1px solid #e8998d !important;
+    border-radius: 5px !important;
+    resize: vertical !important;
+    box-sizing: border-box !important;
 }
 .comment-form-container button {
     background-color: #6c9a8b;
@@ -317,6 +331,8 @@ header.fixed-top {
     background-color: #e8998d;
     color: white;
 }
+
+/* About */
 .hero-about {
     position: relative;
     max-width: 100%;
@@ -359,6 +375,8 @@ header.fixed-top {
     position: relative;
     top: 20px;
 }
+
+/* Contact */
 .contact-hero {
     position: relative;
     height: auto;
@@ -377,21 +395,37 @@ header.fixed-top {
     background-color: #fbf7f4;
     padding: 50px 0;
 }
-.hero-overlay-contact, .hero-overlay-lsu {
+
+/* Login/Signup */
+.hero-lsu {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+}
+.hero-overlay-contact, .hero-overlay-lsu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: rgba(232, 153, 141, 0.9);
-    border-top-right-radius: 15px;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    position: relative;
-    top: 20px;
+    text-align: center;
+    display: inline-block;
+    max-width: 90%;
 }
 .hero-title-contact, .hero-title-about, .hero-title-lsu {
     color: #fbf7f4;
-    font-family: "Imperial Script", sans-serif;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-family: "Birthstone", sans-serif;
+    font-size: 3rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .hero-subtitle-contact, .hero-subtitle-about, .hero-subtitle-lsu {
@@ -451,9 +485,9 @@ header.fixed-top {
 }
 .centered-heading {
     text-align: center;
-    font-family: 'Imperial Script';
+    font-family: 'Birthstone';
     font-size: 3rem;
-    color: #fbf7f4;
+    color: #e8998d;
     margin-bottom: 20px;
     padding: 20px;
 }
@@ -465,39 +499,99 @@ header.fixed-top {
     flex-wrap: wrap;
     max-width: 100%;
 }
-.lsu-card {
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-    background-color: #fbf7f4;
-    border-color: #E8998D;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+/* Center and align form card */
+.form-container-lsu {
+    width: 100%;
     max-width: 600px;
-    border-radius: 10px;
+    margin: 0 auto;
     padding: 20px;
-}
-.form-container {
-    display: inline-block;
-    box-sizing: border-box;
-    background-color: #fbf7f4;
-    border-color: #E8998D;
+    background-color: #fff;
+    border: 2px solid #E8998D;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: max-content;
-    border-radius: 10px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
-.lsu-card, .lsu-card-body {
-    background-color: #fbf7f4;
-    padding: 20px;
-    font-size: 1rem;
-    line-height: 1.6;
+
+/* Styling for individual form boxes */
+.form-box {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 15px 0;
 }
-.separator-text {
+
+/* Ensure form inputs and labels align properly */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+label {
     color: #296b77;
+    font-weight: bold;
+    text-align: left;
+    display: block;
 }
-.separator-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px 10px 0 0;
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e8998d;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Style for buttons */
+.primaryAction {
+    width: 100%;
+    padding: 10px;
+    background-color: #e8998d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.primaryAction:hover {
+    background-color: #d47a6f;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: -8px;
+    display: block;
+}
+
+/* Message list */
+.messages {
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.messages li {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.separator-body {
+    color: #296b77;
+    background-color: #fbf7f4;
+    padding: 5px;
 }
 .form-container h1 {
     text-align: center;
@@ -575,7 +669,7 @@ header.fixed-top {
     display: none;
 }
 .hero-quiz {
-    background-image: url("/static/images/bible-quiz.png");
+    background-image: url("https://res.cloudinary.com/dvs5uituk/image/upload/jih8qcwc7uwegv0b6yhu_t8wle0.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -595,6 +689,29 @@ header.fixed-top {
     background: rgba(108, 156, 139, 0.8);
     padding: 20px;
     border-radius: 10px;
+}
+#quiz-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #eed2cc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#quiz-box .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
 }
 @media (max-width: 1200px) {
     .post-detail-container {
@@ -741,6 +858,10 @@ header.fixed-top {
         justify-content: center;
         gap: 15px;
     }
+    .hero-lsu {
+        min-height: 50vh;
+        padding: 15px;
+    }
     .signup {
         max-width: 100%;
         padding: 15px;
@@ -870,11 +991,32 @@ header.fixed-top {
         padding: 12px;
         max-width: 95%;
     }
+    .banner-text {
+        animation-duration: 25s;
+    }
     .post-detail-title {
         font-size: 1.2rem;
     }
     .post-detail-body {
         font-size: 0.75rem;
+    }
+    .hero-lsu {
+        min-height: 40vh;
+        padding: 10px;
+    }
+    .hero-overlay-contact, .hero-overlay-lsu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(232, 153, 141, 0.9);
+        padding: 6px 10px;
+        border-radius: 8px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        display: inline-block;
+        max-width: 90%;
+        width: auto;
     }
     .signup h1 {
         font-size: 1.3rem;
@@ -911,7 +1053,13 @@ header.fixed-top {
     .form-container input, .form-container button {
         padding: 7px;
     }
-    .comment-form-container li p {
+    .comment-form-container textarea,
+    textarea#id_body.comment-textarea {
+        min-height: 60px;
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+    .comment-form-container p {
         max-width: 100%;
         box-sizing: border-box;
         padding: 8px;
