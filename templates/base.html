@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="h-100" lang="en">
   <head>
-    <title>A Light Unto My Path</title>
     {% load static %}
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Light Unto My Path</title>
 
     <!-- Define URLs -->
     {% url 'homepage' as homepage_url %}
@@ -52,7 +53,9 @@
       type="image/png"
       sizes="16x16"
       href="{% static 'favicon/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}" />
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+
+    {% block styles %}{% endblock %}
   </head>
 
   <body>
@@ -66,7 +69,7 @@
             alt="Logo"
             width="75"
             height="75"
-          />
+          >
         </a>
         <button
           class="navbar-toggler"

@@ -26,7 +26,7 @@ $.ajax({
                                 id="${question}-${answer}"
                                 name="${question}"
                                 value="${answer}">
-                            <label for="${question}">${answer}</label>
+                            <label for="${question}-${answer}">${answer}</label>
                         </div>
                     `;
                 });

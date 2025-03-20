@@ -4,6 +4,15 @@
 {% block title %}Page Not Found{% endblock %}
 
 {% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, we couldn't find the page you're looking for.</p>
+        <p><a href="{% url 'homepage' %}">Return to Home Page</a></p>
+    </div>
+</div>
+{% endblock %}
+{% block styles %}
 <style>
     .hero {
         background: url("{% static 'images/404.webp' %}") no-repeat center center;
@@ -30,12 +39,4 @@
         text-decoration: underline;
     }
 </style>
-
-<div class="hero">
-    <div class="hero-content">
-        <h1>404 - Page Not Found</h1>
-        <p>Sorry, we couldn't find the page you're looking for.</p>
-        <p><a href="{% url 'homepage' %}">Return to Home Page</a></p>
-    </div>
-</div>
 {% endblock %}

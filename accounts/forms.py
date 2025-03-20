@@ -18,7 +18,8 @@ class CustomLoginForm(AuthenticationForm):
         widget=forms.TextInput(attrs={'id': 'id_login_username', 'autocomplete': 'username'})
     )
     password = forms.CharField(
-        widget=forms.PasswordInput(attrs={'id': 'id_login_password', 'autocomplete': 'current-password'})
+        widget=forms.PasswordInput(attrs={'id': 'id_login_password', 'autocomplete': 'current-password'}),
+        help_text=None
     )
 
 # Signup Form with autocomplete & unique IDs
@@ -30,10 +31,12 @@ class CustomSignupForm(UserCreationForm):
         widget=forms.EmailInput(attrs={'id': 'id_signup_email', 'autocomplete': 'email'})
     )
     password1 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'id': 'id_signup_password1', 'autocomplete': 'new-password'})
+        widget=forms.PasswordInput(attrs={'id': 'id_signup_password1', 'autocomplete': 'new-password'}),
+        help_text=None
     )
     password2 = forms.CharField(
-        widget=forms.PasswordInput(attrs={'id': 'id_signup_password2', 'autocomplete': 'new-password'})
+        widget=forms.PasswordInput(attrs={'id': 'id_signup_password2', 'autocomplete': 'new-password'}),
+        help_text=None
     )
 
     class Meta:

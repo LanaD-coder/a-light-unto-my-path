@@ -45,7 +45,7 @@
       <h2 style="color: #e8998d">{% trans "Sign In" %}</h2>
       <form method="post">
         {% csrf_token %}
-        {{ login_form.as_p }}  <!-- This ensures form rendering without duplicate IDs -->
+        {{ login_form.as_p }}
 
         <button type="submit" name="login" class="primaryAction">
           {% trans "Sign In" %}
@@ -58,7 +58,7 @@
       <h2 style="color: #e8998d">{% trans "Sign Up" %}</h2>
       <form method="post">
         {% csrf_token %}
-        {{ signup_form.as_p }}  <!-- Prevents duplicate IDs and ensures form integrity -->
+        {{ signup_form.as_p }}
 
         <button type="submit" name="signup" class="primaryAction">
           {% trans "Sign Up" %}
@@ -80,7 +80,7 @@
   </ul>
 {% endif %}
 
-<script defer>
+<script>
   // Toggle between login and signup forms
   function toggleForms(formType) {
     if (formType === "signup") {

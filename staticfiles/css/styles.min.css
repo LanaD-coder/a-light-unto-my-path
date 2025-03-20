@@ -45,6 +45,7 @@ header.fixed-top {
     border-top-right-radius: 15px;
     color: #fbf7f4;
     max-width: 100%;
+    padding: 10px;
 }
 .rolling-banner {
     position: relative;
@@ -189,6 +190,9 @@ header.fixed-top {
     align-items: center;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5);
     max-width: 100%;
+    min-height: 60px;
+    position: relative;
+    width: 100%;
 }
 .footer p {
     margin: 0;
@@ -201,13 +205,15 @@ header.fixed-top {
     gap: 10px;
     padding: 10px 20px;
 }
+
 .social-icons a {
     color: #296b77;
     font-size: 24px;
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
-.social-icons i:hover {
+
+.social-icons a:hover {
     color: #a1683a;
 }
 
@@ -683,6 +689,29 @@ input {
     background: rgba(108, 156, 139, 0.8);
     padding: 20px;
     border-radius: 10px;
+}
+#quiz-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #eed2cc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#quiz-box .form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
 }
 @media (max-width: 1200px) {
     .post-detail-container {
