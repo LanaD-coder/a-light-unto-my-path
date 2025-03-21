@@ -18,6 +18,9 @@ html, body {
     overflow-x: hidden;
     padding-top: 45px;
 }
+b {
+    color: #fbf7f4;
+}
 h1 {
     margin: 5px;
     text-align: center;
@@ -1126,7 +1129,6 @@ input[type="radio"] {
     .hero-overlay-contact,
     .hero-overlay-lsu {
         width: 95%;
-        top: 40%;
         padding: 8px 12px;
     }
 
