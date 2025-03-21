@@ -3,12 +3,14 @@ from django.views import generic
 from django.core.paginator import Paginator
 from django.views.generic import DetailView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 from django.urls import reverse_lazy
-from .models import Post, Comment
 from .forms import CommentForm
 from django.http import HttpResponseForbidden
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.http import JsonResponse
+from .models import Post, Comment
 
 
 # Post List View
@@ -26,7 +28,12 @@ class PostDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        post = self.object  # The current post instance
+        post = self.object
+
+        if self.request.user.is_authenticated:
+            context['has_liked'] = post.likes.filter(id=self.request.user.id).exists()
+        else:
+            context['has_liked'] = False
 
         # Fetch previous and next posts based on created date
         context['previous_post'] = Post.objects.filter(
@@ -66,6 +73,21 @@ class PostDetailView(DetailView):
 
         return HttpResponseForbidden \
             ("You need to be logged in to comment.")
+
+
+@csrf_protect
+@login_required
+def like_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+
+    return JsonResponse({"liked": liked, "total_likes": post.likes.count()})
 
 
 @login_required
@@ -131,3 +153,5 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
+
+

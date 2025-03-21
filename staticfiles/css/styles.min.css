@@ -497,19 +497,22 @@ textarea#id_body.comment-textarea {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     align-items: center;
     justify-content: center;
-    display: inline-block;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
 }
 .hero-title-contact, .hero-title-about, .hero-title-lsu {
     color: #fbf7f4;
     font-family: "Birthstone", sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
 }
 .hero-subtitle-contact, .hero-subtitle-about, .hero-subtitle-lsu {
     font-family: "Lexend Deca", sans-serif;
     color: #fbf7f4;
-    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-size: clamp(1rem, 4vw, 1.5rem);
     margin-top: 10px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
@@ -747,18 +750,21 @@ input[type="radio"] {
     .hero-overlay {
         padding: 40px;
     }
-    .hero-overlay-contact {
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
         width: 50%;
         top: 50%;
         padding: 25px 30px;
         font-size: 20px;
     }
-    .hero-title-contact {
-        font-size: 24px;
-        max-width: 70%;
+    .hero-title-contact,
+    .hero-title-lsu {
+        font-size: 35px;
+        max-width: 60%;
     }
 
-    .hero-subtitle-contact {
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
         font-size: 18px;
         max-width: 75%;
     }
@@ -809,12 +815,18 @@ input[type="radio"] {
         padding: 12px 15px;
         text-align: center;
     }
-    .hero-title-contact {
+    .hero-overlay-lsu {
+        width: 60%;
+        padding: 20px 25px;
+    }
+    .hero-title-contact,
+    .hero-title-lsu {
         font-size: 22px;
         max-width: 75%;
     }
 
-    .hero-subtitle-contact {
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
         font-size: 16px;
         max-width: 80%;
     }
@@ -872,7 +884,8 @@ input[type="radio"] {
     .post-detail-comments li p {
         word-wrap: break-word !important;
     }
-    .hero-overlay-contact {
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
         width: 80%;
         top: 50%;
         padding: 15px 20px;
@@ -884,11 +897,13 @@ input[type="radio"] {
     .contact-form .form-control {
         padding: 10px;
     }
-    .hero-title-contact {
+    .hero-title-contact,
+    .hero-title-lsu {
         font-size: 2rem;
         text-align: center;
     }
-    .hero-subtitle-contact {
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
         font-size: 1.2rem;
         text-align: center;
     }
@@ -994,7 +1009,8 @@ input[type="radio"] {
     .post-detail-comments li {
         padding: 8px 0;
     }
-    .hero-overlay-contact {
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
         width: 90%;
         top: 45%;
         padding: 10px 15px;
@@ -1005,9 +1021,6 @@ input[type="radio"] {
     }
     .contact-form .form-control {
         padding: 8px;
-    }
-    .hero-title-contact {
-        font-size: 18px;
     }
 
     .hero-subtitle-contact {
@@ -1095,20 +1108,13 @@ input[type="radio"] {
     .footer p {
         padding: 3px;
     }
-    .hero-overlay-contact {
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
         width: 95%;
         top: 40%;
         padding: 8px 12px;
-        font-size: 12px;
-    }
-    .hero-title-contact {
-        font-size: 16px;
     }
 
-    .hero-subtitle-contact {
-        font-size: 12px;
-        padding: 5px;
-    }
     .contact-form .form-control {
         font-size: 11px;
     }
@@ -1127,7 +1133,7 @@ input[type="radio"] {
         padding: 8px;
         word-wrap: break-word;
     }
-    .hero-title-contact, .hero-title-about, .hero-title-lsu {
+    .hero-title-about, .hero-title-lsu {
         font-size: 1.8rem;
         line-height: 1.2;
     }

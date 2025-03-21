@@ -7,6 +7,13 @@
 <div class="post-detail-container">
   <h1>{{ post.title }}</h1>
   <p><small>Posted on {{ post.created_on }} by {{ post.author }}</small></p>
+
+  <!-- Like Button & Count -->
+  <button class="like-button" data-post-id="{{ post.id }}">
+    <i class="fa-regular fa-thumbs-up"></i> <!-- Outlined thumbs-up by default -->
+  </button>
+  <span id="like-count-{{ post.id }}">{{ post.likes.count }}</span>
+
   <div class="post-detail-body">
     <p>{{ post.content|safe }}</p>
   </div>
@@ -78,4 +85,12 @@
   <a href="{% url 'login_signup' %}" class="hero-btn btn-primary">Sign Up</a>
   {% endif %}
 </div>
+
+<!-- CSRF Token for JavaScript -->
+{% csrf_token %}
+
+<!-- JavaScript for Like Button -->
+ <!-- JavaScript for Like Button -->
+<script defer src="{% static 'js/like.js' %}"></script>
+
 {% endblock %}

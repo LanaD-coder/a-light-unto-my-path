@@ -9,7 +9,6 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 class Post(models.Model):
-    # image = models.ImageField(upload_to='blog_images/', default='default.jpg')
     image = CloudinaryField('image', blank=True, null=True)
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -22,6 +21,10 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
     scheduled_publish_date = models.DateTimeField(null=True, blank=True)
+    likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
+
+    def total_likes(self):
+        return self.likes.count()
 
     class Meta:
         ordering = ["-created_on"]
