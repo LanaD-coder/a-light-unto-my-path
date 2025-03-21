@@ -713,6 +713,7 @@ input[type="radio"] {
     width: 16px;
     height: 16px;
 }
+/* ------------------- For screens with max-width of 1200px ------------------- */
 @media (max-width: 1200px) {
     .post-detail-container {
         padding: 20px;
@@ -733,6 +734,7 @@ input[type="radio"] {
         padding: 40px;
     }
 }
+/* ------------------- For screens with max-width of 992px ------------------- */
 @media (max-width: 992px) {
     .base-navbar .navbar-nav {
         flex-direction: column;
@@ -779,6 +781,7 @@ input[type="radio"] {
         text-align: center;
     }
 }
+/* ------------------- For screens with max-width of 768px ------------------- */
 @media (max-width: 768px) {
     .welcome-verse h1 {
         font-size: 1.5rem;
@@ -889,6 +892,7 @@ input[type="radio"] {
         padding: 10px 18px;
     }
 }
+/* ------------------- For screens with max-width of 576px ------------------- */
 @media (max-width: 576px) {
     .hero {
         padding: 50px 15px;
@@ -978,6 +982,7 @@ input[type="radio"] {
         padding: 8px 16px;
     }
 }
+/* ------------------- For screens with max-width of 320px ------------------- */
 @media (max-width: 320px) {
     .hero-title {
         font-size: 1.5rem;
