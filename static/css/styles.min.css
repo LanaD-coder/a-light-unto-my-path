@@ -128,7 +128,7 @@ header.fixed-top {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .hero-title {
-    color: #296b77;
+    color: #fbf7f4;
     font-family: "Birthstone", sans-serif;
     font-size: clamp(2rem, 5vw, 5rem);
     font-weight: bold;
@@ -376,7 +376,7 @@ textarea#id_body.comment-textarea {
     top: 20px;
 }
 
-/* Contact */
+/* ------------------- Contact ------------------- */
 .contact-hero {
     position: relative;
     height: auto;
@@ -395,45 +395,18 @@ textarea#id_body.comment-textarea {
     background-color: #fbf7f4;
     padding: 50px 0;
 }
-
-/* Login/Signup */
-.hero-lsu {
-    position: relative;
-    width: 100%;
-    min-height: 60vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-title-contact {
+    font-size: clamp(18px, 4vw, 32px);
     text-align: center;
-
+    word-wrap: break-word;
 }
-.hero-overlay-contact, .hero-overlay-lsu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(232, 153, 141, 0.9);
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+
+.hero-subtitle-contact {
+    font-size: clamp(14px, 2.5vw, 18px);
     text-align: center;
-    display: inline-block;
     max-width: 90%;
-}
-.hero-title-contact, .hero-title-about, .hero-title-lsu {
-    color: #fbf7f4;
-    font-family: "Birthstone", sans-serif;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-.hero-subtitle-contact, .hero-subtitle-about, .hero-subtitle-lsu {
-    font-family: "Lexend Deca", sans-serif;
-    color: #fbf7f4;
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    margin-top: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    line-height: 1.5;
+    word-wrap: break-word;
 }
 .contact-container {
     color: #296b77;
@@ -499,7 +472,51 @@ textarea#id_body.comment-textarea {
     flex-wrap: wrap;
     max-width: 100%;
 }
-/* Center and align form card */
+
+/* ------------------- Login/Signup ------------------- */
+.hero-lsu {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+.hero-overlay-contact, .hero-overlay-lsu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(232, 153, 141, 0.9);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+.hero-title-contact, .hero-title-about, .hero-title-lsu {
+    color: #fbf7f4;
+    font-family: "Birthstone", sans-serif;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+.hero-subtitle-contact, .hero-subtitle-about, .hero-subtitle-lsu {
+    font-family: "Lexend Deca", sans-serif;
+    color: #fbf7f4;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    margin-top: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 .form-container-lsu {
     width: 100%;
     max-width: 600px;
@@ -515,7 +532,6 @@ textarea#id_body.comment-textarea {
     text-align: center;
 }
 
-/* Styling for individual form boxes */
 .form-box {
     width: 100%;
     max-width: 400px;
@@ -525,7 +541,6 @@ textarea#id_body.comment-textarea {
     padding: 15px 0;
 }
 
-/* Ensure form inputs and labels align properly */
 form {
     display: flex;
     flex-direction: column;
@@ -668,6 +683,8 @@ input {
 .not-visible {
     display: none;
 }
+
+/* ------------------- Quiz ------------------- */
 .hero-quiz {
     background-image: url("https://res.cloudinary.com/dvs5uituk/image/upload/jih8qcwc7uwegv0b6yhu_t8wle0.webp");
     background-size: cover;
@@ -733,6 +750,24 @@ input[type="radio"] {
     .hero-overlay {
         padding: 40px;
     }
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
+        width: 50%;
+        top: 50%;
+        padding: 25px 30px;
+        font-size: 20px;
+    }
+    .hero-title-contact,
+    .hero-title-lsu {
+        font-size: 35px;
+        max-width: 60%;
+    }
+
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
+        font-size: 18px;
+        max-width: 75%;
+    }
 }
 /* ------------------- For screens with max-width of 992px ------------------- */
 @media (max-width: 992px) {
@@ -779,6 +814,21 @@ input[type="radio"] {
     .base-navbar .navbar-nav .nav-link {
         padding: 12px 15px;
         text-align: center;
+    }
+    .hero-overlay-lsu {
+        width: 60%;
+        padding: 20px 25px;
+    }
+    .hero-title-contact,
+    .hero-title-lsu {
+        font-size: 22px;
+        max-width: 75%;
+    }
+
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
+        font-size: 16px;
+        max-width: 80%;
     }
 }
 /* ------------------- For screens with max-width of 768px ------------------- */
@@ -834,17 +884,26 @@ input[type="radio"] {
     .post-detail-comments li p {
         word-wrap: break-word !important;
     }
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
+        width: 80%;
+        top: 50%;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
     .contact-page {
         padding: 40px 10px;
     }
     .contact-form .form-control {
         padding: 10px;
     }
-    .hero-title-contact {
+    .hero-title-contact,
+    .hero-title-lsu {
         font-size: 2rem;
         text-align: center;
     }
-    .hero-subtitle-contact {
+    .hero-subtitle-contact,
+    .hero-subtitle-lsu {
         font-size: 1.2rem;
         text-align: center;
     }
@@ -950,11 +1009,22 @@ input[type="radio"] {
     .post-detail-comments li {
         padding: 8px 0;
     }
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
+        width: 90%;
+        top: 45%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
     .contact-page {
         padding: 30px 0;
     }
     .contact-form .form-control {
         padding: 8px;
+    }
+
+    .hero-subtitle-contact {
+        font-size: 14px;
     }
     .comment-form-container li p {
         max-width: 100% !important;
@@ -1009,20 +1079,6 @@ input[type="radio"] {
         min-height: 40vh;
         padding: 10px;
     }
-    .hero-overlay-contact, .hero-overlay-lsu {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(232, 153, 141, 0.9);
-        padding: 6px 10px;
-        border-radius: 8px;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
-        text-align: center;
-        display: inline-block;
-        max-width: 90%;
-        width: auto;
-    }
     .signup h1 {
         font-size: 1.3rem;
     }
@@ -1052,6 +1108,13 @@ input[type="radio"] {
     .footer p {
         padding: 3px;
     }
+    .hero-overlay-contact,
+    .hero-overlay-lsu {
+        width: 95%;
+        top: 40%;
+        padding: 8px 12px;
+    }
+
     .contact-form .form-control {
         font-size: 11px;
     }
@@ -1070,7 +1133,7 @@ input[type="radio"] {
         padding: 8px;
         word-wrap: break-word;
     }
-    .hero-title-contact, .hero-title-about, .hero-title-lsu {
+    .hero-title-about, .hero-title-lsu {
         font-size: 1.8rem;
         line-height: 1.2;
     }
