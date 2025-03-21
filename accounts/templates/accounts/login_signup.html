@@ -45,7 +45,7 @@
     <!-- Login Form -->
     <div class="form-box login-form" style="display: {% if login_form %}block{% else %}none{% endif %};">
       <h2 style="color: #e8998d">{% trans "Sign In" %}</h2>
-      <form method="post">
+      <form method="post" action="{% url 'login_signup' %}">
         {% csrf_token %}
         {{ login_form.as_p }}
 
@@ -58,7 +58,7 @@
     <!-- Sign Up Form -->
     <div class="form-box signup-form" style="display: {% if signup_form %}block{% else %}none{% endif %};">
       <h2 style="color: #e8998d">{% trans "Sign Up" %}</h2>
-      <form method="post">
+      <form method="post" action="{% url 'login_signup' %}">
         {% csrf_token %}
         {{ signup_form.as_p }}
 
