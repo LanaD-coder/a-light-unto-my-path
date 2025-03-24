@@ -4,8 +4,10 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .forms import CustomUserCreationForm, CustomLoginForm
 
+
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
+
 
 def login_signup_view(request):
     """
@@ -28,17 +30,21 @@ def login_signup_view(request):
                     messages.success(request, "You have successfully signed in!")
                     return redirect('login_signup')
                 else:
-                    messages.error(request, "Invalid username or password.")
+                    messages.error(
+                        request, "Invalid username or password.")
+
 
         # Handle signup
         elif 'signup' in request.POST:
             signup_form = CustomUserCreationForm(request.POST)
             if signup_form.is_valid():
                 signup_form.save()
-                messages.success(request, "Account created! You can now log in.")
+                messages.success(
+                    request, "Account created! You can now log in.")
                 return redirect('login_signup')
             else:
-                messages.error(request, "Signup failed. Please check the details.")
+                messages.error(
+                    request, "Signup failed. Please check the details.")
 
     return render(
         request,
@@ -46,7 +52,7 @@ def login_signup_view(request):
         {'login_form': login_form, 'signup_form': signup_form}
     )
 
+
 def custom_logout_view(request):
     logout(request)
     return render(request, 'accounts/logout.html')
-

@@ -19,13 +19,14 @@ class PostAdmin(SummernoteModelAdmin):
     fieldsets = (
         (None, {
             'fields': (
-                'title', 'slug', 'content', 'excerpt', 'status', 'image', 'author', 'scheduled_publish_date')
+                'title', 'slug', 'content', 'excerpt', 'status',
+                'image', 'author', 'scheduled_publish_date')
         }),
 
         ('Date Information', {
             'fields': ('updated_on', 'created_on'),
         }),
- )
+    )
 
 
 # Register your models here.

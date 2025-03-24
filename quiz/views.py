@@ -6,13 +6,16 @@ from question.models import Question, Answer
 from result.models import Result
 from django.contrib.auth.models import AnonymousUser
 
+
 class QuizListView(ListView):
     model = Quiz
     template_name = 'quiz/quiz_main.html'
 
+
 def quiz_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
     return render(request, 'quiz/quizes.html', {'obj': quiz})
+
 
 def quiz_data_view(request, pk):
     quiz = Quiz.objects.get(pk=pk)
@@ -27,10 +30,12 @@ def quiz_data_view(request, pk):
 
     })
 
+
 def save_quiz_view(request, pk):
     print(request.POST)
 
-    if request.method == "POST" and request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+    if request.method == "POST" and request.headers.get(
+                'X-Requested-With') == 'XMLHttpRequest':
         questions = []
         data = dict(request.POST.lists())
 
@@ -38,7 +43,6 @@ def save_quiz_view(request, pk):
 
         for key, values in data.items():
             print(f'🟡 Received Key: {key} | Values: {values}')
-
 
             question_text = key.replace("question-", "")
 
@@ -77,7 +81,8 @@ def save_quiz_view(request, pk):
                         if a.correct:
                             correct_answer = a.text
 
-                results. append({str(q): {'correct_answer': correct_answer, 'answered': a_selected}})
+                results. append({str(q): {
+                    'correct_answer': correct_answer, 'answered': a_selected}})
             else:
                 results.append({str(q): 'not answered'})
 
@@ -86,9 +91,11 @@ def save_quiz_view(request, pk):
         Result.objects.create(quiz=quiz, user=user, score=score_)
 
         if score_ >= quiz.required_score_to_pass:
-            return JsonResponse({'passed': True, 'score': score_, 'result': results})
+            return JsonResponse(
+                {'passed': True, 'score': score_, 'result': results})
         else:
-            return JsonResponse({'passed': False, 'score': score_, 'result': results})
+            return JsonResponse(
+                {'passed': False, 'score': score_, 'result': results})
 
-    return JsonResponse({'error': 'Invalid request'}, status=400)
-
+    return JsonResponse(
+        {'error': 'Invalid request'}, status=400)

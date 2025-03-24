@@ -2,8 +2,10 @@ from django.db import models
 from datetime import date
 
 
-# Create your models here.
 class DailyVerse(models.Model):
+    """
+    Create your models here.
+    """
     date = models.DateField(auto_now_add=True, unique=True)
     verse_text = models.TextField()
     reference = models.CharField(max_length=100)

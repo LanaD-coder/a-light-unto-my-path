@@ -5,7 +5,8 @@ from . import views
 
 urlpatterns = [
     # Redirect `accounts/` to `accounts/login_signup/`
-    path('', lambda request: redirect('login_signup'), name='accounts_redirect'),
+    path('', lambda request: redirect(
+        'login_signup'), name='accounts_redirect'),
 
     # Custom login/signup view
     path('login_signup/', login_signup_view, name='login_signup'),

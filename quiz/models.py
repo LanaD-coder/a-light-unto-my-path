@@ -1,12 +1,13 @@
 from django.db import models
 import random
-# Create your models here.
+
 
 DIFF_CHOICES = (
     ('easy', 'easy'),
     ('medium', 'medium'),
     ('hard', 'hard'),
 )
+
 
 class Quiz(models.Model):
     name = models.CharField(max_length=200)

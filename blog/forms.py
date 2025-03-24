@@ -2,6 +2,7 @@
 from django import forms
 from .models import Comment, Post
 
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
@@ -13,6 +14,7 @@ class CommentForm(forms.ModelForm):
                 'placeholder': 'Write your comment here...',
             })
         }
+
 
 class PostForm(forms.ModelForm):
     class Mata:

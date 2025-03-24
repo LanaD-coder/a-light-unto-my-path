@@ -33,14 +33,14 @@ class Post(models.Model):
         return f"{self.title} | written by {self.author}"
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail', kwargs={'slug':self.slug})
+        return reverse('blog:post_detail', kwargs={'slug': self.slug})
 
     def is_scheduled_to_publish(self):
         return (
             self.scheduled_publish_date
             and self.status == 0
             and self.scheduled_publish_date <= timezone.now()
-    )
+        )
 
 
 class Comment(models.Model):

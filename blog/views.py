@@ -13,15 +13,19 @@ from django.http import JsonResponse
 from .models import Post, Comment
 
 
-# Post List View
 class PostList(generic.ListView):
+    """
+    Post List View
+    """
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/blog.html"
     paginate_by = 8
 
 
-# View for a single post with comments
 class PostDetailView(DetailView):
+    """
+    View for a single post with comments
+    """
     model = Post
     template_name = 'blog/post_detail.html'
     context_object_name = 'post'
@@ -71,8 +75,8 @@ class PostDetailView(DetailView):
                 # Redirect to the same page after saving the comment
                 return redirect('blog:post_detail', slug=post.slug)
 
-        return HttpResponseForbidden \
-            ("You need to be logged in to comment.")
+        return HttpResponseForbidden(
+            "You need to be logged in to comment.")
 
 
 @csrf_protect
@@ -111,8 +115,10 @@ def comment_view(request, slug):
                   {'form': form, 'post': post})
 
 
-# Update existing Comment
 class CommentUpdateView(UpdateView):
+    """
+    Update existing Comment
+    """
     model = Comment
     fields = ['body']
     template_name = 'blog/edit_comment.html'
@@ -127,8 +133,10 @@ class CommentUpdateView(UpdateView):
         return queryset.filter(author=self.request.user)
 
 
-# Delete a comment
 class CommentDeleteView(DeleteView):
+    """
+    Delete a comment
+    """
     model = Comment
     template_name = 'blog/confirm_delete.html'
 
@@ -142,8 +150,10 @@ class CommentDeleteView(DeleteView):
         return queryset.filter(author=self.request.user)
 
 
-# Handle user sign-up
 def register(request):
+    """
+     Handle user sign-up
+    """
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -153,5 +163,3 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
-
-

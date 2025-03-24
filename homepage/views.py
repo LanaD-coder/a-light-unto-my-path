@@ -4,19 +4,22 @@ from datetime import date
 from django.shortcuts import render
 from .models import DailyVerse
 
+
 API_KEY = 'b3094e0c60a213765a11153a7c25b0c6'
 BIBLE_ID = "de4e12af7f28f599-02"
 
-VERSES = [ "JER.29.11", "PSA.23", "1COR.4.4-8", "PHP.4.13", "JHN.3.16",
-    "ROM.8.28", "ISA.41.10", "PSA.46.1", "GAL.5.22-23", "HEB.11.1",
-    "2TI.1.7", "1COR.10.13", "PRO.22.6", "ISA.40.31", "JOS.1.9",
-    "HEB.12.2", "MAT.11.28", "ROM.10.9-10", "PHP.2.3-4", "MAT.5.43-44",
 
-]
+VERSES = ["JER.29.11", "PSA.23", "1COR.4.4-8", "PHP.4.13", "JHN.3.16",
+        "ROM.8.28", "ISA.41.10", "PSA.46.1", "GAL.5.22-23", "HEB.11.1",
+        "2TI.1.7", "1COR.10.13", "PRO.22.6", "ISA.40.31", "JOS.1.9",
+        "HEB.12.2", "MAT.11.28", "ROM.10.9-10", "PHP.2.3-4", "MAT.5.43-44",
+    ]
 
-# Create your views here
+
 def get_daily_verse():
-    """ Fetches the daily verse and stores it in the database """
+    """
+    Fetches the daily verse and stores it in the database
+    """
     today = date.today()
 
     # Check if today's verse already exists
@@ -41,7 +44,9 @@ def get_daily_verse():
         return verse_entry
     return None
 
+
 def homepage(request):
     """ View function for homepage """
     daily_verse = get_daily_verse()
-    return render(request, 'homepage/homepage.html', {"daily_verse": daily_verse})
+    return render(
+        request, 'homepage/homepage.html', {"daily_verse": daily_verse})

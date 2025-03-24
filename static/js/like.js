@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.liked) {
-                    icon.classList.replace("fa-regular", "fa-solid"); // Change to filled thumbs-up
+                    icon.classList.replace("fa-regular", "fa-solid");
                 } else {
-                    icon.classList.replace("fa-solid", "fa-regular"); // Back to outline thumbs-up
+                    icon.classList.replace("fa-solid", "fa-regular");
                 }
                 likeCount.textContent = data.total_likes;
             })

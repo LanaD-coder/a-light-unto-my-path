@@ -2,8 +2,10 @@ from django.db import models
 from quiz.models import Quiz
 
 
-# Create your models here.
 class Question(models.Model):
+    """
+    Create your models here.
+    """
     text = models.CharField(max_length=200)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
@@ -14,6 +16,7 @@ class Question(models.Model):
     def get_answers(self):
         return self.answer_set.all()
 
+
 class Answer(models.Model):
     text = models.CharField(max_length=200)
     correct = models.BooleanField(default=False)
@@ -21,4 +24,6 @@ class Answer(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"question: {self.question.text}, answer: {self.text}, correct: {self.correct}"
+        return f"question: {
+            self.question.text}, answer: {
+                self.text}, correct: {self.correct}"
