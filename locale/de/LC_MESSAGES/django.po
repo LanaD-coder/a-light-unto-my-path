@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-13 10:51+0200\n"
+"PO-Revision-Date: 2025-06-13 12:00+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German <de@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\accounts\templates\accounts\login_signup.html:42
+msgid "Sign In / Sign Up"
+msgstr "Anmelden / Registrieren"
+
+#: .\accounts\templates\accounts\login_signup.html:47
+#: .\accounts\templates\accounts\login_signup.html:53
+msgid "Sign In"
+msgstr "Anmelden"
+
+#: .\accounts\templates\accounts\login_signup.html:60
+#: .\accounts\templates\accounts\login_signup.html:66
+msgid "Sign Up"
+msgstr "Registrieren"
+
+#: .\accounts\templates\accounts\login_signup.html:70
+msgid "Already have an account?"
+msgstr "Haben Sie bereits ein Konto?"
+
+#: .\accounts\templates\accounts\login_signup.html:71
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: .\accounts\templates\accounts\logout.html:8
+msgid "You have successfully signed out."
+msgstr "Sie haben sich erfolgreich abgemeldet."
+
+#: .\accounts\templates\accounts\logout.html:9
+msgid "Thank you for visiting. We hope to see you again soon!"
+msgstr "Vielen Dank für Ihren Besuch. Wir hoffen, Sie bald wiederzusehen!"
+
+#: .\accounts\templates\accounts\logout.html:10
+msgid "Return to Homepage"
+msgstr "Zurück zur Startseite"
+
+#: .\contact\templates\contact.html:11
+msgid "We would love to hear from you."
+msgstr "Wir würden gerne von Ihnen hören."
+
+#: .\contact\templates\contact.html:13
+msgid ""
+"If you are part of our community and this blog stirs something in your spirit"
+"—whether it brings feelings of anger, sadness, confusion, or hope—please "
+"don’t hesitate to reach out. With the Lord’s guidance, I will do my best to "
+"support and walk alongside you."
+msgstr ""
+"Wenn Sie Teil unserer Gemeinschaft sind und dieser Blog etwas in Ihrem Geist bewegt – sei es Wut, Traurigkeit, Verwirrung oder Hoffnung – zögern Sie bitte nicht, uns zu kontaktieren. Mit der Führung des Herrn werde ich mein Bestes tun, Sie zu unterstützen und an Ihrer Seite zu gehen."
+
+#: .\contact\templates\contact.html:19
+msgid "Contact Me"
+msgstr "Kontaktieren Sie mich"
+
+#: .\contact\templates\contact.html:28
+msgid "Name"
+msgstr "Name"
+
+#: .\contact\templates\contact.html:33 .\contact\templates\contact.html:132
+msgid "Email"
+msgstr "E-Mail"
+
+#: .\contact\templates\contact.html:38
+msgid "Subject"
+msgstr "Betreff"
+
+#: .\contact\templates\contact.html:43
+msgid "Message"
+msgstr "Nachricht"
+
+#: .\contact\templates\contact.html:47
+msgid "Send Message"
+msgstr "Nachricht senden"
+
+#: .\contact\templates\contact.html:54
+msgid "Do you need to speak to someone?"
+msgstr "Müssen Sie mit jemandem sprechen?"
+
+#: .\contact\templates\contact.html:56
+msgid ""
+"If you need urgent support or guidance, as a member of the LGBTA++ community "
+"or a parent, please reach out. We are here to help."
+msgstr ""
+"Wenn Sie als Mitglied der LGBTA++-Gemeinschaft oder als Elternteil dringend Unterstützung oder Orientierung benötigen, kontaktieren Sie uns bitte. Wir sind hier, um zu helfen."
+
+#: .\contact\templates\contact.html:64
+msgid "Contact Helpline"
+msgstr "Kontakt zur Hotline"
+
+#: .\contact\templates\contact.html:89
+msgid "Success!"
+msgstr "Erfolg!"
+
+#: .\contact\templates\contact.html:94 .\contact\templates\contact.html:102
+#: .\contact\templates\contact.html:125 .\contact\templates\contact.html:139
+msgid "Close"
+msgstr "Schließen"
+
+#: .\contact\templates\contact.html:98
+msgid ""
+"Your message has been sent successfully. We will get back to you soon! God "
+"bless!"
+msgstr ""
+"Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden! Gottes Segen!"
+
+#: .\contact\templates\contact.html:120
+msgid "Helpline Information"
+msgstr "Informationen zur Hotline"
+
+#: .\contact\templates\contact.html:129
+msgid "If you need immediate assistance, please reach out:"
+msgstr "Wenn Sie sofortige Hilfe benötigen, kontaktieren Sie uns bitte:"
+
+#: .\contact\templates\contact.html:131
+msgid "Phone"
+msgstr "Telefon"
+
+#: .\contact\templates\contact.html:133
+msgid "Live Chat"
+msgstr "Live-Chat"
+
+#: .\contact\templates\contact.html:133
+msgid "Available 24/7 on our website"
+msgstr "Rund um die Uhr auf unserer Website verfügbar"
+
+#: .\contact\templates\contact.html:135
+msgid ""
+"We are here to help and guide you with the Lord’s wisdom. You are not alone!"
+msgstr ""
+"Wir sind hier, um Ihnen mit der Weisheit des Herrn zu helfen und Sie zu begleiten. Sie sind nicht allein!"
+
+#: .\homepage\templates\homepage\homepage.html:9
+msgid ""
+"\n"
+"      John 8:12<br />\n"
+"      Then Jesus spoke to them again, saying, “I am the light of the world. "
+"He\n"
+"      who follows Me shall not walk in darkness, but have the light of "
+"life.”\n"
+"    "
+msgstr ""
+"\n"
+"      Johannes 8:12<br />\n"
+"      Dann redete Jesus wieder zu ihnen und sprach: „Ich bin das Licht der Welt. "
+"Wer mir nachfolgt, wird nicht in der Finsternis wandeln, sondern das Licht des "
+"Lebens haben.“\n"
+"    "
+
+#: .\homepage\templates\homepage\homepage.html:20
+msgid ""
+"God loves you, as you are. Right at this moment, with all your failings and "
+"faults! He loves you in spite of them."
+msgstr ""
+"Gott liebt dich so, wie du bist. Genau in diesem Moment – mit all deinen Fehlern und Schwächen! Er liebt dich trotz allem."
+
+#: .\homepage\templates\homepage\homepage.html:27
+msgid "Welcome to"
+msgstr "Willkommen bei"
+
+#: .\homepage\templates\homepage\homepage.html:28 .\templates\base.html:7
+#: .\templates\base.html:118
+msgid "A Light Unto My Path"
+msgstr "Ein Licht auf meinem Weg"
+
+#: .\homepage\templates\homepage\homepage.html:31
+msgid "Verse of the Day"
+msgstr "Vers des Tages"
+
+#: .\homepage\templates\homepage\homepage.html:36
+msgid "No verse available. Please try again later."
+msgstr "Kein Vers verfügbar. Bitte versuchen Sie es später erneut."
+
+#: .\homepage\templates\homepage\homepage.html:41
+msgid "Let's play some games!"
+msgstr "Lass uns ein paar Spiele spielen!"
+
+#: .\templates\base.html:50
+msgid "Home"
+msgstr "Startseite"
+
+#: .\templates\base.html:53
+msgid "About"
+msgstr "Über uns"
+
+#: .\templates\base.html:56
+msgid "Blog"
+msgstr "Blog"
+
+#: .\templates\base.html:59
+msgid "Contact"
+msgstr "Kontakt"
+
+#: .\templates\base.html:63 .\templates\base.html:107
+msgid "Logout"
+msgstr "Abmelden"
+
+#: .\templates\base.html:67
+msgid "Login / Sign Up"
+msgstr "Anmelden / Registrieren"
+
+#: .\templates\base.html:99
+msgid "Confirm Logout"
+msgstr "Abmeldung bestätigen"
+
+#: .\templates\base.html:103
+msgid "Are you sure you want to log out?"
+msgstr "Sind Sie sicher, dass Sie sich abmelden möchten?"
+
+#: .\templates\base.html:106
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: .\templates\base.html:119
+msgid "Made by Illana De Beer"
+msgstr "Erstellt von Illana De Beer"

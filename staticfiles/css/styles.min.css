@@ -1,3 +1,4 @@
+/* ------------------- Global ------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -17,6 +18,9 @@ html, body {
     overflow-x: hidden;
     padding-top: 45px;
 }
+b {
+    color: #296b77;
+}
 h1 {
     margin: 5px;
     text-align: center;
@@ -31,7 +35,7 @@ main {
     background-color: #6C9A8B;
 }
 
-/* Homepage */
+/* ------------------- Homepage ------------------- */
 header.fixed-top {
     position: fixed !important;
     top: 0;
@@ -76,8 +80,8 @@ header.fixed-top {
     top: 0;
     z-index: 9999;
     max-width: 100%;
-    background-color: #EED2CC;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: #fbf7f4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .base-navbar .navbar-nav {
     margin-left: auto;
@@ -180,7 +184,7 @@ header.fixed-top {
     font-weight: bold;
 }
 .footer {
-    background-color: #eed2cc;
+    background-color: #fbf7f4;
     color: #296b77;
     text-align: center;
     padding: 0.5rem 1rem;
@@ -188,7 +192,7 @@ header.fixed-top {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2);
     max-width: 100%;
     min-height: 60px;
     position: relative;
@@ -217,7 +221,7 @@ header.fixed-top {
     color: #a1683a;
 }
 
-/* Blog */
+/* ------------------- Blog ------------------- */
 .post-detail-container {
     color: #296b77 !important;
     max-width: 800px;
@@ -332,7 +336,21 @@ textarea#id_body.comment-textarea {
     color: white;
 }
 
-/* About */
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.2s ease;
+    padding: 8px;
+    margin: 5px;
+}
+
+.like-button:hover {
+    transform: scale(1.2);
+}
+
+/* ------------------- About ------------------- */
 .hero-about {
     position: relative;
     max-width: 100%;
@@ -1111,7 +1129,6 @@ input[type="radio"] {
     .hero-overlay-contact,
     .hero-overlay-lsu {
         width: 95%;
-        top: 40%;
         padding: 8px 12px;
     }
 

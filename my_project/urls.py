@@ -45,6 +45,7 @@ urlpatterns = [
 
     path('', redirect_to_homepage, name='root_redirect'),
     path('quiz/', include('quiz.urls', namespace='quiz')),
+    path('i18n/', include('django.conf.urls.i18n')),
 
 ]
 

@@ -1,12 +1,12 @@
+{% load i18n %}
+{% load static %}
 <!DOCTYPE html>
-<html class="h-100" lang="en">
+<html class="h-100" lang="{{ LANGUAGE_CODE }}">
   <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>A Light Unto My Path</title>
+    <title>{% trans "A Light Unto My Path" %}</title>
 
-    <!-- Define URLs -->
     {% url 'homepage' as homepage_url %}
     {% url 'contact' as contact_url %}
     {% url 'about' as about_url %}
@@ -15,46 +15,21 @@
     {% url 'account_logout' as logout_url %}
     {% url 'account_signup' as login_signup_url %}
 
-    <!-- Google Fonts -->
+    <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Static Root CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/modal.css' %}">
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet">
-
-    <!-- API Biblescript-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
 
     <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{% static 'favicon/apple-touch-icon.png' %}">
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{% static 'favicon/favicon-32x32.png' %}">
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
-
     {% block styles %}{% endblock %}
   </head>
 
@@ -64,158 +39,116 @@
     <nav class="navbar navbar-expand-lg base-navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'homepage' %}">
-          <img
-            src="{% static 'images/logo-png.png' %}"
-            alt="Logo"
-            width="75"
-            height="75"
-          >
+          <img src="{% static 'images/logo-png.png' %}" alt="Logo" width="75" height="75">
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-          id="navbar-toggler"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" id="navbar-toggler">
           <i class="fa-solid fa-bars" id="nav-icon"></i>
         </button>
 
-        <!-- Collapsing part inside the container-fluid -->
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ms-auto d-flex justify-content-end">
+          <ul class="navbar-nav d-flex ms-auto" style="gap: 1.5rem; align-items: center;">
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == homepage_url %}active{% endif %}"
-                href="{% url 'homepage' %}"
-                >Home</a
-              >
+              <a class="nav-link {% if request.path == homepage_url %}active{% endif %}" href="{{ homepage_url }}">{% trans "Home" %}</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == about_url %}active{% endif %}"
-                href="{% url 'about' %}"
-                >About</a
-              >
+              <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">{% trans "About" %}</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == blog_url %}active{% endif %}"
-                href="{% url 'blog:post_list' %}"
-                >Blog</a
-              >
+              <a class="nav-link {% if request.path == blog_url %}active{% endif %}" href="{{ blog_url }}">{% trans "Blog" %}</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link {% if request.path == contact_url %}active{% endif %}"
-                href="{% url 'contact' %}"
-                >Contact</a
-              >
+              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">{% trans "Contact" %}</a>
             </li>
-
-            <!-- Authentication Links -->
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                data-bs-toggle="modal"
-                data-bs-target="#logoutModal"
-              >
-                Logout
-              </a>
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">{% trans "Logout" %}</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'login_signup' %}">Login / Sign Up</a>
+              <a class="nav-link" href="{{ login_signup_url }}">{% trans "Login / Sign Up" %}</a>
             </li>
             {% endif %}
+
+            <!-- Language Switcher as a nav-item -->
+            <li class="nav-item">
+              <form action="{% url 'set_language' %}" method="POST" class="d-flex align-items-center">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.path }}">
+                <select name="language"
+                        class="form-select form-select-sm"
+                        onchange="this.form.submit()"
+                        style="width: auto; min-width: 70px; cursor: pointer;">
+                  <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                  <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>
+                </select>
+              </form>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    </header>
+  </header>
 
-    <div class="d-flex flex-column">
-      <main class="flex-shrink-0 main-bg">
-        <div class="container-fluid py-4">
-          {% block content %}
-          <!-- Content Goes Here -->
-          {% endblock %}
+  <div class="d-flex flex-column">
+    <main class="flex-shrink-0 main-bg">
+      <div class="container-fluid py-4">
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="logoutModalLabel">{% trans "Confirm Logout" %}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </main>
-    </div>
-
-    <!-- Logout Confirmation Modal -->
-    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <p>Are you sure you want to log out?</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-danger" id="confirmLogout">Logout</button>
-          </div>
+        <div class="modal-body text-center">
+          <p>{% trans "Are you sure you want to log out?" %}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
+          <button type="button" class="btn btn-danger" id="confirmLogout">{% trans "Logout" %}</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Hidden Logout Form -->
-    <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: none;">
-      {% csrf_token %}
-    </form>
+  <form id="logout-form" method="post" action="{% url 'logout' %}" style="display: none;">
+    {% csrf_token %}
+  </form>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 A Light Unto My Path</p>
-      <p>Made by Illana De Beer</p>
-      <div class="social-icons">
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
-              <span class="fab fa-facebook-square"></span>
-          </a>
-          <a href="https://x.com/" target="_blank" aria-label="X">
-              <span class="fa-brands fa-square-x-twitter"></span>
-          </a>
-          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
-              <span class="fab fa-instagram-square"></span>
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube">
-              <span class="fab fa-youtube-square"></span>
-          </a>
-      </div>
-    </footer>
+  <footer class="footer">
+    <p>&copy; 2025 {% trans "A Light Unto My Path" %}</p>
+    <p>{% trans "Made by Illana De Beer" %}</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><span class="fab fa-facebook-square"></span></a>
+      <a href="https://x.com/" target="_blank" aria-label="X"><span class="fa-brands fa-square-x-twitter"></span></a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><span class="fab fa-instagram-square"></span></a>
+      <a href="https://www.youtube.com/" target="_blank" aria-label="YouTube"><span class="fab fa-youtube-square"></span></a>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer src="{% static 'js/lazysizes.min.js' %}"></script>
-    <script src="{% static 'js/lazyload.js' %}"></script>
-
-    <!-- Logout Modal Script -->
-    <script>
-      document.getElementById("confirmLogout").addEventListener("click", function () {
-          document.getElementById("logout-form").submit();
-      });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          let lazyBg = document.querySelector(".hero-about");
-          if (lazyBg) {  // Ensure the element exists
-              let bgImage = lazyBg.getAttribute("data-bg");
-              if (bgImage) {
-                  lazyBg.style.backgroundImage = `url(${bgImage})`;
-              }
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="{% static 'js/lazysizes.min.js' %}"></script>
+  <script src="{% static 'js/lazyload.js' %}"></script>
+  <script>
+    document.getElementById("confirmLogout").addEventListener("click", function () {
+        document.getElementById("logout-form").submit();
+    });
+    document.addEventListener("DOMContentLoaded", function() {
+      let lazyBg = document.querySelector(".hero-about");
+      if (lazyBg) {
+          let bgImage = lazyBg.getAttribute("data-bg");
+          if (bgImage) {
+              lazyBg.style.backgroundImage = `url(${bgImage})`;
           }
-      });
-      </script>
-    {% block scripts %}{% endblock scripts %}
-
+      }
+    });
+  </script>
+  {% block scripts %}{% endblock scripts %}
   </body>
 </html>
