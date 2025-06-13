@@ -37,7 +37,7 @@ STATIC_DIR = BASE_DIR / 'static'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['alight-untomy-path-5986a905c2de.herokuapp.com', '127.0.0.1']
 
@@ -119,12 +119,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-if 'test' in sys.argv:
-    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
+if DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(DATABASE_URL)
+    }
+else:
+    # fallback to sqlite (for local/dev)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 CSRF_TRUSTED_ORIGINS = [
     "https://github.com",
@@ -220,13 +228,12 @@ WHITENOISE_USE_FINDERS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BIBLE_API_KEY = 'b3094e0c60a213765a11153a7c25b0c6'
-BIBLE_ID = "de4e12af7f28f599-02"
+BIBLE_API_KEY = os.environ.get("BIBLE_API_KEY")
+BIBLE_ID = os.environ.get("BIBLE_ID")
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dvs5uituk',
-    'API_KEY': '922535369712853',
-    'API_SECRET': 'M7aRepNHwXJez8Zn5ibwfZ109Ek',
-}
+CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
+CLOUDINARY_CLOUD_NAME = os.environ.get("CLOUDINARY_CLOUD_NAME")
+CLOUDINARY_API_KEY = os.environ.get("CLOUDINARY_API_KEY")
+CLOUDINARY_API_SECRET = os.environ.get("CLOUDINARY_API_SECRET")
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
