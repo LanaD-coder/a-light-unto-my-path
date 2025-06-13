@@ -19,11 +19,6 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-cloudinary.config(
-    cloud_name = os.getenv('CLOUDINARY_CLOUD_NAME', 'dvs5uituk'),
-    api_key = os.getenv('CLOUDINARY_API_KEY', '922535369712853'),
-    api_secret = os.getenv('CLOUDINARY_API_SECRET', 'M7aRepNHwXJez8Zn5ibwfZ109Ek')
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
