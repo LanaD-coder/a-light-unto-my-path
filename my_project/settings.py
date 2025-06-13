@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 import dj_database_url
 if os.path.isfile('env.py'): import env
 import cloudinary
@@ -25,6 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = BASE_DIR / 'static'
 
+load_dotenv(dotenv_path=BASE_DIR / '.env')
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -32,7 +35,7 @@ STATIC_DIR = BASE_DIR / 'static'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['a-light-unto-my-path-0da204d26d49.herokuapp.com', 'localhost', '127.0.0.1']
 
@@ -58,7 +61,8 @@ INSTALLED_APPS = [
     'about',
     'accounts',
     'cloudinary',
-    'blog',
+    'blog.apps.BlogConfig',
+    'modeltranslation',
     'contact',
     'homepage',
     'django_extensions',
@@ -183,6 +187,8 @@ LANGUAGES = [
     ('en', 'English'),
     ('de', 'Deutsch'),
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 
 LOCALE_PATHS = [
     BASE_DIR / "locale",

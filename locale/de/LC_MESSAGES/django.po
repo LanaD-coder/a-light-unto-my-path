@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-13 10:51+0200\n"
+"POT-Creation-Date: 2025-06-13 12:57+0200\n"
 "PO-Revision-Date: 2025-06-13 12:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German <de@li.org>\n"
@@ -17,6 +17,180 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\about\templates\about\about_me.html:10
+msgid "Let's get to know each other"
+msgstr "Lass uns einander kennenlernen"
+
+#: .\about\templates\about\about_me.html:11
+msgid "\\"
+msgstr "\\"
+
+#: .\about\templates\about\about_me.html:16
+msgid "A light unto my path!"
+msgstr "Ein Licht auf meinem Weg!"
+
+#: .\about\templates\about\about_me.html:20
+msgid ""
+"Welcome to the site! Before I dive into the deep stuff (and I promise, I "
+"will, but bear with me), let’s talk about the Team—because honestly, they're "
+"the real MVPs here. I'm just one of the four members. I am a mature woman "
+"(yes, \\"
+msgstr ""
+"Willkommen auf der Seite! Bevor ich in die tiefgründigen Dinge eintauche (und ich verspreche, das werde ich tun – bleib bitte dran), "
+"möchte ich über das Team sprechen – denn ehrlich gesagt, sie sind die wahren Helden hier. Ich bin nur eines von vier Mitgliedern. "
+"Ich bin eine reife Frau (ja, \\"
+
+#: .\about\templates\about\about_me.html:22
+msgid ""
+"Now, before you click away thinking, “Uh-oh, this is definitely not my "
+"vibe,” I get it. You might fall into one of these categories:"
+msgstr ""
+"Bevor du jetzt wegklickst und denkst: „Oh-oh, das ist definitiv nicht mein Ding“ – ich verstehe dich. "
+"Vielleicht gehörst du zu einer dieser Kategorien:"
+
+#: .\about\templates\about\about_me.html:24
+msgid ""
+"You don’t believe in God, Jesus, or the Holy Spirit (Hopefully you will "
+"stick around and change that, because God believes in you)."
+msgstr ""
+"Du glaubst nicht an Gott, Jesus oder den Heiligen Geist (hoffentlich bleibst du trotzdem und änderst das – denn Gott glaubt an dich)."
+
+#: .\about\templates\about\about_me.html:25
+msgid ""
+"You believe, but you might be wondering, “Can a lesbian really be a "
+"Christian?” (Spoiler alert: Absolutely!)"
+msgstr ""
+"Du glaubst, aber fragst dich vielleicht: „Kann eine Lesbe wirklich Christin sein?“ (Spoiler: Absolut!)"
+
+#: .\about\templates\about\about_me.html:26
+msgid ""
+"You’re just not here for this entire conversation (I’ll send you virtual "
+"hugs, and I totally understand if this is not your jam)."
+msgstr ""
+"Du bist einfach nicht wegen dieses ganzen Themas hier (ich schicke dir virtuelle Umarmungen und verstehe vollkommen, wenn das nicht dein Ding ist)."
+
+#: .\about\templates\about\about_me.html:28
+msgid ""
+"But if you’re still with me, I’m glad you’re here. And I promise I’ll take "
+"you on a journey you didn’t expect. You see, I grew up in a quiet little "
+"town in the heart of nowhere Africa. It was peaceful, we had all the basics—"
+"food, a roof over our heads, and a sense of comfort. But... Sundays were a "
+"bit of a drag. Like most kids in my country, I was dragged to church, even "
+"though I couldn’t figure out why I had to go. It was just what you did. But "
+"here’s the thing – I also knew early on that I was gay. And in that little "
+"town, where conservative values were in full swing, being gay wasn’t exactly "
+"“the vibe.” Add Sundays into the mix, and I found myself super confused. "
+"What’s worse? My church wasn’t exactly rolling out the rainbow carpet. I "
+"began wondering, “Does God really love me? Is it even okay to be gay AND "
+"believe in God?” Spoiler #2: I had no clue, and neither did most people I "
+"met. Fast forward to now, and I’m on a mission to give a different answer: "
+"YES, God loves us all! Whether you're gay, straight, bi, or somewhere in "
+"between, you are loved. If you’ve ever been told that God doesn’t love you "
+"because of your sexuality, then this website was made for you. I want to "
+"show you a different side of faith—one that embraces ALL people, just as "
+"they are. So, here’s what this website is all about:"
+msgstr ""
+"Aber wenn du noch hier bist, freut es mich sehr, dass du da bist. Und ich verspreche dir, ich nehme dich mit auf eine Reise, "
+"die du nicht erwartet hast. Ich bin in einem ruhigen kleinen Ort im Nirgendwo Afrikas aufgewachsen. Es war friedlich, wir hatten das Nötigste – "
+"Essen, ein Dach über dem Kopf und ein Gefühl von Geborgenheit. Aber ... Sonntage waren eher anstrengend. Wie die meisten Kinder in meinem Land wurde ich zur Kirche mitgeschleppt, "
+"obwohl ich nicht wirklich verstand, warum. Es gehörte einfach dazu. Aber hier ist der Punkt – ich wusste schon früh, dass ich homosexuell bin. "
+"In dieser kleinen Stadt, in der konservative Werte vorherrschten, war das nicht gerade angesagt. Mit den Sonntagen kam auch die Verwirrung. "
+"Und schlimmer noch: Meine Kirche hieß Menschen wie mich nicht gerade willkommen. Ich fragte mich: „Liebt Gott mich wirklich? Darf ich überhaupt schwul sein UND an Gott glauben?“ "
+"Spoiler #2: Ich hatte keine Ahnung. Und die meisten Menschen, die ich traf, auch nicht. Heute bin ich auf einer Mission, eine andere Antwort zu geben: "
+"JA, Gott liebt uns alle! Egal ob du homosexuell, hetero, bi oder irgendwo dazwischen bist – du wirst geliebt. "
+"Wenn dir jemals jemand gesagt hat, dass Gott dich wegen deiner Sexualität nicht liebt, dann wurde diese Website genau für dich gemacht. "
+"Ich möchte dir eine andere Seite des Glaubens zeigen – eine, die ALLE Menschen annimmt, so wie sie sind. Und genau darum geht es auf dieser Website:"
+
+#: .\about\templates\about\about_me.html:31
+msgid "The Mission:"
+msgstr "Die Mission:"
+
+#: .\about\templates\about\about_me.html:31
+msgid ""
+"The mission is simple (but profound): Share my thoughts, growth, and "
+"insights as a gay Christian and show that faith and sexuality don’t have to "
+"be at odds. By doing so, I hope to help others feel that they, too, can be "
+"loved by God – exactly as they are."
+msgstr ""
+"Die Mission ist einfach (aber tiefgründig): Ich teile meine Gedanken, meinen Weg und meine Erkenntnisse als lesbische Christin "
+"und zeige, dass Glaube und Sexualität sich nicht widersprechen müssen. Damit möchte ich anderen helfen zu erkennen, dass auch sie von Gott geliebt sind – genau so, wie sie sind."
+
+#: .\about\templates\about\about_me.html:33
+msgid "The Five Values of this Website:"
+msgstr "Die fünf Werte dieser Website:"
+
+#: .\about\templates\about\about_me.html:36
+msgid "Love First, Judge Never"
+msgstr "Liebe zuerst, niemals urteilen"
+
+#: .\about\templates\about\about_me.html:37
+msgid "This site is about one thing—love. No judgments, no \\"
+msgstr "Auf dieser Seite geht es nur um eines – Liebe. Keine Urteile, kein \\"
+
+#: .\about\templates\about\about_me.html:39
+msgid "Acceptance Over Rejection"
+msgstr "Annahme statt Ablehnung"
+
+#: .\about\templates\about\about_me.html:40
+msgid ""
+"I want to help people who feel rejected by their faith to see that God "
+"doesn’t turn away from them. Ever. We’re all welcome here, just as we are."
+msgstr ""
+"Ich möchte Menschen, die sich durch ihren Glauben abgelehnt fühlen, helfen zu erkennen, dass Gott sich nie von ihnen abwendet. "
+"Wir sind hier alle willkommen – genau so, wie wir sind."
+
+#: .\about\templates\about\about_me.html:42
+msgid "Honesty, Even When It’s Tough"
+msgstr "Ehrlichkeit, auch wenn es schwer ist"
+
+#: .\about\templates\about\about_me.html:43
+msgid ""
+"I’m not going to sugar-coat it. Life is hard, faith can be confusing, and "
+"sometimes, it feels like the world doesn’t get us. But honesty—raw, real "
+"honesty—will always be our guiding star."
+msgstr ""
+"Ich werde nichts beschönigen. Das Leben ist hart, Glaube kann verwirrend sein, und manchmal hat man das Gefühl, nicht verstanden zu werden. "
+"Aber Ehrlichkeit – echte, rohe Ehrlichkeit – wird immer unser Leitstern sein."
+
+#: .\about\templates\about\about_me.html:45
+msgid "Growth Through Faith"
+msgstr "Wachstum durch Glauben"
+
+#: .\about\templates\about\about_me.html:46
+msgid ""
+"This site is a place to explore, question, and grow. Whether you’re just "
+"starting to find your way back to God or you’ve always been on this journey, "
+"we’re in this together. Growth is a messy, beautiful process!"
+msgstr ""
+"Diese Seite ist ein Ort zum Erkunden, Fragen stellen und Wachsen. Egal ob du gerade erst beginnst, deinen Weg zu Gott zu finden, oder schon lange auf dieser Reise bist – "
+"wir sind gemeinsam unterwegs. Wachstum ist ein chaotischer, aber wunderschöner Prozess!"
+
+#: .\about\templates\about\about_me.html:48
+msgid "Hope That’s Bigger Than Fear"
+msgstr "Hoffnung, die größer ist als Angst"
+
+#: .\about\templates\about\about_me.html:49
+msgid ""
+"Fear tries to hold us back. Fear of rejection, fear of not being enough, "
+"fear of stepping into the unknown. But the hope we find in faith is so much "
+"bigger than any fear. And here, that hope is always in abundance."
+msgstr ""
+"Angst versucht, uns zurückzuhalten. Angst vor Ablehnung, Angst, nicht genug zu sein, Angst vor dem Unbekannten. "
+"Aber die Hoffnung, die wir im Glauben finden, ist so viel größer als jede Angst. Und hier gibt es diese Hoffnung im Überfluss."
+
+#: .\about\templates\about\about_me.html:51
+msgid ""
+"So, whether you’re here because you’re curious, you’re looking for some "
+"comfort, or you just want to explore a different way of viewing faith and "
+"sexuality, I’m thrilled you found your way to this website. God loves us ALL—"
+"rainbow flags and all—and that’s the truth I’m here to share. Take a seat, "
+"stay for a while, and let’s have some real, honest conversations about God, "
+"Jesus, the Holy Spirit... and everything in between."
+msgstr ""
+"Egal ob du hier bist, weil du neugierig bist, Trost suchst oder einfach eine andere Sicht auf Glauben und Sexualität erkunden möchtest – "
+"ich freue mich riesig, dass du den Weg zu dieser Website gefunden hast. Gott liebt uns ALLE – mit Regenbogenflagge und allem – und genau diese Wahrheit möchte ich teilen. "
+"Nimm Platz, bleib eine Weile und lass uns echte, ehrliche Gespräche führen – über Gott, Jesus, den Heiligen Geist ... und alles dazwischen."
 
 #: .\accounts\templates\accounts\login_signup.html:42
 msgid "Sign In / Sign Up"
@@ -63,7 +237,10 @@ msgid ""
 "don’t hesitate to reach out. With the Lord’s guidance, I will do my best to "
 "support and walk alongside you."
 msgstr ""
-"Wenn Sie Teil unserer Gemeinschaft sind und dieser Blog etwas in Ihrem Geist bewegt – sei es Wut, Traurigkeit, Verwirrung oder Hoffnung – zögern Sie bitte nicht, uns zu kontaktieren. Mit der Führung des Herrn werde ich mein Bestes tun, Sie zu unterstützen und an Ihrer Seite zu gehen."
+"Wenn Sie Teil unserer Gemeinschaft sind und dieser Blog etwas in Ihrem Geist "
+"bewegt – sei es Wut, Traurigkeit, Verwirrung oder Hoffnung – zögern Sie "
+"bitte nicht, uns zu kontaktieren. Mit der Führung des Herrn werde ich mein "
+"Bestes tun, Sie zu unterstützen und an Ihrer Seite zu gehen."
 
 #: .\contact\templates\contact.html:19
 msgid "Contact Me"
@@ -98,7 +275,9 @@ msgid ""
 "If you need urgent support or guidance, as a member of the LGBTA++ community "
 "or a parent, please reach out. We are here to help."
 msgstr ""
-"Wenn Sie als Mitglied der LGBTA++-Gemeinschaft oder als Elternteil dringend Unterstützung oder Orientierung benötigen, kontaktieren Sie uns bitte. Wir sind hier, um zu helfen."
+"Wenn Sie als Mitglied der LGBTA++-Gemeinschaft oder als Elternteil dringend "
+"Unterstützung oder Orientierung benötigen, kontaktieren Sie uns bitte. Wir "
+"sind hier, um zu helfen."
 
 #: .\contact\templates\contact.html:64
 msgid "Contact Helpline"
@@ -110,6 +289,7 @@ msgstr "Erfolg!"
 
 #: .\contact\templates\contact.html:94 .\contact\templates\contact.html:102
 #: .\contact\templates\contact.html:125 .\contact\templates\contact.html:139
+#: .\quiz\templates\quiz\quiz_main.html:30
 msgid "Close"
 msgstr "Schließen"
 
@@ -118,7 +298,8 @@ msgid ""
 "Your message has been sent successfully. We will get back to you soon! God "
 "bless!"
 msgstr ""
-"Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen melden! Gottes Segen!"
+"Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns bald bei Ihnen "
+"melden! Gottes Segen!"
 
 #: .\contact\templates\contact.html:120
 msgid "Helpline Information"
@@ -144,7 +325,8 @@ msgstr "Rund um die Uhr auf unserer Website verfügbar"
 msgid ""
 "We are here to help and guide you with the Lord’s wisdom. You are not alone!"
 msgstr ""
-"Wir sind hier, um Ihnen mit der Weisheit des Herrn zu helfen und Sie zu begleiten. Sie sind nicht allein!"
+"Wir sind hier, um Ihnen mit der Weisheit des Herrn zu helfen und Sie zu "
+"begleiten. Sie sind nicht allein!"
 
 #: .\homepage\templates\homepage\homepage.html:9
 msgid ""
@@ -158,9 +340,9 @@ msgid ""
 msgstr ""
 "\n"
 "      Johannes 8:12<br />\n"
-"      Dann redete Jesus wieder zu ihnen und sprach: „Ich bin das Licht der Welt. "
-"Wer mir nachfolgt, wird nicht in der Finsternis wandeln, sondern das Licht des "
-"Lebens haben.“\n"
+"      Dann redete Jesus wieder zu ihnen und sprach: „Ich bin das Licht der "
+"Welt. Wer mir nachfolgt, wird nicht in der Finsternis wandeln, sondern das "
+"Licht des Lebens haben.“\n"
 "    "
 
 #: .\homepage\templates\homepage\homepage.html:20
@@ -168,14 +350,15 @@ msgid ""
 "God loves you, as you are. Right at this moment, with all your failings and "
 "faults! He loves you in spite of them."
 msgstr ""
-"Gott liebt dich so, wie du bist. Genau in diesem Moment – mit all deinen Fehlern und Schwächen! Er liebt dich trotz allem."
+"Gott liebt dich so, wie du bist. Genau in diesem Moment – mit all deinen "
+"Fehlern und Schwächen! Er liebt dich trotz allem."
 
 #: .\homepage\templates\homepage\homepage.html:27
 msgid "Welcome to"
 msgstr "Willkommen bei"
 
-#: .\homepage\templates\homepage\homepage.html:28 .\templates\base.html:7
-#: .\templates\base.html:118
+#: .\homepage\templates\homepage\homepage.html:28 .\templates\base.html:8
+#: .\templates\base.html:124
 msgid "A Light Unto My Path"
 msgstr "Ein Licht auf meinem Weg"
 
@@ -191,42 +374,126 @@ msgstr "Kein Vers verfügbar. Bitte versuchen Sie es später erneut."
 msgid "Let's play some games!"
 msgstr "Lass uns ein paar Spiele spielen!"
 
-#: .\templates\base.html:50
+#: .\quiz\templates\quiz\quiz_main.html:6
+msgid "home"
+msgstr ""
+
+#: .\quiz\templates\quiz\quiz_main.html:14
+msgid ""
+"Are you ready to test your Bible knowledge in a fun and engaging way? Dive "
+"into our exciting quizzes and challenge yourself with three thought-"
+"provoking topics:"
+msgstr ""
+"Bist du bereit, dein Bibelwissen auf unterhaltsame und spannende Weise zu testen? "
+"Stürze dich in unsere aufregenden Quizze und fordere dich mit drei zum Nachdenken anregenden Themen heraus:"
+
+#: .\quiz\templates\quiz\quiz_main.html:15
+msgid "What am I?"
+msgstr "Was bin ich?"
+
+#: .\quiz\templates\quiz\quiz_main.html:15
+msgid "Where am I?"
+msgstr "Wo bin ich?"
+
+#: .\quiz\templates\quiz\quiz_main.html:15
+msgid "Who am I?"
+msgstr "Wer bin ich?"
+
+#: .\quiz\templates\quiz\quiz_main.html:16
+msgid "Each topic offers three levels—"
+msgstr "Jedes Thema bietet drei Schwierigkeitsstufen –"
+
+#: .\quiz\templates\quiz\quiz_main.html:17
+msgid "Easy"
+msgstr "Einfach"
+
+#: .\quiz\templates\quiz\quiz_main.html:17
+msgid "Medium"
+msgstr "Mittel"
+
+#: .\quiz\templates\quiz\quiz_main.html:17
+msgid "Hard"
+msgstr "Schwierig"
+
+#: .\quiz\templates\quiz\quiz_main.html:18
+msgid ""
+"—so whether you're just starting or you're a seasoned Bible scholar, there's "
+"a quiz for you!"
+msgstr ""
+"– ganz gleich, ob du gerade erst anfängst oder ein erfahrener Bibelkenner bist – es gibt ein Quiz für dich!"
+
+#: .\quiz\templates\quiz\quiz_main.html:19
+msgid ""
+"Explore the scriptures, learn new insights, and see how well you really know "
+"the Bible. Take a quiz today and put your knowledge to the test!"
+msgstr ""
+"Erkunde die Heilige Schrift, entdecke neue Erkenntnisse und finde heraus, wie gut du die Bibel wirklich kennst. "
+"Mach heute ein Quiz und teste dein Wissen!"
+
+#: .\quiz\templates\quiz\quiz_main.html:29
+msgid "Start?"
+msgstr "Starten?"
+
+#: .\quiz\templates\quiz\quiz_main.html:34
+msgid "No"
+msgstr "Nein"
+
+#: .\quiz\templates\quiz\quiz_main.html:35
+msgid "Let's go"
+msgstr "Los geht's"
+
+#: .\quiz\templates\quiz\quiz_main.html:42
+msgid "Enjoy our quizzes!"
+msgstr "Viel Spaß mit unseren Quizzen!"
+
+#: .\quiz\templates\quiz\quizes.html:16
+msgid "score to pass"
+msgstr "Bestehenspunktzahl"
+
+#: .\quiz\templates\quiz\quizes.html:20
+msgid "Submit Quiz"
+msgstr "Quiz abschicken"
+
+#: .\quiz\templates\quiz\quizes.html:27
+msgid "Back to All Quizzes"
+msgstr "Zurück zu allen Quizzen"
+
+#: .\templates\base.html:51
 msgid "Home"
 msgstr "Startseite"
 
-#: .\templates\base.html:53
+#: .\templates\base.html:54
 msgid "About"
 msgstr "Über uns"
 
-#: .\templates\base.html:56
+#: .\templates\base.html:57
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\base.html:59
+#: .\templates\base.html:60
 msgid "Contact"
 msgstr "Kontakt"
 
-#: .\templates\base.html:63 .\templates\base.html:107
+#: .\templates\base.html:64 .\templates\base.html:113
 msgid "Logout"
 msgstr "Abmelden"
 
-#: .\templates\base.html:67
+#: .\templates\base.html:68
 msgid "Login / Sign Up"
 msgstr "Anmelden / Registrieren"
 
-#: .\templates\base.html:99
+#: .\templates\base.html:105
 msgid "Confirm Logout"
 msgstr "Abmeldung bestätigen"
 
-#: .\templates\base.html:103
+#: .\templates\base.html:109
 msgid "Are you sure you want to log out?"
 msgstr "Sind Sie sicher, dass Sie sich abmelden möchten?"
 
-#: .\templates\base.html:106
+#: .\templates\base.html:112
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: .\templates\base.html:119
+#: .\templates\base.html:125
 msgid "Made by Illana De Beer"
 msgstr "Erstellt von Illana De Beer"

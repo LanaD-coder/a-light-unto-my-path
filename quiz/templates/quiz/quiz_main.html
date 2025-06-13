@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
-home
+{% trans "home" %}
 {% endblock title %}
 
 {% block content %}
@@ -10,9 +11,12 @@ home
 <div class="hero-quiz">
   <div class="container text-center">
       <p class="hero-quiz-text">
-          Are you ready to test your Bible knowledge in a fun and engaging way? Dive into our exciting quizzes and challenge yourself with three thought-provoking topics:
-          <strong>"What am I?"</strong>, <strong>"Where am I?"</strong>, and <strong>"Who am I?"</strong>. Each topic offers three levels—<strong>Easy, Medium, and Hard</strong>—so whether you're just starting or you're a seasoned Bible scholar, there's a quiz for you!
-          Explore the scriptures, learn new insights, and see how well you really know the Bible. Take a quiz today and put your knowledge to the test!
+          {% trans "Are you ready to test your Bible knowledge in a fun and engaging way? Dive into our exciting quizzes and challenge yourself with three thought-provoking topics:" %}
+          <strong>{% trans "What am I?" %}</strong>, <strong>{% trans "Where am I?" %}</strong>, and <strong>{% trans "Who am I?" %}</strong>.
+          {% trans "Each topic offers three levels—" %}
+          <strong>{% trans "Easy" %}, {% trans "Medium" %}, {% trans "Hard" %}</strong>
+          {% trans "—so whether you're just starting or you're a seasoned Bible scholar, there's a quiz for you!" %}
+          {% trans "Explore the scriptures, learn new insights, and see how well you really know the Bible. Take a quiz today and put your knowledge to the test!" %}
       </p>
   </div>
 </div>
@@ -22,20 +26,20 @@ home
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Start?</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="exampleModalLabel">{% trans "Start?" %}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% trans "Close" %}"></button>
         </div>
         <div class="modal-body" id="modal-body-confirm"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-          <button type="button" id="start-button" class="btn btn-success">Let's go</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">{% trans "No" %}</button>
+          <button type="button" id="start-button" class="btn btn-success">{% trans "Let's go" %}</button>
         </div>
       </div>
     </div>
 </div>
 
 <div class="h1-quiz text-center" style="color: #fbf7f4; font-family: 'Imperial Script'; font-size: 2.5rem;">
-   <b>Enjoy our quizzes!</b>
+   <b>{% trans "Enjoy our quizzes!" %}</b>
 </div>
 <hr>
 
@@ -53,7 +57,7 @@ home
       border: none;
       display: block;
       width: 200px;
-      transition: background-color 0.3s ease, transform 0.2s ease;""
+      transition: background-color 0.3s ease, transform 0.2s ease;"
     data-pk="{{ obj.pk }}"
     data-quiz="{{ obj.name }}"
     data-questions="{{ obj.number_of_questions }}"
