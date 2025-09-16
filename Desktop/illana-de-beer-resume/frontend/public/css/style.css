@@ -1,0 +1,71 @@
+/* Background image */
+body {
+  background-image: url("/assets/images/bg-main.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  scroll-behavior: smooth;
+  font-family: "Epunda Sans", sans-serif;
+}
+
+/* Section spacing */
+section {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Navbar styling */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Project card titles using Quintessential */
+.card-title {
+  font-family: "Quintessential", serif;
+  font-weight: 600;
+}
+
+/* Footer */
+footer {
+  background: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Epunda Sans";
+  src: var(--epunda-regular) format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Epunda Sans";
+  src: var(--epunda-bold) format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Quintessential";
+  src: var(--quintessential) format("woff2");
+  font-weight: 400;
+}
+
+/* Font classes */
+.epunda-sans-regular {
+  font-family: "Epunda Sans", sans-serif;
+  font-weight: 400;
+}
+
+.epunda-sans-bold {
+  font-family: "Epunda Sans", sans-serif;
+  font-weight: 700;
+}
+
+.quintessential-regular {
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+}
